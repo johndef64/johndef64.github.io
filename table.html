@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSV to Table</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var csvPath = 'file.csv'; // Replace with the actual CSV file path
+
+      // Fetch the CSV file
+      fetch(csvPath)
+        .then(response => response.text())
+        .then(csv => {
+          // Split the CSV content into rows
+          var rows = csv.trim().split('\n');
+          var tableBody = document.getElementById('table-body');
+
+          // Create table rows and cells
+          rows.forEach(function(row) {
+            var cells = row.split(',');
+
+            var tableRow = document.createElement('tr');
+            cells.forEach(function(cell) {
+              var tableCell = document.createElement('td');
+              tableCell.textContent = cell;
+              tableRow.appendChild(tableCell);
+            });
+
+            tableBody.appendChild(tableRow);
+          });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  </script>
+</head>
+<body>
+  <h1>CSV to Table</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <!-- Add more table headers as needed -->
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+</body>
+</html>
