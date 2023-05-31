@@ -4,5 +4,40 @@
 <h1>JohnDef main repository</h1>
 <h2>Nutrigentic Research:</h2>
 <a href="Nutrigenetic Reference Mesh Lists.html">Nutrigenetic Reference Mesh Lists</a>
+  
+ <head>
+  <title>Folder Contents</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var folderPath = 'GRPMX_playground'; // Replace with the actual folder path
+
+      // Fetch the folder contents
+      fetch(folderPath)
+        .then(response => response.text())
+        .then(html => {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html, 'text/html');
+          var fileLinks = Array.from(doc.querySelectorAll('a')).map(a => a.href);
+
+          // Display the file names in a list
+          var listContainer = document.getElementById('file-list');
+          fileLinks.forEach(function(link) {
+            var listItem = document.createElement('li');
+            var linkElement = document.createElement('a');
+            linkElement.href = link;
+            linkElement.textContent = link.substring(link.lastIndexOf('/') + 1);
+            listItem.appendChild(linkElement);
+            listContainer.appendChild(listItem);
+          });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  </script>
+</head>
+<body>
+  <h1>Folder Contents</h1>
+  <ul id="file-list"></ul>
 </body>
 </html>
