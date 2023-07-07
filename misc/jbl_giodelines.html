@@ -1,0 +1,540 @@
+<p>Preliminary notes:</p>
+<pre><code>Journal main topic: **Translational bioinformatics** 
+
+Translational bioinformatics papers are scientific articles <span class="hljs-keyword">that</span> focus <span class="hljs-keyword">on</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">application</span> <span class="hljs-keyword">of</span> bioinformatics methods <span class="hljs-keyword">and</span> tools <span class="hljs-keyword">to</span> bridge <span class="hljs-keyword">the</span> gap <span class="hljs-keyword">between</span> biological research <span class="hljs-keyword">and</span> clinical practice. These papers often involve <span class="hljs-keyword">the</span> analysis <span class="hljs-keyword">and</span> interpretation <span class="hljs-keyword">of</span> large-scale biological data, such <span class="hljs-keyword">as</span> genomics, transcriptomics, proteomics, <span class="hljs-keyword">and</span> metabolomics, <span class="hljs-keyword">with</span> <span class="hljs-keyword">the</span> aim <span class="hljs-keyword">of</span> translating <span class="hljs-keyword">the</span> findings <span class="hljs-keyword">into</span> actionable insights <span class="hljs-keyword">for</span> improving patient care, disease diagnosis, prognosis, <span class="hljs-keyword">and</span> treatment.
+
+Translational bioinformatics papers may cover a wide range <span class="hljs-keyword">of</span> topics, including:
+
+    - Development <span class="hljs-keyword">and</span> <span class="hljs-built_in">application</span> <span class="hljs-keyword">of</span> computational algorithms <span class="hljs-keyword">and</span> tools <span class="hljs-keyword">for</span> analyzing biological data.
+
+    - Integration <span class="hljs-keyword">of</span> multi-omics data <span class="hljs-keyword">to</span> identify disease biomarkers <span class="hljs-keyword">or</span> therapeutic targets.
+
+    - Prediction models <span class="hljs-keyword">for</span> disease prognosis, drug response, <span class="hljs-keyword">or</span> treatment outcomes.
+
+    - Data mining <span class="hljs-keyword">and</span> machine learning approaches <span class="hljs-keyword">to</span> extract knowledge <span class="hljs-keyword">from</span> biomedical databases.
+
+    - Computational drug discovery <span class="hljs-keyword">and</span> repurposing studies.
+
+    - Clinical decision support systems based <span class="hljs-keyword">on</span> bioinformatics analysis.
+
+    - Implementation <span class="hljs-keyword">of</span> genomic medicine <span class="hljs-keyword">in</span> clinical settings.
+
+    - Studies <span class="hljs-keyword">on</span> personalized medicine <span class="hljs-keyword">and</span> precision oncology.
+
+    - Bioinformatics approaches <span class="hljs-keyword">for</span> identifying disease subtypes <span class="hljs-keyword">or</span> patient stratification.
+
+    - Validation <span class="hljs-keyword">and</span> benchmarking <span class="hljs-keyword">of</span> bioinformatics methods <span class="hljs-keyword">in</span> clinical <span class="hljs-keyword">or</span> translational research.
+
+    - These papers contribute <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> advancement <span class="hljs-keyword">of</span> precision medicine <span class="hljs-keyword">by</span> leveraging bioinformatics techniques <span class="hljs-keyword">to</span> translate genomic <span class="hljs-keyword">and</span> molecular information <span class="hljs-keyword">into</span> improved patient care <span class="hljs-keyword">and</span> clinical outcomes.
+
+Declaration <span class="hljs-keyword">of</span> generative AI <span class="hljs-keyword">in</span> scientific writing:
+
+    The <span class="hljs-keyword">below</span> guidance only refers <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> writing process, <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> use <span class="hljs-keyword">of</span> AI tools <span class="hljs-keyword">to</span> analyse <span class="hljs-keyword">and</span> draw insights <span class="hljs-keyword">from</span> data <span class="hljs-keyword">as</span> part <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> research process.
+
+    Where authors use generative artificial intelligence (AI) <span class="hljs-keyword">and</span> AI-assisted technologies <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> writing process, authors should only use these technologies <span class="hljs-keyword">to</span> improve readability <span class="hljs-keyword">and</span> language. Applying <span class="hljs-keyword">the</span> technology should be done <span class="hljs-keyword">with</span> human oversight <span class="hljs-keyword">and</span> control, <span class="hljs-keyword">and</span> authors should carefully review <span class="hljs-keyword">and</span> edit <span class="hljs-keyword">the</span> <span class="hljs-literal">result</span>, <span class="hljs-keyword">as</span> AI can generate authoritative-sounding output <span class="hljs-keyword">that</span> can be incorrect, incomplete <span class="hljs-keyword">or</span> biased. AI <span class="hljs-keyword">and</span> AI-assisted technologies should <span class="hljs-keyword">not</span> be listed <span class="hljs-keyword">as</span> an author <span class="hljs-keyword">or</span> co-author, <span class="hljs-keyword">or</span> be cited <span class="hljs-keyword">as</span> an author. Authorship implies responsibilities <span class="hljs-keyword">and</span> tasks <span class="hljs-keyword">that</span> can only be attributed <span class="hljs-keyword">to</span> <span class="hljs-keyword">and</span> performed
+
+    <span class="hljs-keyword">by</span> humans, <span class="hljs-keyword">as</span> outlined <span class="hljs-keyword">in</span> Elsevier's AI policy <span class="hljs-keyword">for</span> authors.
+
+    Authors should disclose <span class="hljs-keyword">in</span> their manuscript <span class="hljs-keyword">the</span> use <span class="hljs-keyword">of</span> AI <span class="hljs-keyword">and</span> AI-assisted technologies <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> writing process <span class="hljs-keyword">by</span> following <span class="hljs-keyword">the</span> instructions <span class="hljs-keyword">below</span>. A statement will appear <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> published work. Please note <span class="hljs-keyword">that</span> authors are ultimately responsible <span class="hljs-keyword">and</span> accountable <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">contents</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> work.
+
+        Disclosure instructions:
+
+        Authors must disclose <span class="hljs-keyword">the</span> use <span class="hljs-keyword">of</span> generative AI <span class="hljs-keyword">and</span> AI-assisted technologies <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> writing process <span class="hljs-keyword">by</span> adding a statement <span class="hljs-keyword">at</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> their manuscript <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> core manuscript <span class="hljs-built_in">file</span>, <span class="hljs-keyword">before</span> <span class="hljs-keyword">the</span> References <span class="hljs-built_in">list</span>. The statement should be placed <span class="hljs-keyword">in</span> a new section entitled 'Declaration <span class="hljs-keyword">of</span> Generative AI <span class="hljs-keyword">and</span> AIassisted technologies <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> writing process'.
+
+            Statement: During <span class="hljs-keyword">the</span> preparation <span class="hljs-keyword">of</span> this work <span class="hljs-keyword">the</span> author(s) used [NAME TOOL / SERVICE] <span class="hljs-keyword">in</span> order <span class="hljs-keyword">to</span> [REASON]. After using this tool/service, <span class="hljs-keyword">the</span> author(s) reviewed <span class="hljs-keyword">and</span> edited <span class="hljs-keyword">the</span> content <span class="hljs-keyword">as</span> needed <span class="hljs-keyword">and</span> take(s) full responsibility <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> content <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> publication.
+
+        This declaration <span class="hljs-keyword">does</span> <span class="hljs-keyword">not</span> apply <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> use <span class="hljs-keyword">of</span> basic tools <span class="hljs-keyword">for</span> checking grammar, spelling, references etc. If there <span class="hljs-keyword">is</span> nothing <span class="hljs-keyword">to</span> disclose, there <span class="hljs-keyword">is</span> no need <span class="hljs-keyword">to</span> add a statement.
+</code></pre><hr>
+<p>Focus Areas and Topics of Interest:</p>
+<pre><code>JBI seeks <span class="hljs-keyword">to</span> publish papers <span class="hljs-keyword">that</span> make a conceptual contribution <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> field, typically <span class="hljs-keyword">by</span> describing  an innovation <span class="hljs-keyword">in</span> methodology <span class="hljs-keyword">or</span> technique <span class="hljs-keyword">or</span> <span class="hljs-keyword">by</span> discussing substantive generalizable lessons <span class="hljs-keyword">that</span>  have been learned <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> context <span class="hljs-keyword">of</span> an informatics project. When a methodological contribution has  a theoretical basis, <span class="hljs-keyword">that</span> theory <span class="hljs-keyword">is</span> an appropriate emphasis <span class="hljs-keyword">for</span> papers <span class="hljs-keyword">as</span> well. Research papers may  also present a novel <span class="hljs-string">"method of methods"</span> explaining how <span class="hljs-keyword">to</span> apply <span class="hljs-keyword">the</span> existing methods <span class="hljs-keyword">to</span> a <span class="hljs-literal">space</span> 
+
+<span class="hljs-keyword">of</span> biomedical problems <span class="hljs-keyword">that</span> share unique characteristics influencing <span class="hljs-keyword">the</span> choice <span class="hljs-keyword">of</span> methods.
+
+JBI publishes papers <span class="hljs-keyword">on</span> a wide range <span class="hljs-keyword">of</span> informatics topics. However, across these topics, papers must build <span class="hljs-keyword">on</span> deep understanding <span class="hljs-keyword">and</span> utilization <span class="hljs-keyword">of</span> medical domain knowledge <span class="hljs-keyword">and</span> should consider pragmatic translation <span class="hljs-keyword">for</span> clinical care <span class="hljs-keyword">or</span> applications. Topics <span class="hljs-keyword">of</span> interest include (<span class="hljs-keyword">but</span> are <span class="hljs-keyword">not</span> limited <span class="hljs-keyword">to</span>) clinical decision support, patient safety, natural language processing, artificial intelligence <span class="hljs-keyword">and</span> machine learning, knowledge representation <span class="hljs-keyword">for</span> healthcare, translational bioinformatics, clinical research informatics, <span class="hljs-keyword">and</span> clinical informatics. Additional considerations <span class="hljs-keyword">for</span> papers <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> areas <span class="hljs-keyword">of</span> translational bioinformatics, machine learning, security <span class="hljs-keyword">and</span> privacy are provided <span class="hljs-keyword">below</span>. Irrespective <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> topic, papers must focus <span class="hljs-keyword">on</span> novel informatics methods <span class="hljs-keyword">and</span> <span class="hljs-keyword">its</span> comparison <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> current approaches.
+
+If you are <span class="hljs-keyword">considering</span> an article <span class="hljs-keyword">with</span> a focus <span class="hljs-keyword">on</span> translational bioinformatics, please <span class="hljs-built_in">read</span> this
+
+editorial. Biologic discoveries based <span class="hljs-keyword">on</span> <span class="hljs-keyword">the</span> use <span class="hljs-keyword">of</span> routine informatics techniques may be important
+
+biologic contributions, <span class="hljs-keyword">but</span> are <span class="hljs-keyword">not</span> suitable <span class="hljs-keyword">for</span> JBI. In addition, please note <span class="hljs-keyword">that</span> JBI publishes
+
+bioinformatics papers only <span class="hljs-keyword">if</span> they deal <span class="hljs-keyword">with</span> issues <span class="hljs-keyword">in</span> translational (human) science (e.g., translational
+
+bioinformatics papers).
+
+Papers are generally <span class="hljs-keyword">of</span> seven types:
+
+Original research: Presentation <span class="hljs-keyword">and</span> discussion <span class="hljs-keyword">of</span> a biomedically <span class="hljs-keyword">or</span> clinically motivated system <span class="hljs-keyword">or</span> approach <span class="hljs-keyword">that</span> has required <span class="hljs-keyword">the</span> development <span class="hljs-keyword">of</span> innovative methods rather than <span class="hljs-keyword">the</span> <span class="hljs-built_in">application</span> <span class="hljs-keyword">of</span> established techniques. Motivating applications may be discussed, <span class="hljs-keyword">but</span> <span class="hljs-keyword">the</span> new method should be discussed so <span class="hljs-keyword">that</span> generalizability <span class="hljs-keyword">is</span> clear, ideally <span class="hljs-keyword">with</span> an assessment <span class="hljs-keyword">of</span> <span class="hljs-keyword">its</span> range <span class="hljs-keyword">of</span> applicability. Please choose <span class="hljs-keyword">the</span> article type <span class="hljs-string">"Research Paper"</span> during <span class="hljs-keyword">the</span> submission process
+
+AUDIENCE: Biomedical informaticists, Health informaticists
+</code></pre><p>GUIDE FOR AUTHORS</p>
+<p>.</p>
+<p>INTRODUCTION:</p>
+<pre><code>The Journal <span class="hljs-keyword">of</span> Biomedical Informatics (JBI) <span class="hljs-keyword">is</span> <span class="hljs-keyword">the</span> premier methodology journal <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> field <span class="hljs-keyword">of</span> biomedical informatics. JBI publishes research <span class="hljs-keyword">on</span> new methodologies <span class="hljs-keyword">and</span> techniques <span class="hljs-keyword">that</span> have general applicability <span class="hljs-keyword">and</span> form <span class="hljs-keyword">the</span> basis <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> evolving science <span class="hljs-keyword">of</span> biomedical informatics. Papers should focus <span class="hljs-keyword">on</span> a <span class="hljs-built_in">real</span>-world biomedical <span class="hljs-keyword">or</span> clinical problem, develop a novel approach <span class="hljs-keyword">to</span> address <span class="hljs-keyword">the</span> problem, <span class="hljs-keyword">and</span> evaluate <span class="hljs-keyword">its</span> appropriateness <span class="hljs-keyword">in</span> comparison <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> current state-<span class="hljs-keyword">of</span>-<span class="hljs-keyword">the</span>-art (SoA) methods. Involvement <span class="hljs-keyword">of</span> healthcare professionals <span class="hljs-keyword">in</span> motivating <span class="hljs-keyword">the</span> work <span class="hljs-keyword">and</span> evaluation <span class="hljs-keyword">of</span> results <span class="hljs-keyword">is</span> expected.
+
+Focus Areas <span class="hljs-keyword">and</span> Topics <span class="hljs-keyword">of</span> Interest:
+
+    JBI seeks <span class="hljs-keyword">to</span> publish papers <span class="hljs-keyword">that</span> make a conceptual contribution <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> field, typically <span class="hljs-keyword">by</span> describing an innovation <span class="hljs-keyword">in</span> methodology <span class="hljs-keyword">or</span> technique <span class="hljs-keyword">or</span> <span class="hljs-keyword">by</span> discussing substantive generalizable lessons <span class="hljs-keyword">that</span> have been learned <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> context <span class="hljs-keyword">of</span> an informatics project. When a methodological contribution has a theoretical basis, <span class="hljs-keyword">that</span> theory <span class="hljs-keyword">is</span> an appropriate emphasis <span class="hljs-keyword">for</span> papers <span class="hljs-keyword">as</span> well. Research papers may also present a novel <span class="hljs-string">"method of methods"</span> explaining how <span class="hljs-keyword">to</span> apply <span class="hljs-keyword">the</span> existing methods <span class="hljs-keyword">to</span> a <span class="hljs-literal">space</span>
+
+    <span class="hljs-keyword">of</span> biomedical problems <span class="hljs-keyword">that</span> share unique characteristics influencing <span class="hljs-keyword">the</span> choice <span class="hljs-keyword">of</span> methods.
+
+    JBI publishes papers <span class="hljs-keyword">on</span> a wide range <span class="hljs-keyword">of</span> informatics topics. However, across these topics, papers must build <span class="hljs-keyword">on</span> deep understanding <span class="hljs-keyword">and</span> utilization <span class="hljs-keyword">of</span> medical domain knowledge <span class="hljs-keyword">and</span> should consider pragmatic translation <span class="hljs-keyword">for</span> clinical care <span class="hljs-keyword">or</span> applications. Topics <span class="hljs-keyword">of</span> interest include (<span class="hljs-keyword">but</span> are <span class="hljs-keyword">not</span> limited <span class="hljs-keyword">to</span>) clinical decision support, patient safety, natural language processing, artificial intelligence <span class="hljs-keyword">and</span> machine learning, knowledge representation <span class="hljs-keyword">for</span> healthcare, translational bioinformatics, clinical research informatics, <span class="hljs-keyword">and</span> clinical informatics. Additional considerations <span class="hljs-keyword">for</span> papers <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> areas <span class="hljs-keyword">of</span> translational bioinformatics, machine learning, security <span class="hljs-keyword">and</span> privacy are provided <span class="hljs-keyword">below</span>. Irrespective <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> topic, papers must focus <span class="hljs-keyword">on</span> novel informatics methods <span class="hljs-keyword">and</span> <span class="hljs-keyword">its</span> comparison <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> current
+
+    approaches.
+
+Submission checklist:
+
+    You can use this <span class="hljs-built_in">list</span> <span class="hljs-keyword">to</span> carry out a final check <span class="hljs-keyword">of</span> your submission <span class="hljs-keyword">before</span> you send <span class="hljs-keyword">it</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> journal <span class="hljs-keyword">for</span>
+
+    review. Please check <span class="hljs-keyword">the</span> relevant section <span class="hljs-keyword">in</span> this Guide <span class="hljs-keyword">for</span> Authors <span class="hljs-keyword">for</span> more details.
+
+    Ensure <span class="hljs-keyword">that</span> <span class="hljs-keyword">the</span> following items are present:
+
+        One author has been designated <span class="hljs-keyword">as</span> <span class="hljs-keyword">the</span> corresponding author <span class="hljs-keyword">with</span> contact details:
+
+            - E-mail address
+
+            - Full postal address
+
+            - Twitter handle
+
+        All necessary files have been uploaded:
+
+        Manuscript:
+
+            - Provide a structured abstract, <span class="hljs-keyword">with</span> no more than <span class="hljs-number">350</span> <span class="hljs-built_in">words</span>, <span class="hljs-keyword">and</span> including Objective, Methods,
+
+            Results, Conclusion.
+
+            - Include keywords
+
+            - Statement <span class="hljs-keyword">of</span> Significance
+
+            - Graphical Abstract
+
+            - All figures (include relevant captions)
+
+            - All tables (including titles, description, footnotes)
+
+            - Ensure all figure <span class="hljs-keyword">and</span> table citations <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">text</span> match <span class="hljs-keyword">the</span> files provided
+
+            - Indicate clearly <span class="hljs-keyword">if</span> color should be used <span class="hljs-keyword">for</span> any figures <span class="hljs-keyword">in</span> print
+
+            Supplemental files (<span class="hljs-keyword">where</span> applicable)
+
+        Important:
+
+            - Manuscript <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">words</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">equal</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">less than</span> <span class="hljs-number">6</span>,<span class="hljs-number">000</span> (excluding abstract, references, figures
+
+            <span class="hljs-keyword">and</span> tables)
+
+            - Total <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> tables <span class="hljs-keyword">or</span> figures <span class="hljs-keyword">is</span> <span class="hljs-keyword">equal</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">less than</span> <span class="hljs-number">8</span>
+
+        Further considerations:
+
+            - Manuscript has been 'spell checked' <span class="hljs-keyword">and</span> 'grammar checked'
+
+            - All references mentioned <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> Reference List are cited <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">text</span>, <span class="hljs-keyword">and</span> vice versa
+
+            - Permission has been obtained <span class="hljs-keyword">for</span> use <span class="hljs-keyword">of</span> copyrighted material <span class="hljs-keyword">from</span> other sources (including <span class="hljs-keyword">the</span>
+
+            Internet)
+
+            - A competing interests statement <span class="hljs-keyword">is</span> provided, even <span class="hljs-keyword">if</span> <span class="hljs-keyword">the</span> authors have no competing interests <span class="hljs-keyword">to</span>
+
+            declare
+
+            - Journal policies detailed <span class="hljs-keyword">in</span> this guide have been reviewed
+
+            - Referee suggestions <span class="hljs-keyword">and</span> contact details provided, based <span class="hljs-keyword">on</span> journal requirements
+
+   Submission:
+
+        Our online submission system guides you stepwise <span class="hljs-keyword">through</span> <span class="hljs-keyword">the</span> process <span class="hljs-keyword">of</span> entering your article details <span class="hljs-keyword">and</span> uploading your files. The system converts your article files <span class="hljs-keyword">to</span> a single PDF <span class="hljs-built_in">file</span> used <span class="hljs-keyword">in</span>         <span class="hljs-keyword">the</span> peer-review process. Editable files (e.g., Word, LaTeX) are required <span class="hljs-keyword">to</span> typeset your article <span class="hljs-keyword">for</span> final publication. All correspondence, including notification <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> Editor's decision <span class="hljs-keyword">and</span> requests <span class="hljs-keyword">for</span> revision, <span class="hljs-keyword">is</span> sent <span class="hljs-keyword">by</span> e-mail.
+
+        Please note <span class="hljs-keyword">the</span> maximum <span class="hljs-built_in">word</span> <span class="hljs-built_in">count</span> <span class="hljs-keyword">and</span> <span class="hljs-built_in">count</span> <span class="hljs-keyword">of</span> figures <span class="hljs-keyword">and</span> tables <span class="hljs-keyword">in</span> submission <span class="hljs-keyword">of</span> Original
+
+        Research, Special Communication, Methodological Review papers:
+
+            Structured abstract (lesser <span class="hljs-keyword">or</span> <span class="hljs-keyword">equal</span> <span class="hljs-keyword">to</span> <span class="hljs-number">350</span> <span class="hljs-built_in">words</span>, usual structure <span class="hljs-keyword">of</span> Objective, Methods, Results, Conclusion). <span class="hljs-number">6</span>,<span class="hljs-number">000</span> <span class="hljs-built_in">words</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> body <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> manuscript (excluding abstract, references, appendices, figures <span class="hljs-keyword">and</span> tables). Total <span class="hljs-keyword">of</span> figures <span class="hljs-keyword">and</span> tables = <span class="hljs-number">8</span>
+</code></pre><p>PREPARATION:</p>
+<pre><code>    Please <span class="hljs-literal">note</span> that figures <span class="hljs-keyword">and</span> tables should be embedded <span class="hljs-keyword">in</span> the <span class="hljs-literal">text</span> as close as possible <span class="hljs-keyword">to</span> where they are initially cited. It <span class="hljs-keyword">is</span> also mandatory <span class="hljs-keyword">to</span> upload separate graphic <span class="hljs-keyword">and</span> table files as these will be required <span class="hljs-keyword">if</span> your manuscript <span class="hljs-keyword">is</span> accepted <span class="hljs-keyword">for</span> publication.
+
+<span class="hljs-keyword">NEW</span> SUBMISSIONS:
+
+    References:
+
+    There are no strict requirements <span class="hljs-keyword">on</span> reference formatting at submission. References can be <span class="hljs-keyword">in</span> any style <span class="hljs-keyword">or</span> format as long as the style <span class="hljs-keyword">is</span> consistent. Where applicable, author(s) name(s), journal title/ book title, chapter title/article title, year <span class="hljs-keyword">of</span> publication, volume number/book chapter <span class="hljs-keyword">and</span> the article number <span class="hljs-keyword">or</span> pagination must be present. <span class="hljs-keyword">Use</span> <span class="hljs-keyword">of</span> DOI <span class="hljs-keyword">is</span> highly encouraged. The reference style used by the journal will be applied <span class="hljs-keyword">to</span> the accepted article by Elsevier at the proof stage. <span class="hljs-literal">Note</span> that missing data will be highlighted at proof stage <span class="hljs-keyword">for</span> the author <span class="hljs-keyword">to</span> correct.
+
+    Formatting requirements:
+
+    There are no strict formatting requirements but <span class="hljs-keyword">all</span> manuscripts must contain the essential elements needed <span class="hljs-keyword">to</span> convey your manuscript, <span class="hljs-keyword">for</span> example Abstract, Keywords, Introduction, Materials <span class="hljs-keyword">and</span> Methods, Results, Conclusions, Artwork <span class="hljs-keyword">and</span> Tables <span class="hljs-keyword">with</span> Captions.
+
+    <span class="hljs-keyword">If</span> your article includes any Videos <span class="hljs-keyword">and</span>/<span class="hljs-keyword">or</span> other Supplementary material, this should be included <span class="hljs-keyword">in</span> your initial submission <span class="hljs-keyword">for</span> peer review purposes.
+
+    Divide the article into clearly defined sections.
+
+    Figures <span class="hljs-keyword">and</span> tables embedded <span class="hljs-keyword">in</span> <span class="hljs-literal">text</span>:
+
+    Please ensure the figures <span class="hljs-keyword">and</span> the tables included <span class="hljs-keyword">in</span> the single <span class="hljs-keyword">file</span> are placed <span class="hljs-keyword">next</span> <span class="hljs-keyword">to</span> the relevant <span class="hljs-literal">text</span> <span class="hljs-keyword">in</span> the manuscript, rather than at the bottom <span class="hljs-keyword">or</span> the top <span class="hljs-keyword">of</span> the <span class="hljs-keyword">file</span>. The corresponding caption should be placed directly below the figure <span class="hljs-keyword">or</span> table.
+
+REVISED SUBMISSIONS:
+
+    <span class="hljs-literal">Line</span> spacing: 
+
+    <span class="hljs-keyword">All</span> revised submissions required <span class="hljs-number">1.5</span> <span class="hljs-literal">line</span> spacing
+
+    <span class="hljs-keyword">Use</span> <span class="hljs-keyword">of</span> word processing software:
+
+    Regardless <span class="hljs-keyword">of</span> the <span class="hljs-keyword">file</span> format <span class="hljs-keyword">of</span> the original submission, at revision you must provide us <span class="hljs-keyword">with</span> an editable <span class="hljs-keyword">file</span> <span class="hljs-keyword">of</span> the entire article. Keep the layout <span class="hljs-keyword">of</span> the <span class="hljs-literal">text</span> as simple as possible. Most formatting codes will be removed <span class="hljs-keyword">and</span> replaced <span class="hljs-keyword">on</span> processing the article. The electronic <span class="hljs-literal">text</span> should be prepared <span class="hljs-keyword">in</span> a way very similar <span class="hljs-keyword">to</span> that <span class="hljs-keyword">of</span> conventional manuscripts (see also the Guide <span class="hljs-keyword">to</span> Publishing <span class="hljs-keyword">with</span> Elsevier). See also the section <span class="hljs-keyword">on</span> Electronic artwork.
+
+    <span class="hljs-keyword">To</span> avoid unnecessary errors you are strongly advised <span class="hljs-keyword">to</span> <span class="hljs-keyword">use</span> the <span class="hljs-symbol">'spell</span>-check' <span class="hljs-keyword">and</span> <span class="hljs-symbol">'grammar</span>-check' functions <span class="hljs-keyword">of</span> your word processor.
+
+    LaTeX:
+
+    You are recommended <span class="hljs-keyword">to</span> <span class="hljs-keyword">use</span> the Elsevier article class elsarticle.cls <span class="hljs-keyword">to</span> prepare your manuscript <span class="hljs-keyword">and</span> BibTeX <span class="hljs-keyword">to</span> <span class="hljs-keyword">generate</span> your bibliography.
+
+    Our LaTeX site has detailed submission instructions, templates <span class="hljs-keyword">and</span> other information.
+
+    Article structure:
+
+        Subdivision - numbered sections
+
+        Divide your article into clearly defined <span class="hljs-keyword">and</span> numbered sections. Subsections should be numbered <span class="hljs-number">1.1</span> (<span class="hljs-keyword">then</span> <span class="hljs-number">1.1</span>.<span class="hljs-number">1</span>, <span class="hljs-number">1.1</span>.<span class="hljs-number">2</span>, ...), <span class="hljs-number">1.2</span>, etc. (the abstract <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> included <span class="hljs-keyword">in</span> section numbering). <span class="hljs-keyword">Use</span> this numbering also <span class="hljs-keyword">for</span> internal cross-referencing: do <span class="hljs-keyword">not</span> just refer <span class="hljs-keyword">to</span> <span class="hljs-symbol">'the</span> <span class="hljs-literal">text</span>'. Any subsection may be given a brief heading. Each heading should appear <span class="hljs-keyword">on</span> its own separate <span class="hljs-literal">line</span>.
+
+        Introduction:
+
+        State the objectives <span class="hljs-keyword">of</span> the work <span class="hljs-keyword">and</span> provide an adequate background, avoiding a detailed literature survey <span class="hljs-keyword">or</span> a summary <span class="hljs-keyword">of</span> the results.
+
+        Material <span class="hljs-keyword">and</span> methods:
+
+        Provide sufficient details <span class="hljs-keyword">to</span> allow the work <span class="hljs-keyword">to</span> be reproduced by an independent researcher. Methods that are already published should be summarized, <span class="hljs-keyword">and</span> indicated by a reference. <span class="hljs-keyword">If</span> quoting directly from a previously published method, <span class="hljs-keyword">use</span> quotation marks <span class="hljs-keyword">and</span> also cite the source. Any modifications <span class="hljs-keyword">to</span> existing methods should also be described.
+
+        Results:
+
+        Results should be clear <span class="hljs-keyword">and</span> concise.
+
+        Discussion
+
+        This should explore the significance <span class="hljs-keyword">of</span> the results <span class="hljs-keyword">of</span> the work, <span class="hljs-keyword">not</span> repeat them. A combined Results <span class="hljs-keyword">and</span> Discussion section <span class="hljs-keyword">is</span> often appropriate. Avoid extensive citations <span class="hljs-keyword">and</span> discussion <span class="hljs-keyword">of</span> published literature.
+
+        Conclusions
+
+        A short Conclusions section should follow the Discussion section. The Conclusions should present the main conclusions <span class="hljs-keyword">of</span> the study <span class="hljs-keyword">and</span> should clearly summarize the <span class="hljs-keyword">range</span> <span class="hljs-keyword">of</span> applicability <span class="hljs-keyword">of</span> the methodology described <span class="hljs-keyword">in</span> the article.
+
+        Appendices
+
+        <span class="hljs-keyword">If</span> there <span class="hljs-keyword">is</span> more than one appendix, they should be identified as A, B, etc. Formulae <span class="hljs-keyword">and</span> equations <span class="hljs-keyword">in</span> appendices should be given separate numbering: Eq. (A.<span class="hljs-number">1</span>), Eq. (A.<span class="hljs-number">2</span>), etc.; <span class="hljs-keyword">in</span> a subsequent appendix, Eq. (B.<span class="hljs-number">1</span>) <span class="hljs-keyword">and</span> so <span class="hljs-keyword">on</span>. Similarly <span class="hljs-keyword">for</span> tables <span class="hljs-keyword">and</span> figures: Table A.<span class="hljs-number">1</span>; Fig. A.<span class="hljs-number">1</span>, etc.
+
+    Essential title page information:
+
+        - Title: Concise <span class="hljs-keyword">and</span> informative. Titles are often used <span class="hljs-keyword">in</span> information-retrieval systems. Avoid abbreviations <span class="hljs-keyword">and</span> formulae where possible.
+
+        - Author names <span class="hljs-keyword">and</span> affiliations: Please clearly indicate the given name(s) <span class="hljs-keyword">and</span> family name(s) <span class="hljs-keyword">of</span> each author <span class="hljs-keyword">and</span> check that <span class="hljs-keyword">all</span> names are accurately spelled. You can add your name between parentheses <span class="hljs-keyword">in</span> your own script behind the English transliteration. Present the authors' affiliation addresses (where the actual work was done) below the names. Indicate <span class="hljs-keyword">all</span> affiliations <span class="hljs-keyword">with</span> a lowercase superscript letter immediately <span class="hljs-keyword">after</span> the author<span class="hljs-symbol">'s</span> name <span class="hljs-keyword">and</span> <span class="hljs-keyword">in</span> front <span class="hljs-keyword">of</span> the appropriate address. Provide the full postal address <span class="hljs-keyword">of</span> each affiliation, including the country name <span class="hljs-keyword">and</span>, <span class="hljs-keyword">if</span> available, the e-mail address <span class="hljs-keyword">of</span> each author.
+
+        - Corresponding author: Clearly indicate who will handle correspondence at <span class="hljs-keyword">all</span> stages <span class="hljs-keyword">of</span> refereeing <span class="hljs-keyword">and</span> publication, also post-publication. This responsibility includes answering any future queries about Methodology <span class="hljs-keyword">and</span> Materials. Ensure that the e-mail address <span class="hljs-keyword">is</span> given <span class="hljs-keyword">and</span> that contact details are kept up <span class="hljs-keyword">to</span> date by the corresponding author.
+
+        - Present/permanent address: <span class="hljs-keyword">If</span> an author has moved since the work described <span class="hljs-keyword">in</span> the article was done, <span class="hljs-keyword">or</span> was visiting at the <span class="hljs-built_in">time</span>, a <span class="hljs-symbol">'Present</span> address' (<span class="hljs-keyword">or</span> <span class="hljs-symbol">'Permanent</span> address') may be indicated as a footnote <span class="hljs-keyword">to</span> that author<span class="hljs-symbol">'s</span> name. The address at which the author actually did the work must be retained as the main, affiliation address. Superscript Arabic numerals are used <span class="hljs-keyword">for</span> such footnotes.
+
+    Structured Abstract:
+
+        A concise <span class="hljs-keyword">and</span> factual abstract <span class="hljs-keyword">is</span> required, <span class="hljs-keyword">with</span> a maximum <span class="hljs-keyword">of</span> <span class="hljs-number">350</span> words, <span class="hljs-keyword">and</span> including Objective, Methods, Results, <span class="hljs-keyword">and</span> Conclusion. The abstract should state briefly the purpose <span class="hljs-keyword">of</span> the research, the principal results <span class="hljs-keyword">and</span> major conclusions. An abstract <span class="hljs-keyword">is</span> often presented separately from the article, so it must be able <span class="hljs-keyword">to</span> stand alone. <span class="hljs-keyword">For</span> this reason, References should be avoided, but <span class="hljs-keyword">if</span> essential, <span class="hljs-keyword">then</span> cite the author(s) <span class="hljs-keyword">and</span> year(s). Also, non-standard <span class="hljs-keyword">or</span> uncommon abbreviations should be avoided, but <span class="hljs-keyword">if</span> essential they must be defined at their first mention <span class="hljs-keyword">in</span> the abstract itself.
+
+        Graphical Abstract:
+
+        Authors must supply a graphical abstract <span class="hljs-keyword">for</span> <span class="hljs-keyword">all</span> types <span class="hljs-keyword">of</span> articles at the <span class="hljs-built_in">time</span> the paper <span class="hljs-keyword">is</span> first submitted. The graphic should summarize the contents <span class="hljs-keyword">of</span> the paper <span class="hljs-keyword">in</span> a concise, pictorial form designed <span class="hljs-keyword">to</span> capture the attention <span class="hljs-keyword">of</span> a wide readership <span class="hljs-keyword">and</span> <span class="hljs-keyword">for</span> compilation <span class="hljs-keyword">of</span> databases. Carefully drawn figures that serve <span class="hljs-keyword">to</span> illustrate the theme <span class="hljs-keyword">of</span> the paper are desired. The dimensions <span class="hljs-keyword">of</span> the graphical abstract are <span class="hljs-number">200</span> x <span class="hljs-number">500</span> pixels. Authors must supply the graphic separately as an electronic <span class="hljs-keyword">file</span>. Please refer the following link <span class="hljs-keyword">for</span> details <span class="hljs-keyword">of</span> graphical abstracts <span class="hljs-keyword">and</span> their specifications: https://www.elsevier.com/authors/journal-authors/graphical-abstract . <span class="hljs-keyword">For</span> an example <span class="hljs-keyword">of</span> a graphical abstract please click here.
+
+    Keywords:
+
+        Immediately <span class="hljs-keyword">after</span> the abstract, provide a maximum <span class="hljs-keyword">of</span> <span class="hljs-number">6</span> keywords, using American spelling <span class="hljs-keyword">and</span> avoiding general <span class="hljs-keyword">and</span> plural terms <span class="hljs-keyword">and</span> multiple concepts (avoid, <span class="hljs-keyword">for</span> example, <span class="hljs-symbol">'and</span>', <span class="hljs-symbol">'of</span>'). Be sparing <span class="hljs-keyword">with</span> abbreviations: only abbreviations firmly established <span class="hljs-keyword">in</span> the field may be eligible. These keywords will be used <span class="hljs-keyword">for</span> indexing purposes.
+
+    Statement <span class="hljs-keyword">of</span> significance:
+
+        <span class="hljs-keyword">In</span> the introduction, create a table using the following headings <span class="hljs-keyword">to</span> summarize (<span class="hljs-keyword">in</span> <span class="hljs-number">100</span> words <span class="hljs-keyword">or</span> less) the contribution <span class="hljs-keyword">of</span> your paper <span class="hljs-keyword">to</span> the existing literature:
+
+        - Problem <span class="hljs-keyword">or</span> Issue What <span class="hljs-keyword">is</span> Already Known
+
+        - What this Paper Adds
+
+        Example <span class="hljs-keyword">of</span> Statement <span class="hljs-keyword">of</span> Significance:
+
+        *Problem* Clinical trials' conclusions may <span class="hljs-keyword">not</span> generalize <span class="hljs-keyword">to</span> other patients.
+
+        *What <span class="hljs-keyword">is</span> Already Known* Although there have been many prior explorations comparing a trial sample <span class="hljs-keyword">with</span> a potentially eligible cohort, a prominent limitation <span class="hljs-keyword">in</span> these methods <span class="hljs-keyword">is</span> that their comparisons are between different clinical settings <span class="hljs-keyword">or</span> geographical locations.
+
+        *What This Paper Adds* This study aims <span class="hljs-keyword">to</span> build upon the prior generalizability assessment literature by controlling <span class="hljs-keyword">for</span> clinical setting. Additionally, this study has a unique opportunity <span class="hljs-keyword">to</span> address a potential temporality concern <span class="hljs-keyword">for</span> generalizability assessments by focusing <span class="hljs-keyword">on</span> <span class="hljs-keyword">when</span> the trial was ongoing as opposed <span class="hljs-keyword">to</span> <span class="hljs-keyword">when</span> the trial was completed; this opportunity <span class="hljs-keyword">is</span> worthwhile because it further ensures the patients are subject <span class="hljs-keyword">to</span> the same treatment opportunities.
+
+        Abbreviations:
+
+        Define abbreviations that are <span class="hljs-keyword">not</span> standard <span class="hljs-keyword">in</span> this field <span class="hljs-keyword">in</span> a footnote <span class="hljs-keyword">to</span> be placed <span class="hljs-keyword">on</span> the first page <span class="hljs-keyword">of</span> the article. Such abbreviations that are unavoidable <span class="hljs-keyword">in</span> the abstract must be defined at their first mention there, as well as <span class="hljs-keyword">in</span> the footnote. Ensure consistency <span class="hljs-keyword">of</span> abbreviations throughout the article.
+
+        Acknowledgements:
+
+        Collate acknowledgements <span class="hljs-keyword">in</span> a separate section at the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the article before the references <span class="hljs-keyword">and</span> do <span class="hljs-keyword">not</span>, therefore, include them <span class="hljs-keyword">on</span> the title page, as a footnote <span class="hljs-keyword">to</span> the title <span class="hljs-keyword">or</span> otherwise. List here those individuals who provided help during the research (e.g., providing language help, writing assistance
+
+        <span class="hljs-keyword">or</span> proof reading the article, etc.).
+
+        Formatting <span class="hljs-keyword">of</span> funding sources:
+
+        List funding sources <span class="hljs-keyword">in</span> this standard way <span class="hljs-keyword">to</span> facilitate compliance <span class="hljs-keyword">to</span> funder<span class="hljs-symbol">'s</span> requirements:
+
+        Funding: This work was supported by the National Institutes <span class="hljs-keyword">of</span> Health [grant numbers xxxx, yyyy]; the Bill &amp; Melinda Gates Foundation, Seattle, WA [grant number zzzz]; <span class="hljs-keyword">and</span> the United States Institutes <span class="hljs-keyword">of</span> Peace [grant number aaaa]. 
+
+        It <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> necessary <span class="hljs-keyword">to</span> include detailed descriptions <span class="hljs-keyword">on</span> the program <span class="hljs-keyword">or</span> <span class="hljs-keyword">type</span> <span class="hljs-keyword">of</span> grants <span class="hljs-keyword">and</span> awards. <span class="hljs-keyword">When</span> funding <span class="hljs-keyword">is</span> from a <span class="hljs-keyword">block</span> grant <span class="hljs-keyword">or</span> other resources available <span class="hljs-keyword">to</span> a university, college, <span class="hljs-keyword">or</span> other research institution, submit the name <span class="hljs-keyword">of</span> the institute <span class="hljs-keyword">or</span> organization that provided the funding.
+
+        <span class="hljs-keyword">If</span> no funding has been provided <span class="hljs-keyword">for</span> the research, it <span class="hljs-keyword">is</span> recommended <span class="hljs-keyword">to</span> include the following sentence:
+
+        This research did <span class="hljs-keyword">not</span> receive any specific grant from funding agencies <span class="hljs-keyword">in</span> the public, commercial, <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span>-<span class="hljs-keyword">for</span>-profit sectors.
+
+        Math formulae:
+
+        Please submit math equations as editable <span class="hljs-literal">text</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> as images. Present simple formulae <span class="hljs-keyword">in</span> <span class="hljs-literal">line</span> <span class="hljs-keyword">with</span> normal <span class="hljs-literal">text</span> where possible <span class="hljs-keyword">and</span> <span class="hljs-keyword">use</span> the solidus (/) instead <span class="hljs-keyword">of</span> a horizontal <span class="hljs-literal">line</span> <span class="hljs-keyword">for</span> small fractional terms, e.g., X/Y. <span class="hljs-keyword">In</span> principle, variables are <span class="hljs-keyword">to</span> be presented <span class="hljs-keyword">in</span> italics. Powers <span class="hljs-keyword">of</span> e are often more conveniently denoted by exp. Number consecutively any equations that have <span class="hljs-keyword">to</span> be displayed separately from the <span class="hljs-literal">text</span> (<span class="hljs-keyword">if</span> referred <span class="hljs-keyword">to</span> explicitly <span class="hljs-keyword">in</span> the <span class="hljs-literal">text</span>).
+
+        Footnotes:
+
+        Footnotes should be used sparingly. Number them consecutively throughout the article. Many word processors build footnotes into the <span class="hljs-literal">text</span>, <span class="hljs-keyword">and</span> this feature may be used. Should this <span class="hljs-keyword">not</span> be the <span class="hljs-keyword">case</span>, indicate the position <span class="hljs-keyword">of</span> footnotes <span class="hljs-keyword">in</span> the <span class="hljs-literal">text</span> <span class="hljs-keyword">and</span> present the footnotes themselves separately at the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the article.
+
+    Artwork:
+
+        Electronic Artwork:
+
+        - Maximum number <span class="hljs-keyword">of</span> tables <span class="hljs-keyword">or</span> figures allowed <span class="hljs-keyword">is</span> <span class="hljs-number">8</span>.
+
+        - <span class="hljs-keyword">Use</span> uniform lettering <span class="hljs-keyword">and</span> sizing <span class="hljs-keyword">of</span> original artwork.
+
+        - Preferred fonts: Arial (<span class="hljs-keyword">or</span> Helvetica), Times <span class="hljs-keyword">New</span> Roman (<span class="hljs-keyword">or</span> Times), Symbol, Courier.
+
+        - Number illustrations according <span class="hljs-keyword">to</span> their <span class="hljs-keyword">sequence</span> <span class="hljs-keyword">in</span> the <span class="hljs-literal">text</span>.
+
+        - <span class="hljs-keyword">Use</span> logical naming convention <span class="hljs-keyword">for</span> artwork files.
+
+        - Indicate <span class="hljs-keyword">if</span> figure <span class="hljs-keyword">is</span> single, <span class="hljs-number">1.5</span>, <span class="hljs-keyword">or</span> <span class="hljs-number">2</span>-column fitting image.
+
+        - <span class="hljs-keyword">For</span> Word submissions, provide figures, captions, <span class="hljs-keyword">and</span> tables <span class="hljs-keyword">in</span> a single <span class="hljs-keyword">file</span> at revision stage.
+
+        - Figures larger than <span class="hljs-number">10</span> MB must be provided <span class="hljs-keyword">in</span> separate source files.
+
+        Formats:
+
+            Save <span class="hljs-keyword">or</span> convert electronic artwork <span class="hljs-keyword">to</span> the following formats:
+
+            - EPS (<span class="hljs-keyword">or</span> PDF): Vector drawings. Embed font <span class="hljs-keyword">or</span> save <span class="hljs-literal">text</span> as <span class="hljs-symbol">'graphics</span>'.
+
+            - TIFF (<span class="hljs-keyword">or</span> JPG): Color <span class="hljs-keyword">or</span> grayscale photographs (halftones): minimum <span class="hljs-keyword">of</span> <span class="hljs-number">300</span> dpi.
+
+            - TIFF (<span class="hljs-keyword">or</span> JPG): Bitmapped <span class="hljs-literal">line</span> drawings: minimum <span class="hljs-keyword">of</span> <span class="hljs-number">1000</span> dpi.
+
+            - TIFF (<span class="hljs-keyword">or</span> JPG): Combinations bitmapped <span class="hljs-literal">line</span>/halftone (color <span class="hljs-keyword">or</span> grayscale): minimum <span class="hljs-keyword">of</span> <span class="hljs-number">500</span> dpi.
+
+            - Do <span class="hljs-keyword">not</span> supply files optimized <span class="hljs-keyword">for</span> screen <span class="hljs-keyword">use</span> (e.g., GIF, BMP, PICT, WPG) <span class="hljs-keyword">or</span> files <span class="hljs-keyword">with</span> low resolution.
+
+            - Do <span class="hljs-keyword">not</span> submit graphics that are disproportionately large <span class="hljs-keyword">for</span> the content.
+
+        Color Artwork:
+
+            Ensure artwork files are <span class="hljs-keyword">in</span> acceptable format (TIFF <span class="hljs-keyword">or</span> JPEG, EPS <span class="hljs-keyword">or</span> PDF, <span class="hljs-keyword">or</span> MS Office files) <span class="hljs-keyword">with</span> correct resolution.
+
+            <span class="hljs-keyword">If</span> usable color figures are submitted <span class="hljs-keyword">with</span> accepted article, Elsevier will ensure they appear <span class="hljs-keyword">in</span> color online at no additional charge.
+
+            Indicate preference <span class="hljs-keyword">for</span> color: <span class="hljs-keyword">in</span> print <span class="hljs-keyword">or</span> online only.
+
+        Figure Captions:
+
+        Each illustration should have a caption.
+
+        Caption should include brief title (<span class="hljs-keyword">not</span> <span class="hljs-keyword">on</span> the figure itself) <span class="hljs-keyword">and</span> description <span class="hljs-keyword">of</span> the illustration.
+
+        Keep <span class="hljs-literal">text</span> <span class="hljs-keyword">in</span> illustrations minimal, but explain symbols <span class="hljs-keyword">and</span> abbreviations used.
+
+    Tables:
+
+        - Submit tables as editable <span class="hljs-literal">text</span>, <span class="hljs-keyword">not</span> images.
+
+        - Place tables <span class="hljs-keyword">next</span> <span class="hljs-keyword">to</span> relevant <span class="hljs-literal">text</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">on</span> separate page(s) at the <span class="hljs-keyword">end</span>.
+
+        - Number tables consecutively <span class="hljs-keyword">in</span> accordance <span class="hljs-keyword">with</span> their appearance <span class="hljs-keyword">in</span> the <span class="hljs-literal">text</span>.
+
+        - Place table notes below the table <span class="hljs-keyword">body</span>.
+
+        - <span class="hljs-keyword">Use</span> tables sparingly <span class="hljs-keyword">and</span> avoid duplicating results presented elsewhere.
+
+        - Avoid vertical rules <span class="hljs-keyword">and</span> shading <span class="hljs-keyword">in</span> table cells.
+
+    Equations:
+
+        - Number equations consecutively, <span class="hljs-keyword">with</span> the number <span class="hljs-keyword">in</span> parentheses at the right <span class="hljs-keyword">of</span> the equation.
+
+        - Refer <span class="hljs-keyword">to</span> equations as Eq. (<span class="hljs-number">3</span>) <span class="hljs-keyword">or</span> simply (<span class="hljs-number">3</span>).
+
+        - Punctuate equations <span class="hljs-keyword">to</span> conform <span class="hljs-keyword">to</span> their place <span class="hljs-keyword">in</span> the sentence syntax.
+
+    References:
+
+        Citation <span class="hljs-keyword">in</span> <span class="hljs-literal">Text</span>:
+
+        - Ensure that every reference cited <span class="hljs-keyword">in</span> the <span class="hljs-literal">text</span> <span class="hljs-keyword">is</span> also present <span class="hljs-keyword">in</span> the reference list (<span class="hljs-keyword">and</span> vice versa).
+
+        - References cited <span class="hljs-keyword">in</span> the abstract must be given <span class="hljs-keyword">in</span> full.
+
+        - Avoid including unpublished results <span class="hljs-keyword">and</span> personal communications <span class="hljs-keyword">in</span> the reference list, but mention them <span class="hljs-keyword">in</span> the <span class="hljs-literal">text</span>.
+
+        - <span class="hljs-keyword">If</span> unpublished results <span class="hljs-keyword">or</span> personal communications are included <span class="hljs-keyword">in</span> the reference list, substitute the publication date <span class="hljs-keyword">with</span> <span class="hljs-string">"Unpublished results"</span> <span class="hljs-keyword">or</span> <span class="hljs-string">"Personal communication"</span>.
+
+        - Citing a reference as <span class="hljs-string">"in press"</span> indicates that it has been accepted <span class="hljs-keyword">for</span> publication.
+
+        Reference Links:
+
+        - Online links <span class="hljs-keyword">to</span> the cited sources enhance discoverability <span class="hljs-keyword">of</span> research <span class="hljs-keyword">and</span> ensure high-quality peer review.
+
+        - <span class="hljs-keyword">To</span> enable the creation <span class="hljs-keyword">of</span> links <span class="hljs-keyword">to</span> abstracting <span class="hljs-keyword">and</span> indexing services (e.g., Scopus, Crossref, PubMed), ensure the provided reference data <span class="hljs-keyword">is</span> accurate.
+
+        - Incorrect surnames, journal/book titles, publication years, <span class="hljs-keyword">and</span> pagination may prevent link creation.
+
+        - <span class="hljs-keyword">Use</span> DOI whenever possible.
+
+        - Take care <span class="hljs-keyword">when</span> copying references as they may already contain errors.
+
+        - Using DOI <span class="hljs-keyword">is</span> highly encouraged.
+
+        Web References:
+
+        - Include the full URL <span class="hljs-keyword">and</span> the date <span class="hljs-keyword">when</span> the reference was last accessed.
+
+        - Provide additional information <span class="hljs-keyword">if</span> available (DOI, author names, dates, source publication, etc.).
+
+        - Web references can be listed separately <span class="hljs-keyword">or</span> included <span class="hljs-keyword">in</span> the reference list.
+
+        Data References:
+
+        - Cite underlying <span class="hljs-keyword">or</span> relevant datasets <span class="hljs-keyword">in</span> the manuscript<span class="hljs-symbol">'s</span> <span class="hljs-literal">text</span> <span class="hljs-keyword">and</span> include a data reference <span class="hljs-keyword">in</span> the Reference List.
+
+        - Include author name(s), dataset title, data repository, version (<span class="hljs-keyword">if</span> available), year, <span class="hljs-keyword">and</span> global persistent identifier.
+
+        - Add <span class="hljs-string">"[dataset]"</span> before the reference <span class="hljs-keyword">to</span> identify it as a data reference. This identifier will <span class="hljs-keyword">not</span> appear <span class="hljs-keyword">in</span> the published article.
+
+        Preprint References:
+
+        - <span class="hljs-keyword">Use</span> the formal publication as the reference <span class="hljs-keyword">if</span> a preprint has been published.
+
+        - Clearly mark preprints as such by including the word <span class="hljs-string">"preprint"</span> <span class="hljs-keyword">or</span> the preprint server name <span class="hljs-keyword">in</span> the reference.
+
+        - Provide the preprint DOI.
+
+        References <span class="hljs-keyword">in</span> a Special Issue:
+
+        - Add <span class="hljs-string">"this issue"</span> <span class="hljs-keyword">to</span> references <span class="hljs-keyword">and</span> citations <span class="hljs-keyword">of</span> other articles <span class="hljs-keyword">in</span> the same Special Issue.
+
+        Reference Management Software:
+
+        - Many popular reference management software products have Elsevier journal templates available.
+
+        - Ensure <span class="hljs-keyword">all</span> field codes are removed before submitting the electronic manuscript.
+
+        Reference Formatting:
+
+        - No strict requirements <span class="hljs-keyword">on</span> reference formatting at submission.
+
+        - References can be <span class="hljs-keyword">in</span> any style <span class="hljs-keyword">or</span> format as long as the style <span class="hljs-keyword">is</span> consistent.
+
+        - Include author(s) name(s), journal title/book title, chapter title/article title, year <span class="hljs-keyword">of</span> publication, volume number/book chapter, <span class="hljs-keyword">and</span> article number/pagination.
+
+        - <span class="hljs-keyword">Use</span> DOI whenever possible.
+
+        - Elsevier will apply the journal<span class="hljs-symbol">'s</span> reference style <span class="hljs-keyword">to</span> the accepted article at the proof stage. Missing data will be highlighted <span class="hljs-keyword">for</span> correction.
+
+        - <span class="hljs-keyword">If</span> formatting references manually, arrange them according <span class="hljs-keyword">to</span> the provided examples.
+
+        Reference style:
+
+        <span class="hljs-literal">Text</span>: Indicate references by number(s) <span class="hljs-keyword">in</span> square brackets <span class="hljs-keyword">in</span> <span class="hljs-literal">line</span> <span class="hljs-keyword">with</span> the <span class="hljs-literal">text</span>. The actual authors
+
+        can be referred <span class="hljs-keyword">to</span>, but the reference number(s) must always be given.
+
+        Example: '..... as demonstrated [<span class="hljs-number">3</span>,<span class="hljs-number">6</span>]. Barnaby <span class="hljs-keyword">and</span> Jones [<span class="hljs-number">8</span>] obtained a different result ....'
+
+        List: Number the references (numbers <span class="hljs-keyword">in</span> square brackets) <span class="hljs-keyword">in</span> the list <span class="hljs-keyword">in</span> the order <span class="hljs-keyword">in</span> which they appear
+
+        <span class="hljs-keyword">in</span> the <span class="hljs-literal">text</span>.
+
+        Examples:
+
+            Reference <span class="hljs-keyword">to</span> a journal publication:
+
+            [<span class="hljs-number">1</span>] J. van der Geer, J.A.J. Hanraads, R.A. Lupton, The art <span class="hljs-keyword">of</span> writing a scientific article, J. Sci. Commun.
+
+            <span class="hljs-number">163</span> (<span class="hljs-number">2010</span>) <span class="hljs-number">51</span><span class="hljs-comment">--59. https://doi.org/10.1016/j.Sc.2010.00372.</span>
+
+            Reference <span class="hljs-keyword">to</span> a journal publication <span class="hljs-keyword">with</span> an article number:
+
+            [<span class="hljs-number">2</span>] J. van der Geer, J.A.J. Hanraads, R.A. Lupton, <span class="hljs-number">2018</span>. The art <span class="hljs-keyword">of</span> writing a scientific article. Heliyon.
+
+            <span class="hljs-number">19</span>, e00205. https://doi.org/<span class="hljs-number">10.1016</span>/j.heliyon.<span class="hljs-number">2018</span>.e00205.
+
+            Reference <span class="hljs-keyword">to</span> a book:
+
+            [<span class="hljs-number">3</span>] W. Strunk Jr., E.B. White, The Elements <span class="hljs-keyword">of</span> Style, fourth ed., Longman, <span class="hljs-keyword">New</span> York, <span class="hljs-number">2000</span>.
+
+            Reference <span class="hljs-keyword">to</span> a chapter <span class="hljs-keyword">in</span> an edited book:
+
+            [<span class="hljs-number">4</span>] G.R. Mettam, L.B. Adams, How <span class="hljs-keyword">to</span> prepare an electronic version <span class="hljs-keyword">of</span> your article, <span class="hljs-keyword">in</span>: B.S. Jones, R.Z.
+
+            Smith (Eds.), Introduction <span class="hljs-keyword">to</span> the Electronic Age, E-Publishing Inc., <span class="hljs-keyword">New</span> York, <span class="hljs-number">2009</span>, pp. <span class="hljs-number">281</span><span class="hljs-comment">--304.</span>
+
+            Reference <span class="hljs-keyword">to</span> a website:
+
+            [<span class="hljs-number">5</span>] Cancer Research UK, Cancer statistics reports <span class="hljs-keyword">for</span> the UK. http://www.cancerresearchuk.org/
+
+            aboutcancer/statistics/cancerstatsreport/, <span class="hljs-number">2003</span> (accessed <span class="hljs-number">13</span> March <span class="hljs-number">2003</span>).
+
+            Reference <span class="hljs-keyword">to</span> a dataset:
+
+            [dataset] [<span class="hljs-number">6</span>] M. Oguro, S. Imahiro, S. Saito, T. Nakashizuka, Mortality data <span class="hljs-keyword">for</span> Japanese oak wilt
+
+            disease <span class="hljs-keyword">and</span> surrounding forest compositions, Mendeley Data, v1, <span class="hljs-number">2015</span>. https://doi.org/<span class="hljs-number">10.17632</span>/
+
+            xwj98nb39r.<span class="hljs-number">1</span>.
+
+            Reference <span class="hljs-keyword">to</span> software:
+
+            [<span class="hljs-number">7</span>] E. Coon, M. Berndt, A. Jan, D. Svyatsky, A. Atchley, E. Kikinzon, D. Harp, G. Manzini, E. Shelef,
+
+            K. Lipnikov, R. Garimella, C. Xu, D. Moulton, S. Karra, S. Painter, E. Jafarov, S. Molins, Advanced
+
+            Terrestrial Simulator (ATS) v0.<span class="hljs-number">88</span> (Version <span class="hljs-number">0.88</span>), Zenodo, March <span class="hljs-number">25</span>, <span class="hljs-number">2020</span>. https://doi.org/<span class="hljs-number">10.5281</span>/
+
+            zenodo.<span class="hljs-number">3727209</span>
+
+    Research data:
+
+        This journal encourages <span class="hljs-keyword">and</span> enables you <span class="hljs-keyword">to</span> share data that supports your research publication where appropriate, <span class="hljs-keyword">and</span> enables you <span class="hljs-keyword">to</span> interlink the data <span class="hljs-keyword">with</span> your published articles. Research data refers <span class="hljs-keyword">to</span> the results <span class="hljs-keyword">of</span> observations <span class="hljs-keyword">or</span> experimentation that validate research findings, which may also include software, code, models, algorithms, protocols, methods <span class="hljs-keyword">and</span> other useful materials related <span class="hljs-keyword">to</span> the project.
+
+        Below are a number <span class="hljs-keyword">of</span> ways <span class="hljs-keyword">in</span> which you can associate data <span class="hljs-keyword">with</span> your article <span class="hljs-keyword">or</span> make a statement about the availability <span class="hljs-keyword">of</span> your data <span class="hljs-keyword">when</span> submitting your manuscript. <span class="hljs-keyword">If</span> you are sharing data <span class="hljs-keyword">in</span> one <span class="hljs-keyword">of</span> these ways, you are encouraged <span class="hljs-keyword">to</span> cite the data <span class="hljs-keyword">in</span> your manuscript <span class="hljs-keyword">and</span> reference list. Please refer <span class="hljs-keyword">to</span> the <span class="hljs-string">"References"</span> section <span class="hljs-keyword">for</span> more information about data citation. <span class="hljs-keyword">For</span> more information <span class="hljs-keyword">on</span> depositing, sharing <span class="hljs-keyword">and</span> using research data <span class="hljs-keyword">and</span> other relevant research materials, visit the research data page.
+
+        Data linking:
+
+        <span class="hljs-keyword">If</span> you have made your research data available <span class="hljs-keyword">in</span> a data repository, you can link your article directly <span class="hljs-keyword">to</span> the dataset. Elsevier collaborates <span class="hljs-keyword">with</span> a number <span class="hljs-keyword">of</span> repositories <span class="hljs-keyword">to</span> link articles <span class="hljs-keyword">on</span> ScienceDirect <span class="hljs-keyword">with</span> relevant repositories, giving readers <span class="hljs-keyword">access</span> <span class="hljs-keyword">to</span> underlying data that gives them a better understanding <span class="hljs-keyword">of</span> the research described.
+
+        There are different ways <span class="hljs-keyword">to</span> link your datasets <span class="hljs-keyword">to</span> your article. <span class="hljs-keyword">When</span> available, you can directly link your dataset <span class="hljs-keyword">to</span> your article by providing the relevant information <span class="hljs-keyword">in</span> the submission system. <span class="hljs-keyword">For</span> more information, visit the database linking page.
+
+        <span class="hljs-keyword">For</span> supported data repositories a repository banner will automatically appear <span class="hljs-keyword">next</span> <span class="hljs-keyword">to</span> your published article <span class="hljs-keyword">on</span> ScienceDirect.
+
+        <span class="hljs-keyword">In</span> addition, you can link <span class="hljs-keyword">to</span> relevant data <span class="hljs-keyword">or</span> entities through identifiers within the <span class="hljs-literal">text</span> <span class="hljs-keyword">of</span> your manuscript, using the following format: Database: xxxx (e.g., TAIR: AT1G01020; CCDC: <span class="hljs-number">734053</span>; PDB: <span class="hljs-number">1</span>XFN).
+
+     Research Elements:
+
+        This journal enables you <span class="hljs-keyword">to</span> publish research objects related <span class="hljs-keyword">to</span> your original research <span class="hljs-comment">-- such as data, methods, protocols, software and hardware -- as an additional paper in a Research Elements journal.</span>
+
+        Research Elements <span class="hljs-keyword">is</span> a suite <span class="hljs-keyword">of</span> peer-reviewed, <span class="hljs-keyword">open</span> <span class="hljs-keyword">access</span> journals which make your research objects findable, accessible <span class="hljs-keyword">and</span> reusable. Articles place research objects into <span class="hljs-keyword">context</span> by providing detailed descriptions <span class="hljs-keyword">of</span> objects <span class="hljs-keyword">and</span> their application, <span class="hljs-keyword">and</span> linking <span class="hljs-keyword">to</span> the associated original research articles.
+
+        Research Elements articles can be prepared by you, <span class="hljs-keyword">or</span> by one <span class="hljs-keyword">of</span> your collaborators.
+
+        During submission, you will be alerted <span class="hljs-keyword">to</span> the opportunity <span class="hljs-keyword">to</span> prepare <span class="hljs-keyword">and</span> submit a manuscript <span class="hljs-keyword">to</span> one <span class="hljs-keyword">of</span> the Research Elements journals.
+
+        More information can be found <span class="hljs-keyword">on</span> the Research Elements page.
+
+        Data statement:
+
+        <span class="hljs-keyword">To</span> foster transparency, we encourage you <span class="hljs-keyword">to</span> state the availability <span class="hljs-keyword">of</span> your data <span class="hljs-keyword">in</span> your submission.
+
+        This may be a requirement <span class="hljs-keyword">of</span> your funding <span class="hljs-keyword">body</span> <span class="hljs-keyword">or</span> institution. <span class="hljs-keyword">If</span> your data <span class="hljs-keyword">is</span> unavailable <span class="hljs-keyword">to</span> <span class="hljs-keyword">access</span> <span class="hljs-keyword">or</span> unsuitable <span class="hljs-keyword">to</span> post, you will have the opportunity <span class="hljs-keyword">to</span> indicate why during the submission <span class="hljs-keyword">process</span>, <span class="hljs-keyword">for</span> example by stating that the research data <span class="hljs-keyword">is</span> confidential. The statement will appear <span class="hljs-keyword">with</span> your published article <span class="hljs-keyword">on</span> ScienceDirect. <span class="hljs-keyword">For</span> more information, visit the Data Statement page.
+</code></pre>
