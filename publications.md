@@ -3,15 +3,21 @@ layout: default
 is_contact: true
 ---
 
-* Email: [foo@xyz.com](mailto:foo@xyz.com)
 
-* Phone: [+91-123123](tel:+91-123123)
+## Publications
+<!--
+1. F.Bar, J.Doe: Effects of having a placeholder of a name
+2. S.Holmes, J.Watson: Consequences of living with a sociopath in London
+-->
+* Researchgate: [researchgate.net](https://www.researchgate.net/profile/Giovanni-Maria-De-Filippis/research)
+
+* Scopus: [scopus.com](https://www.scopus.com/authid/detail.uri?authorId=58613393100)
 
 ---
 
 ## Mailing Address
 
-> 221B, Baker Street
+> 7, Craven Road
 >
 > London
 >
