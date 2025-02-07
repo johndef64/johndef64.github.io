@@ -16,6 +16,7 @@ This is a jekyll based resume template. You can find the full source code on [Gi
 
 Biologist with training in molecular genetics, genomics and nutrition. Proficient and bioinformatics applied to the study of human genetic polymorphism. Experience in extraction, cataloging, and analysis of genomic and transcriptomic data in Python and R.
 
+- LinkTree: [Click Me!](https://linktr.ee/johndef64)
 - ORCID : 0009-0002-8395-0724
 
 
