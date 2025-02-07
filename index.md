@@ -29,7 +29,9 @@ Biologist with training in molecular genetics, genomics and nutrition. Proficien
 [3] G. M. De Filippis, A. M. Rinaldi, C. Russo, e C. Tommasino, «Advanced Topic Modeling in Genomics: Towards Personalized Dietary Recommendations Through BERTopic Analysis», presentato al Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), 2025, pp. 3–17. doi: 10.1007/978-3-031-78093-6_1.
 
 [4] D. Benfenati, G. M. De Filippis, A. M. Rinaldi, C. Russo, e C. Tommasino, «A Retrieval-augmented Generation application for Question-Answering in Nutrigenetics Domain», presentato al Procedia Computer Science, 2024, pp. 586–595. doi: 10.1016/j.procs.2024.09.467.
+
 <!--  -->
+
 <!--
 ## Typography
 
@@ -45,6 +47,7 @@ Year | Award | Category
 
 Here is a horizontal rule
 -->
+
 ---
 
 <!--  Here is a blockquote -->
