@@ -3,8 +3,9 @@ layout: default
 is_contact: true
 ---
 
-* Email: [foo@xyz.com](mailto:foo@xyz.com)
+* Email: [giovannimaria.defilippis@unina.it](giovannimaria.defilippis@unina.it)
 
+<!--
 * Phone: [+91-123123](tel:+91-123123)
 
 ---
@@ -16,11 +17,11 @@ is_contact: true
 > London
 >
 > United Kingdom
-
+-->
 ---
 
 ## Social
 
-1. [Facebook](#)
+1. [Youtube](https://www.youtube.com/@JohnDef64)
 2. [Twitter](#)
-3. [Google+](#)
+3. [Github](#)
