@@ -19,6 +19,7 @@ Biologist with training in molecular genetics, genomics and nutrition. Proficien
 - LinkTree: [Click Me!](https://linktr.ee/johndef64)
 - ORCID : 0009-0002-8395-0724
 
+<!--  
 
 ## Publications
 
@@ -30,7 +31,7 @@ Biologist with training in molecular genetics, genomics and nutrition. Proficien
 
 [4] D. Benfenati, G. M. De Filippis, A. M. Rinaldi, C. Russo, e C. Tommasino, «A Retrieval-augmented Generation application for Question-Answering in Nutrigenetics Domain», presentato al Procedia Computer Science, 2024, pp. 586–595. doi: 10.1016/j.procs.2024.09.467.
 
-<!--  -->
+-->
 
 <!--
 ## Typography
