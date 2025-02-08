@@ -288,6 +288,10 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-video:hover .overlay {
   background: rgba(0, 0, 0, 0.7);
 }
+
+
+
+
 .fh5co-video:hover a {
   position: relative;
   -webkit-transform: scale(1.2);
@@ -668,6 +672,8 @@ h1, h2, h3, h4, h5, h6, figure {
   -ms-border-radius: 7px;
   border-radius: 7px;
 }
+
+
 @media screen and (max-width: 480px) {
   #fh5co-gallery-list li {
     margin-left: 0;
@@ -958,6 +964,7 @@ form label {
 #fh5co-couple-story,
 #fh5co-couple,
 #fh5co-gallery,
+#fh5co-placeholder,
 .fh5co-section {
   padding: 7em 0;
   clear: both;
@@ -971,6 +978,7 @@ form label {
   #fh5co-couple-story,
   #fh5co-couple,
   #fh5co-gallery,
+  #fh5co-placeholder,
   .fh5co-section {
     padding: 3em 0;
   }
