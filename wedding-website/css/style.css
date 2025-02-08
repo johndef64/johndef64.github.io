@@ -655,6 +655,8 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   width: 100%;
 }
+
+
 #fh5co-gallery-list li {
   display: block;
   padding: 0;
@@ -749,6 +751,10 @@ h1, h2, h3, h4, h5, h6, figure {
     width: 100%;
   }
 }
+
+
+
+/* Add any additional styles as needed */
 
 #map {
   width: 100%;
