@@ -23,5 +23,5 @@ is_contact: true
 ## Social
 
 1. [Youtube](https://www.youtube.com/@JohnDef64)
-2. [Twitter](#)
-3. [Github](#)
+2. [Twitter](https://x.com/johndef64)
+3. [Github](https://github.com/johndef64)
