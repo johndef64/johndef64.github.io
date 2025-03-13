@@ -6,11 +6,11 @@ layout: default
 
 <img class="profile-picture" src="https://avatars.githubusercontent.com/u/116732521?v=4">
 
-Hi! I'm John, a computational biologist with roots in a hidden forest nook, enveloped by nature's embrace. My work bridges reality and dreams, blending cosmic creativity with scientific rigor. I compose binary symphonies and whisper to electrons, coding by moonlight and exploring the cyber landscapes.
+Hi! I'm J., a computational biologist with roots in a hidden forest nook, enveloped by nature's embrace. My work bridges reality and dreams, blending cosmic creativity with scientific rigor. I compose binary symphonies and whisper to electrons, coding by moonlight and exploring the cyber landscapes.
 
 Embracing the absurd and the quantum, I find joy at the edge of fractals and in the harmony of chaos. My journey is a blend of solitude and transparency, guided by the sound of waves and the endless cycle of beginnings and endings.
 
-This is a jekyll based resume template. You can find the full source code on [GitHub](https://github.com/bk2dcradle/researcher)
+[//]: # (This is a jekyll based resume template. You can find the full source code on [GitHub]&#40;https://github.com/bk2dcradle/researcher&#41;)
 
 ## Research Interest
 
