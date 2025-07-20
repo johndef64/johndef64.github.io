@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://johndef64.github.io/sitemap.xml
+
+# Disallow specific directories if needed
+# Disallow: /archives/
+# Disallow: /templates/

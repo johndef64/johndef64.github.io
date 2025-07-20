@@ -1,23 +1,45 @@
 ---
 layout: default
+title: About
 ---
 
 ## About Me
 
-<img class="profile-picture" src="https://avatars.githubusercontent.com/u/116732521?v=4">
+<img class="profile-picture" src="https://avatars.githubusercontent.com/u/116732521?v=4" alt="Giovanni Maria De Filippis">
 
-Hi! I'm J., a computational biologist with roots in a hidden forest nook, enveloped by nature's embrace. My work bridges reality and dreams, blending cosmic creativity with scientific rigor. I compose binary symphonies and whisper to electrons, coding by moonlight and exploring the cyber landscapes.
+I'm **Giovanni Maria De Filippis**, a computational biologist specializing in **Graph Neural Networks (GNN)** and **Knowledge Graphs (KG)** applied to bioinformatics. My research focuses on developing advanced computational frameworks for multi-omics data integration and biological knowledge representation.
 
-Embracing the absurd and the quantum, I find joy at the edge of fractals and in the harmony of chaos. My journey is a blend of solitude and transparency, guided by the sound of waves and the endless cycle of beginnings and endings.
+With expertise in molecular genetics, genomics, and machine learning, I specialize in applying graph-based methods to complex biological datasets. My current work bridges artificial intelligence and biology through innovative approaches to knowledge graph construction and graph neural network architectures.
 
-[//]: # (This is a jekyll based resume template. You can find the full source code on [GitHub]&#40;https://github.com/bk2dcradle/researcher&#41;)
+## Research Interests
 
-## Research Interest
+- **Graph Neural Networks**: GCN, GAT, and CompGCN for biological data analysis
+- **Knowledge Graphs**: Construction, validation, and reasoning for biological knowledge
+- **Multi-omics Integration**: Graph-based approaches for transcriptomic and genomic data
+- **Information Retrieval**: BioKG and semantic technologies for biological literature
+- **Single-cell Analysis**: Advanced computational methods for transcriptomic data
+- **Drug Repurposing**: Cross-species knowledge graphs for therapeutic discovery
 
-Biologist with training in molecular genetics, genomics and nutrition. Proficient and bioinformatics applied to the study of human genetic polymorphism. Experience in extraction, cataloging, and analysis of genomic and transcriptomic data in Python and R.
+## Current Focus
 
-- LinkTree: [Click Me!](https://linktr.ee/johndef64)
-- ORCID : 0009-0002-8395-0724
+My current research involves developing computational frameworks for biological knowledge integration, with a particular emphasis on:
+
+- **GraphRAG**: LLM-driven knowledge graph construction for biological data augmentation
+- **Prior Knowledge Integration**: Advanced GNN architectures (MOGONET, MOGAT, MPK-GNN) for multi-omics analysis
+- **Cross-species Knowledge Graphs**: Drug repurposing through comparative biological networks
+- **Single-cell Transcriptomics**: Graph-based methods for cellular analysis and classification
+- **Information Retrieval**: Semantic search and retrieval systems for biological knowledge graphs
+
+## Recent Experience
+
+Currently conducting research at the **Department of Computer Science, University of Cambridge**, focusing on advanced graph neural network methodologies and their applications to biological data analysis.
+
+## Academic Profiles
+
+- **ORCID**: [0009-0002-8395-0724](https://orcid.org/0009-0002-8395-0724)
+- **ResearchGate**: [View Profile](https://www.researchgate.net/profile/Giovanni-Maria-De-Filippis)
+- **Scopus**: [Author Profile](https://www.scopus.com/authid/detail.uri?authorId=58613393100)
+- **LinkTree**: [All Links](https://linktr.ee/johndef64)
 
 <!--  
 

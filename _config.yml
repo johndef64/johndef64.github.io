@@ -1,19 +1,27 @@
-title: Researcher
-#url: "https://johndef64.com"
+title: "Giovanni Maria De Filippis"
+author: "Giovanni Maria De Filippis"
+description: "Computational Biologist specializing in Graph Neural Networks and Knowledge Graphs for Bioinformatics"
 url: "https://johndef64.github.io"
 baseurl: ""
 
-#url: "https://ankitsultana.com"
-#baseurl: "/researcher"
-
 markdown: kramdown
-#ins_logo: "./bits-logo.png"
+highlighter: rouge
+permalink: pretty
 
-tracking_id: #
+# Social and Academic Links
+email: giovannimaria.defilippis@unina.it
+github_username: johndef64
+twitter_username: johndef64
+orcid: 0009-0002-8395-0724
+researchgate: Giovanni-Maria-De-Filippis
+
+# SEO and Analytics
+tracking_id: # Add Google Analytics ID if needed
+timezone: Europe/Rome
 
 footer: yes
 footer_url: "https://github.com/johndef64"
-footer_text: "Page design by Ankit Sultana"
+footer_text: "© 2025 Giovanni Maria De Filippis"
 
 sass:
     style: compressed
@@ -21,9 +29,9 @@ sass:
 
 nav:
  - name: "About"
-   link: "index" #"/researcher/"
-# - name: "Resume"
-#   link: "resume.pdf"
+   link: "index"
+ - name: "Research"
+   link: "research"
  - name: "Publications"
    link: "publications"
  - name: "Contact"

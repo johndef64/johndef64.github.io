@@ -2,13 +2,17 @@
  * Customization Variables
  */
 
-$accent: #FF0F00;
+$accent: #3498db; // Professional blue
+$accent-hover: #2980b9; // Darker blue for hover
+$text-color: #2c3e50; // Dark blue-gray for text
+$secondary-text: #7f8c8d; // Light gray for secondary text
+$border-color: #ecf0f1; // Light gray for borders
 $image-size: 85px;
 
 /*
  * Build Variables, don't touch
  */
 
-$max-width: 700px;
-$med-width: 600px;
+$max-width: 800px; // Increased for better readability
+$med-width: 650px;
 $small-width: 480px;
