@@ -6,13 +6,15 @@ is_contact: true
 
 ## Publications
 
-[1] G. M. De Filippis, M. Monticelli, A. Pollice, T. Angrisano, B. H. Mele, e V. Calabrò, «Computational Strategies in Nutrigenetics: Constructing a Reference Dataset of Nutrition-Associated Genetic Polymorphisms», medRxiv, 2023, doi: 10.1101/2023.08.04.23293659.
+[1] G. M. De Filippis, M. Monticelli, A. Pollice, T. Angrisano, B. H. Mele, V. Calabrò, «Computational strategies in nutrigenetics: constructing a reference dataset of nutrition-associated genetic polymorphisms», Journal of Biomedical Informatics, 104845, 2025.
 
-[2] G. M. De Filippis, A. M. Rinaldi, C. Russo, e C. Tommasino, «Enhanced Semantic Understanding with Graph-Based Information Retrieval», presentato al Communications in Computer and Information Science, 2025, pp. 11–24. doi: 10.1007/978-3-031-71382-8_2.
+[2] G. M. De Filippis, A. M. Rinaldi, C. Russo, C. Tommasino, «Enhanced semantic understanding with graph-based information retrieval», International Workshop on Graph-Based Approaches in Information Retrieval, pp. 11-24, 2024.
 
-[3] G. M. De Filippis, A. M. Rinaldi, C. Russo, e C. Tommasino, «Advanced Topic Modeling in Genomics: Towards Personalized Dietary Recommendations Through BERTopic Analysis», presentato al Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), 2025, pp. 3–17. doi: 10.1007/978-3-031-78093-6_1.
+[3] D. Benfenati, G. M. De Filippis, A. M. Rinaldi, C. Russo, C. Tommasino, «A retrieval-augmented generation application for question-answering in nutrigenetics domain», Procedia Computer Science 246, pp. 586-595, 2024.
 
-[4] D. Benfenati, G. M. De Filippis, A. M. Rinaldi, C. Russo, e C. Tommasino, «A Retrieval-augmented Generation application for Question-Answering in Nutrigenetics Domain», presentato al Procedia Computer Science, 2024, pp. 586–595. doi: 10.1016/j.procs.2024.09.467.
+[4] G. M. De Filippis, D. Amalfitano, C. Russo, C. Tommasino, A. M. Rinaldi, «A systematic mapping study of semantic technologies in multi-omics data integration», Journal of Biomedical Informatics, 104809, 2025.
+
+[5] G. M. De Filippis, A. M. Rinaldi, C. Russo, C. Tommasino, «Advanced topic modeling in genomics: Towards personalized dietary recommendations through bertopic analysis», International Conference on Information Integration and Web Intelligence, pp. 3-17, 2024.
 
 
 * Researchgate: [researchgate.net](https://www.researchgate.net/profile/Giovanni-Maria-De-Filippis/research)
