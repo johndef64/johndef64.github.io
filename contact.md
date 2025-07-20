@@ -31,4 +31,5 @@ I'm open to collaborations in:
 - AI-powered drug discovery and repurposing
 - Information retrieval from biological literature
 
+
 Feel free to reach out if you'd like to discuss potential collaborations or have questions about my research in graph neural networks and computational biology!
