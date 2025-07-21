@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="graph neural networks, knowledge graphs, computational biology, bioinformatics, multi-omics, single-cell, drug repurposing, {{ site.author }}">
+    <meta name="keywords" content="blog, accent, {{ site.author }}, {{ site.title }}, jekyll">
     <meta name="author" content="{{ site.author }}">
     {% if page.url == "/404.html" %}
         <meta http-equiv="refresh" content="5; url=/">
@@ -21,67 +21,33 @@
         {% assign url = site.url | append: site.baseurl | append: page.url %}
     {% endif %}
     <meta name="description" content="{{ desc }}">
-    
-    <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-    
-    <!-- Stylesheets -->
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="/feed.xml" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-    
-    <!-- Favicon -->
     {% if site.favicon %}
         <link rel="icon" type="image/ico" href="{{ site.favicon_location }}">
         <link rel="shortcut-icon" type="image/ico" href="{{ site.favicon_location }}">
     {% endif %}
-    
-    <!-- Social Media Links -->
     {% if site.twitter_username %}
         <link rel="author" href="https://twitter.com/{{ site.twitter_username }}">
     {% endif %}
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url }}">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:description" content="{{ desc }}">
+    <!-- Facebook Open Graph -->
+    <meta name="og:description" content="{{ desc }}">
+    <meta name="og:title" content="{{ site.title }}">
+    <meta name="og:url" content="{{ url }}">
+    <meta name="og:type" content="article">
     {% if site.og_image %}
-        <meta property="og:image" content="{{ site.og_image }}">
+        <meta name="og:image" content="{{ site.og_image }}">
     {% endif %}
     {% if site.facebook_id %}
-        <meta property="fb:admins" content="{{ site.facebook_id }}">
+        <meta name="fb:admins" content="{{ site.facebook_id }}">
     {% endif %}
-    
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ url }}">
-    <meta property="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="twitter:description" content="{{ desc }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:description" content="{{ desc }}">
+    <meta name="twitter:url" content="{{ url }}">
     {% if site.twitter_image %}
-        <meta property="twitter:image" content="{{ site.twitter_image }}">
-    {% else %}
-        <meta property="twitter:image" content="{{ site.profile_picture }}">
-    {% endif %}
-    
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "{{ site.author }}",
-        "url": "{{ site.url }}",
-        "jobTitle": "Computational Biologist",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "University of Naples Federico II"
-        },
-        "sameAs": [
-            "https://github.com/{{ site.github_username }}",
-            "https://twitter.com/{{ site.twitter_username }}",
-            "https://orcid.org/{{ site.orcid }}"
-        ]
-    }
-    </script>
         <meta name="twitter:image" content="{{ site.twitter_image }}">
     {% else %}
         <meta name="twitter:image" content="{{ site.profile_picture }}">
