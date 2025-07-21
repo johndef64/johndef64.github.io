@@ -24,6 +24,8 @@ nav:
    link: "index" #"/researcher/"
 # - name: "Resume"
 #   link: "resume.pdf"
+ - name: "Research"
+   link: "research"
  - name: "Publications"
    link: "publications"
  - name: "Contact"

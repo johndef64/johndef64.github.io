@@ -123,8 +123,31 @@ I actively collaborate with researchers in:
 **Visiting Researcher** - Department of Computer Science, University of Cambridge
 - Focus on Graph Neural Networks and Knowledge Graphs for bioinformatics
 - Advanced methodologies for multi-omics and transcriptomic data analysis
-- Collaboration on REDAC chatbot for transcriptomic analysis
-- Development of GraphRAG systems for biological knowledge
+- Collaboration on REDAC chatbot for RNASeq Expression Data Analysis
+- Development of GraphRAG systems for biological knowledge augmentation
+- Cross-species knowledge graph construction for drug repurposing
+- Information Retrieval methodologies on biological knowledge graphs
+- Single-cell transcriptomics analysis using Seurat and graph-based approaches
+
+### Recent Projects and Contributions
+
+#### REDAC Chatbot for Transcriptomic Analysis
+Contribution to the development of a Large Language Model-powered chatbot for RNASeq expression data analysis, making transcriptomic analysis more accessible to researchers.
+
+**Technologies**: LLMs, Transcriptomics, RNA-seq Analysis
+**Status**: Delivered and operational
+
+#### GraphRAG 
+Development of Graph-based Retrieval-Augmented Generation systems applied to biological datasets, with potential for journal publication and scalability to larger datasets.
+
+**Technologies**: GraphRAG, LLMs, Knowledge Graph Construction
+**Status**: Presented at workshop, under development for journal submission
+
+#### Cross-Species Drug Repurposing
+Implementation of knowledge graph construction spanning multiple species with Graph Convolutional Networks (GCN) and Composition-based GCN (CompGCN) for drug repurposing applications.
+
+**Technologies**: Cross-species KG, GCN, CompGCN, Link Prediction
+**Status**: In preparation for publication
 
 ### Future Directions
 

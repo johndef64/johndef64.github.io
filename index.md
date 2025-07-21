@@ -6,18 +6,39 @@ layout: default
 
 <img class="profile-picture" src="https://avatars.githubusercontent.com/u/116732521?v=4">
 
-Hi! I'm Giovanni, a computational biologist with roots in a hidden forest nook, enveloped by nature's embrace. My work bridges reality and dreams, blending cosmic creativity with scientific rigor. I compose binary symphonies and whisper to electrons, coding by moonlight and exploring the cyber landscapes.
+Hi! I'm **Giovanni**, a computational biologist passionate about bridging the gap between artificial intelligence and biological discovery. My work combines rigorous scientific methodology with innovative computational approaches, exploring the intersection of Graph Neural Networks, Knowledge Graphs, and bioinformatics.
 
-Embracing the absurd and the quantum, I find joy at the edge of fractals and in the harmony of chaos. My journey is a blend of solitude and transparency, guided by the sound of waves and the endless cycle of beginnings and endings.
+When I'm not developing algorithms or analyzing genomic data, I find inspiration in nature's complexity and the endless patterns that emerge from biological systems. I believe that the future of biology lies in our ability to computationally understand and model the intricate networks that govern life.
+
+My journey spans from molecular genetics to cutting-edge AI, always guided by curiosity and the pursuit of meaningful scientific discoveries that can impact human health and understanding.
 
 [//]: # (This is a jekyll based resume template. You can find the full source code on [GitHub]&#40;https://github.com/bk2dcradle/researcher&#41;)
 
 ## Research Interest
 
-Biologist with training in molecular genetics, genomics and nutrition. Proficient and bioinformatics applied to the study of human genetic polymorphism. Experience in extraction, cataloging, and analysis of genomic and transcriptomic data in Python and R.
+Computational biologist specializing in **Knowledge Graphs** and **Graph Neural Networks** andfor biological data analysis. My research focuses on the intersection of artificial intelligence and bioinformatics, with particular expertise in:
 
+- **Multi-omics data integration** using advanced graph-based machine learning approaches
+- **Knowledge graph construction** for biological systems and drug repurposing
+- **Single-cell transcriptomics analysis** with graph neural network architectures
+- **Nutrigenetics** and personalized medicine through computational approaches
+- **Information retrieval** from biological literature using LLMs and RAG systems
+
+### Current Focus
+Currently conducting research as a **Visiting Researcher** at the Department of Computer Science, University of Cambridge, working on Graph Neural Networks (GCN, GAT, CompGCN) and their applications to biological knowledge graphs.
+
+### Technical Expertise
+- **Programming**: Python (PyTorch, PyTorch Geometric, DGL), R (Bioconductor, Seurat)
+- **AI/ML**: Graph Neural Networks, Large Language Models, Knowledge Graph Embeddings
+- **Bioinformatics**: Multi-omics analysis, RNA-seq, single-cell genomics
+- **Databases**: Neo4j, PostgreSQL, biological ontologies (GO, KEGG)
+
+---
+
+**Links & Profiles**
 - LinkTree: [Click Me!](https://linktr.ee/johndef64)
-- ORCID : 0009-0002-8395-0724
+- ORCID: [0009-0002-8395-0724](https://orcid.org/0009-0002-8395-0724)
+
 
 <!--  
 
