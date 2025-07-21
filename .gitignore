@@ -12,5 +12,5 @@
 /.ipynb_checkpoints/
 /.idea/
 wedding-website.zip
-/data/
-/misc/
+/data/*
+/misc/*
