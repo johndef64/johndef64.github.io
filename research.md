@@ -104,10 +104,11 @@ Advanced computational methods for single-cell RNA sequencing data analysis usin
 
 **Data Management**
 - Neo4j (Graph databases)
-- PostgreSQL
+<!-- - PostgreSQL -->
 - MongoDB
-- Apache Spark
-- Docker/Kubernetes
+- ArangoDB
+<!-- - Apache Spark
+- Docker/Kubernetes -->
 
 <!-- ### Collaborations
 
