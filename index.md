@@ -24,8 +24,8 @@ Computational biologist specializing in **Knowledge Graphs** and **Graph Neural 
 - **Nutrigenetics** and personalized medicine through computational approaches
 - **Information retrieval** from biological literature using LLMs and RAG systems
 
-### Current Focus
-Currently conducting research as a **Visiting Researcher** at the Department of Computer Science, University of Cambridge, working on Graph Neural Networks (GCN, GAT, CompGCN) and their applications to biological knowledge graphs.
+### Recent Experience
+Completed a research visiting period (March-June 2025) as a **Visiting Researcher** at the Department of Computer Science, University of Cambridge, working on Graph Neural Networks (GCN, GAT, CompGCN) and their applications to biological knowledge graphs.
 
 ### Technical Expertise
 - **Programming**: Python (PyTorch, PyTorch Geometric, DGL), R (Bioconductor, Seurat)
