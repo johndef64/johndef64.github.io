@@ -109,21 +109,21 @@ Advanced computational methods for single-cell RNA sequencing data analysis usin
 - Apache Spark
 - Docker/Kubernetes
 
-### Collaborations
+<!-- ### Collaborations
 
 I actively collaborate with researchers in:
 - Graph neural network research groups
 - Computational biology laboratories
 - AI for science communities
 - Bioinformatics centers
-- Drug discovery teams
+- Drug discovery teams -->
 
 ### Recent Experience
 
 **Visiting Researcher** - Department of Computer Science, University of Cambridge
 - Focus on Graph Neural Networks and Knowledge Graphs for bioinformatics
-- Advanced methodologies for multi-omics and transcriptomic data analysis
-- Collaboration on REDAC chatbot for RNASeq Expression Data Analysis
+<!-- - Advanced methodologies for multi-omics and transcriptomic data analysis
+- Collaboration on REDAC chatbot for RNASeq Expression Data Analysis -->
 - Development of GraphRAG systems for biological knowledge augmentation
 - Cross-species knowledge graph construction for drug repurposing
 - Information Retrieval methodologies on biological knowledge graphs
@@ -156,4 +156,4 @@ Implementation of knowledge graph construction spanning multiple species with Gr
 - Real-time knowledge graph updates from scientific literature
 - Large-scale biological network analysis and prediction
 - AI-powered drug discovery through graph-based methods
-- Cross-species comparative genomics using knowledge graphs
+<!-- - Cross-species comparative genomics using knowledge graphs -->
