@@ -7,6 +7,13 @@ title: Research
 
 ### Current Research
 
+#### Multi-Omics Integration with Prior Knowledge
+Implementation of advanced GNN methods (MOGONET, MOGAT, MPK-GNN) that integrate biological prior knowledge into graph neural network architectures for improved multi-omics data analysis.
+
+**Key Technologies**: Multi-modal Graph Learning, Prior Knowledge Integration, Omics Data Fusion
+**Status**: Methodology development and benchmarking
+
+
 #### Graph Neural Networks for Biological Data Analysis
 Development and application of advanced GNN architectures (GCN, GAT, CompGCN) for biological data analysis. Focus on node classification, link prediction, and graph-level tasks using standard benchmarks (Cora, Cornell, Chameleon) and biological datasets.
 
@@ -24,12 +31,6 @@ Development of comprehensive knowledge graphs spanning multiple species for drug
 
 **Key Technologies**: Knowledge Graph Embeddings, Cross-species Data Integration, Drug Repurposing Algorithms
 **Status**: In preparation for publication
-
-#### Multi-Omics Integration with Prior Knowledge
-Implementation of advanced GNN methods (MOGONET, MOGAT, MPK-GNN) that integrate biological prior knowledge into graph neural network architectures for improved multi-omics data analysis.
-
-**Key Technologies**: Multi-modal Graph Learning, Prior Knowledge Integration, Omics Data Fusion
-**Status**: Methodology development and benchmarking
 
 #### Single-Cell Transcriptomics Analysis
 Advanced computational methods for single-cell RNA sequencing data analysis using graph-based approaches. Integration with tools like Seurat and development of novel network-based methods.
@@ -104,11 +105,9 @@ Advanced computational methods for single-cell RNA sequencing data analysis usin
 
 **Data Management**
 - Neo4j (Graph databases)
-<!-- - PostgreSQL -->
 - MongoDB
 - ArangoDB
-<!-- - Apache Spark
-- Docker/Kubernetes -->
+
 
 <!-- ### Collaborations
 
@@ -123,8 +122,6 @@ I actively collaborate with researchers in:
 
 **Visiting Researcher** - Department of Computer Science, University of Cambridge
 - Focus on Graph Neural Networks and Knowledge Graphs for bioinformatics
-<!-- - Advanced methodologies for multi-omics and transcriptomic data analysis
-- Collaboration on REDAC chatbot for RNASeq Expression Data Analysis -->
 - Development of GraphRAG systems for biological knowledge augmentation
 - Cross-species knowledge graph construction for drug repurposing
 - Information Retrieval methodologies on biological knowledge graphs
@@ -157,4 +154,3 @@ Implementation of knowledge graph construction spanning multiple species with Gr
 - Real-time knowledge graph updates from scientific literature
 - Large-scale biological network analysis and prediction
 - AI-powered drug discovery through graph-based methods
-<!-- - Cross-species comparative genomics using knowledge graphs -->
