@@ -31,7 +31,7 @@ Completed a research visiting period (March-June 2025) as a **Visiting Researche
 - **Programming**: Python (PyTorch, PyTorch Geometric, DGL), R (Bioconductor, Seurat)
 - **AI/ML**: Graph Neural Networks, Large Language Models, Knowledge Graph Embeddings
 - **Bioinformatics**: Multi-omics analysis, RNA-seq, single-cell genomics
-- **Databases**: Neo4j, PostgreSQL, biological ontologies (GO, KEGG)
+- **Databases**: Neo4j, ArangoDB, biological data repositories (EMBL, NCBI)
 
 ---
 
@@ -74,7 +74,8 @@ Here is a horizontal rule
 
 <!--  Here is a blockquote -->
 
-> To a great mind, nothing is little
+> “A path is made by walking on it.”
+> ― Chuang Tzu
 
 <!--  
 ## References
