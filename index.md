@@ -1,85 +1,77 @@
 ---
 layout: default
+description: >-
+  Giovanni Maria De Filippis, computational biologist. Biomedical knowledge
+  graphs and heterogeneous graph neural networks for multi-omics data
+  integration, cancer subtyping and drug repurposing.
 ---
 
-## About Me
+## About
 
-<img class="profile-picture" src="https://avatars.githubusercontent.com/u/116732521?v=4">
+<img class="profile-picture" src="https://avatars.githubusercontent.com/u/116732521?v=4" alt="Giovanni Maria De Filippis">
 
-Hi! I'm **Giovanni**, a computational biologist passionate about bridging the gap between artificial intelligence and biological discovery. My work combines rigorous scientific methodology with innovative computational approaches, exploring the intersection of Graph Neural Networks, Knowledge Graphs, and bioinformatics.
+Hi, I'm **Giovanni**. I'm a biologist who became a computational scientist, and
+I work where biomedical knowledge representation meets deep learning on graphs.
 
-When I'm not developing algorithms or analyzing genomic data, I find inspiration in nature's complexity and the endless patterns that emerge from biological systems. I believe that the future of biology lies in our ability to computationally understand and model the intricate networks that govern life.
+My doctoral research asks a deceptively simple question: **how much biological
+semantics is worth formalising in a data representation, and what does that
+formalisation actually buy a learning system?** To answer it I build
+ontology-grounded knowledge graphs that carry per-sample multi-omic measurements,
+and heterogeneous graph neural networks that learn over them, for cancer subtype
+classification and drug–target discovery.
 
-My journey spans from molecular genetics to cutting-edge AI, always guided by curiosity and the pursuit of meaningful scientific discoveries that can impact human health and understanding.
+I came to computation from molecular genetics and nutrition science, and I still
+think that background is the useful part: the hard problems in this field are
+rarely about the architecture, and almost always about what the data is allowed
+to mean.
 
-[//]: # (This is a jekyll based resume template. You can find the full source code on [GitHub]&#40;https://github.com/bk2dcradle/researcher&#41;)
+<ul class="facts">
+  <li><b>Position</b> PhD candidate in Computational and Quantitative Biology (cycle XXXIX)</li>
+  <li><b>Affiliation</b> DIETI, University of Naples Federico II</li>
+  <li><b>Supervisor</b> Prof. Antonio Maria Rinaldi</li>
+  <li><b>Previously</b> Visiting researcher, Computer Laboratory, University of Cambridge (2025)</li>
+  <li><b>ORCID</b> <a href="https://orcid.org/0009-0002-8395-0724">0009-0002-8395-0724</a></li>
+  <li><b>Elsewhere</b> <a href="https://scholar.google.com/citations?user=VMk1EUQAAAAJ">Scholar</a> · <a href="https://github.com/johndef64">GitHub</a> · <a href="https://linktr.ee/johndef64">LinkTree</a></li>
+</ul>
 
-## Research Interest
+## Doctoral thesis
 
-Computational biologist specializing in **Knowledge Graphs** and **Graph Neural Networks** andfor biological data analysis. My research focuses on the intersection of artificial intelligence and bioinformatics, with particular expertise in:
+**From Trans-Omic Networks to Knowledge Graphs: Encoding and Exploiting Biological
+Semantics for Multi-Omics Data Integration with Graph Neural Networks**
 
-- **Multi-omics data integration** using advanced graph-based machine learning approaches
-- **Knowledge graph construction** for biological systems and drug repurposing
-- **Single-cell transcriptomics analysis** with graph neural network architectures
-- **Nutrigenetics** and personalized medicine through computational approaches
-- **Information retrieval** from biological literature using LLMs and RAG systems
+In multi-omics the bottleneck is no longer measurement, it is representation.
+Every integrative study rebuilds its own encoding, and existing biomedical
+knowledge graphs keep per-sample quantitative vectors in external matrices,
+breaking the link between an entity and its measurement at query time.
 
-### Recent Experience
-Completed a research visiting period (March-June 2025) as a **Visiting Researcher** at the Department of Computer Science, University of Cambridge, working on Graph Neural Networks (GCN, GAT, CompGCN) and their applications to biological knowledge graphs.
+The thesis builds one reusable substrate where an ontological backbone and dense
+per-sample multi-omic profiles are stored together and retrieved through a single
+query, then puts that substrate to work three ways: joint querying of knowledge
+and measurement, discovery of new biological relations, and molecular subtype
+classification. The organising axis is the degree of semantic formality of the
+prior, from implicit trans-omic networks, to shallow molecular priors, to a
+formal multi-scale knowledge graph.
 
-### Technical Expertise
-- **Programming**: Python (PyTorch, PyTorch Geometric, DGL), R (Bioconductor, Seurat)
-- **AI/ML**: Graph Neural Networks, Large Language Models, Knowledge Graph Embeddings
-- **Bioinformatics**: Multi-omics analysis, RNA-seq, single-cell genomics
-- **Databases**: Neo4j, ArangoDB, biological data repositories (EMBL, NCBI)
+The finding is a careful one, and it is the point of the work: the quantitative
+signal dominates, and formal semantics contributes selectively, trading marginal
+accuracy for robustness under feature scarcity, stability across data splits and
+mechanistic interpretability, which are the properties that matter when complete
+omic panels are unavailable, as they usually are in the clinic.
 
----
+## Research interests
 
-**Links & Profiles**
-- LinkTree: [Click Me!](https://linktr.ee/johndef64)
-- ORCID: [0009-0002-8395-0724](https://orcid.org/0009-0002-8395-0724)
+- **Multi-omics integration** with ontology-grounded knowledge graphs
+- **Heterogeneous and multi-relational graph neural networks** for classification
+  and link prediction
+- **Knowledge graph embedding** for drug repurposing, including across species
+- **Interpretable and calibrated models** for clinical decision support
+- **LLMs and retrieval** over biomedical literature and structured knowledge
+- **Nutrigenetics** and genotype-informed personalised nutrition
 
-
-<!--  
-
-## Publications
-
-[1] G. M. De Filippis, M. Monticelli, A. Pollice, T. Angrisano, B. H. Mele, e V. Calabrò, «Computational Strategies in Nutrigenetics: Constructing a Reference Dataset of Nutrition-Associated Genetic Polymorphisms», medRxiv, 2023, doi: 10.1101/2023.08.04.23293659.
-
-[2] G. M. De Filippis, A. M. Rinaldi, C. Russo, e C. Tommasino, «Enhanced Semantic Understanding with Graph-Based Information Retrieval», presentato al Communications in Computer and Information Science, 2025, pp. 11–24. doi: 10.1007/978-3-031-71382-8_2.
-
-[3] G. M. De Filippis, A. M. Rinaldi, C. Russo, e C. Tommasino, «Advanced Topic Modeling in Genomics: Towards Personalized Dietary Recommendations Through BERTopic Analysis», presentato al Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), 2025, pp. 3–17. doi: 10.1007/978-3-031-78093-6_1.
-
-[4] D. Benfenati, G. M. De Filippis, A. M. Rinaldi, C. Russo, e C. Tommasino, «A Retrieval-augmented Generation application for Question-Answering in Nutrigenetics Domain», presentato al Procedia Computer Science, 2024, pp. 586–595. doi: 10.1016/j.procs.2024.09.467.
-
--->
-
-<!--
-## Typography
-
-This is a [link](http://google.com). Something *italics* and something **bold**.
-
-Here is a table
-
-Year | Award | Category
------|-------|--------
-2014 | Emmy  | Won Outstanding Lead Actor in a miniseries or a movie
-2015 | BAFTA | Nominated for Best Leading Actor for Sherlock
-2014 | Satellite | Won Best Actor miniseries or television film
-
-Here is a horizontal rule
--->
+A fuller account is on the [research]({{ '/research' | relative_url }}) page, and
+the record of published work on the [publications]({{ '/publications' | relative_url }}) page.
 
 ---
 
-<!--  Here is a blockquote -->
-
-> “A path is made by walking on it.”
+> "A path is made by walking on it."
 > ― Chuang Tzu
-
-<!--  
-## References
-
-* Foo Bar: Head of Department, Placeholder Names, Lorem
-* John Doe: Associate Professor, Department of Computer Science, Ipsum
--->

@@ -1,0 +1,20 @@
+# Server di sviluppo locale: docker compose up  ->  http://localhost:4000
+services:
+  jekyll:
+    image: ruby:3.3
+    working_dir: /srv/jekyll
+    command: >
+      bash -c "bundle install &&
+      bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling
+      --config _config.yml,_config.dev.yml"
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    volumes:
+      - .:/srv/jekyll
+      - bundle:/usr/local/bundle
+    environment:
+      - JEKYLL_ENV=development
+
+volumes:
+  bundle:

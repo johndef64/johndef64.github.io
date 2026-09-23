@@ -1,325 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=devi    <div class="report-section">
-    <h2 style="margin-top: 0;">Education</h2>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">March 2025 - June 2025</h4>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giovanni Maria De Filippis — Curriculum Vitae</title>
+<meta name="description" content="Academic curriculum vitae of Giovanni Maria De Filippis, PhD candidate in Computational and Quantitative Biology, University of Naples Federico II.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15202b;
+  --ink-soft:#4a5766;
+  --ink-faint:#78859a;
+  --rule:#dfe4ea;
+  --rule-soft:#eef1f4;
+  --accent:#1d4e79;
+  --accent-soft:#eaf0f6;
+  --bg:#ffffff;
+  --bg-soft:#f8f9fb;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --measure:56rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#e7ecf2; --ink-soft:#b3bfcd; --ink-faint:#8896a8;
+    --rule:#2b3542; --rule-soft:#222b36;
+    --accent:#8ab6de; --accent-soft:#1a2430;
+    --bg:#11161c; --bg-soft:#161c24;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:15px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.page{max-width:var(--measure); margin:0 auto; padding:56px 24px 96px}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent}
+a:hover{border-bottom-color:currentColor}
 
-    <p><strong>Visiting Researcher</strong></p>
+/* ---------- masthead ---------- */
+.masthead{display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap}
+.portrait{
+  width:118px; height:150px; object-fit:cover; border-radius:4px;
+  border:1px solid var(--rule); flex:0 0 auto;
+}
+.identity{flex:1 1 20rem; min-width:16rem}
+h1{
+  font-family:var(--serif); font-size:2.3rem; line-height:1.15;
+  margin:0 0 6px; letter-spacing:-.015em; font-weight:600;
+}
+.role{font-size:1rem; color:var(--ink-soft); margin:0 0 4px; font-weight:500}
+.affil{font-size:.9rem; color:var(--ink-faint); margin:0 0 16px}
+.links{
+  display:flex; flex-wrap:wrap; gap:6px 18px;
+  font-size:.86rem; color:var(--ink-soft); margin:0; padding:0; list-style:none;
+}
+.links b{color:var(--ink-faint); font-weight:600; margin-right:5px}
 
-    <p style="margin-left:40px">University of Cambridge, United Kingdom</p>
+/* ---------- sections ---------- */
+section{margin-top:44px}
+h2{
+  font-family:var(--sans); font-size:.76rem; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
+  margin:0 0 4px; padding-bottom:9px; border-bottom:1.5px solid var(--rule);
+}
+h3{
+  font-family:var(--serif); font-size:1.02rem; font-weight:600;
+  margin:26px 0 8px; color:var(--ink);
+}
+h3:first-of-type{margin-top:20px}
+p{margin:0 0 12px}
+.lede{font-family:var(--serif); font-size:1.06rem; line-height:1.62; color:var(--ink-soft); margin-top:22px}
 
-    <p style="margin-left:40px; font-size: smaller">Research focus: Advanced bioinformatics and computational biology applications in nutrigenomics</p>
-    </div>  
-    <br>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">June 2032 - July 2023</h4>
+/* ---------- entries ---------- */
+.entry{display:grid; grid-template-columns:8.5rem 1fr; gap:4px 22px; padding:15px 0; border-bottom:1px solid var(--rule-soft)}
+.entry:last-child{border-bottom:0}
+.when{font-size:.82rem; color:var(--ink-faint); font-variant-numeric:tabular-nums; padding-top:2px}
+.what{min-width:0}
+.what .title{font-weight:600; display:block; margin-bottom:2px}
+.what .where{color:var(--ink-soft); font-size:.92rem}
+.what .detail{color:var(--ink-faint); font-size:.87rem; margin-top:5px}
+.what ul{margin:7px 0 0; padding-left:1.05rem; color:var(--ink-soft); font-size:.9rem}
+.what li{margin-bottom:3px}
 
-    <p><strong>Scholarship</strong></p>
+/* ---------- publications ---------- */
+ol.pubs{margin:0; padding-left:1.6rem}
+ol.pubs li{margin-bottom:13px; padding-left:3px}
+ol.pubs .venue{font-style:italic}
+.me{font-weight:600}
+.tag{
+  display:inline-block; font-size:.68rem; font-weight:600; letter-spacing:.07em;
+  text-transform:uppercase; padding:1px 7px; border-radius:3px;
+  background:var(--accent-soft); color:var(--accent); vertical-align:1px; margin-left:4px;
+  white-space:nowrap;
+}
+.doi{font-size:.84rem; color:var(--ink-faint); display:block; margin-top:2px}
+.doi a{color:var(--ink-faint)}
 
-    <p style="margin-left:40px">&quot;Identification of risk alleles for obesity predisposition using bioinformatics tools&quot;</p>
+/* ---------- misc blocks ---------- */
+ul.plain{margin:14px 0 0; padding-left:1.05rem}
+ul.plain li{margin-bottom:7px}
+.grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:4px 34px; margin-top:16px}
+.skill{padding:9px 0; border-bottom:1px solid var(--rule-soft)}
+.skill b{display:block; font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:3px}
+.skill span{font-size:.92rem; color:var(--ink-soft)}
+.metrics{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; padding:0; list-style:none}
+.metrics li{
+  flex:1 1 7.5rem; background:var(--bg-soft); border:1px solid var(--rule-soft);
+  border-radius:5px; padding:11px 13px;
+}
+.metrics .n{display:block; font-family:var(--serif); font-size:1.5rem; font-weight:600; line-height:1.1}
+.metrics .l{font-size:.75rem; color:var(--ink-faint); letter-spacing:.04em}
+footer{margin-top:52px; padding-top:16px; border-top:1px solid var(--rule); font-size:.8rem; color:var(--ink-faint)}
 
-    <p style="margin-left:40px; font-size: smaller">University of Naples Federico II</p>
-
-    <p style="margin-left:40px; font-size: smaller">Supervisor: Prof. Viola Calabrò</p>
-    </div>tial-scale=1.0">
-    <title>Curriculum Vitae</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: white;
-        }
-        h1 {
-            text-transform: uppercase;
-            color: #2C3E50;
-            border-bottom: 2px solid #3498DB;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        h2,h3,h4,h5 {
-            color: #2C3E50;
-        }
-        p, li {
-            color: #34495E;
-            line-height: 1.6;
-        }
-        .section {
-            padding: 20px;
-            background-color: #ffffff;
-            border: 1px solid #dddddd;
-            margin-bottom: 20px;
-            border-radius: 3px;
-            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-        }
-        .section-title {
-            text-transform: uppercase;
-            border-bottom: 2px solid #3498DB;
-            padding-bottom: 10px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-
-
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: left;
-        }
-        .section-title {
-            margin-top: 0;
-        }
-        .report-section {
-            background-color: #E0FFFF;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-    </style>
+@media (max-width:640px){
+  .page{padding:32px 18px 64px}
+  h1{font-size:1.85rem}
+  .entry{grid-template-columns:1fr; gap:2px}
+  .when{padding-top:0; font-weight:500}
+  .portrait{width:92px; height:118px}
+}
+@media print{
+  :root{--ink:#000; --ink-soft:#333; --ink-faint:#555; --rule:#bbb; --rule-soft:#ddd;
+        --accent:#000; --accent-soft:#eee; --bg:#fff; --bg-soft:#fff}
+  body{font-size:10.5pt}
+  .page{max-width:none; padding:0}
+  section{margin-top:22px; break-inside:avoid}
+  h2{break-after:avoid}
+  .entry, ol.pubs li{break-inside:avoid}
+  a{color:#000; border:0}
+  .metrics{display:none}
+}
+</style>
 </head>
+<body>
+<main class="page">
 
-<h1>Giovanni Maria De Filippis&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h1>
+<header class="masthead">
+  <img class="portrait" alt="Giovanni Maria De Filippis"
+       src="https://raw.githubusercontent.com/johndef64/johndef64.github.io/main/curriculum/media/photo_2023-09-30_18-06-02_N_c.jpg">
+  <div class="identity">
+    <h1>Giovanni Maria De Filippis</h1>
+    <p class="role">PhD Candidate in Computational and Quantitative Biology</p>
+    <p class="affil">Department of Electrical Engineering and Information Technology (DIETI) &middot;
+       University of Naples Federico II, Italy</p>
+    <ul class="links">
+      <li><b>Email</b><a href="mailto:giovannimaria.defilippis@unina.it">giovannimaria.defilippis@unina.it</a></li>
+      <li><b>ORCID</b><a href="https://orcid.org/0009-0002-8395-0724">0009-0002-8395-0724</a></li>
+      <li><b>Scholar</b><a href="https://scholar.google.com/citations?user=VMk1EUQAAAAJ">VMk1EUQAAAAJ</a></li>
+      <li><b>GitHub</b><a href="https://github.com/johndef64">johndef64</a></li>
+      <li><b>Web</b><a href="https://johndef64.github.io/">johndef64.github.io</a></li>
+    </ul>
+  </div>
+</header>
 
-<h2>Biologist / Data Scientist<img alt="" src="https://raw.githubusercontent.com/johndef64/johndef64.github.io/main/curriculum/media/photo_2023-09-30_18-06-02_N_c.jpg" style="float:left; height:220px;margin-top:10px;margin-bottom:10px; margin-left:30px; margin-right:30px; width:170px" /></h2>
+<p class="lede">
+  Biologist turned computational scientist, working where biomedical knowledge
+  representation meets deep learning on graphs. My doctoral research asks how much
+  biological semantics is worth formalising in a data representation, and what that
+  formalisation actually buys a learning system: I build ontology-grounded knowledge
+  graphs that carry per-sample multi-omic measurements, and heterogeneous graph neural
+  networks that learn over them for cancer subtype classification and drug&ndash;target
+  discovery.
+</p>
 
-<p>Biologist with training in molecular genetics, genomics and nutrition. Proficient in bioinformatics applied to the study of human genetic polymorphism. Experience in extraction, cataloging, and analysis of genomic and transcriptomic data in Python and R.</p>
-
-<p><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#303030">ORCID: </span></span></span></strong><a href="https://orcid.org/0009-0002-8395-0724" style="color:blue; text-decoration:underline">0009-0002-8395-0724</a></span></span></p>
-
-<p><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#303030">GitHub:</span></span></span></strong> <a href="https://github.com/johndef64" style="color:blue; text-decoration:underline">johndef64</a></span></span></p>
-
-<p><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#303030">Website:</span></span></span></strong> <a href="https://johndef64.github.io/" style="color:blue; text-decoration:underline">Link</a></span></span></p>
-
-<br >
-    <div class="report-section">
-        <h2 style="margin-top: 0;">Publications</h2>
-        <div style="background-color: white; border-radius: 10px; padding: 20px;">
-<ul>
-  <li>
-    <h4 style="margin-bottom: 5px;">Computational strategies in nutrigenetics: constructing a reference dataset of nutrition-associated genetic polymorphisms</h4>
-    <p style="margin: 0; font-size: smaller; color: #666;">G. M. De Filippis, M. Monticelli, A. Pollice, T. Angrisano, B. H. Mele, V. Calabrò</p>
-    <p style="margin: 0; font-size: smaller; font-style: italic;">Journal of Biomedical Informatics, 104845, 2025</p>
-  </li>
-  <li style="margin-top: 15px;">
-    <h4 style="margin-bottom: 5px;">A systematic mapping study of semantic technologies in multi-omics data integration</h4>
-    <p style="margin: 0; font-size: smaller; color: #666;">G. M. De Filippis, D. Amalfitano, C. Russo, C. Tommasino, A. M. Rinaldi</p>
-    <p style="margin: 0; font-size: smaller; font-style: italic;">Journal of Biomedical Informatics, 104809, 2025</p>
-  </li>
-  <li style="margin-top: 15px;">
-    <h4 style="margin-bottom: 5px;">A retrieval-augmented generation application for question-answering in nutrigenetics domain</h4>
-    <p style="margin: 0; font-size: smaller; color: #666;">D. Benfenati, G. M. De Filippis, A. M. Rinaldi, C. Russo, C. Tommasino</p>
-    <p style="margin: 0; font-size: smaller; font-style: italic;">Procedia Computer Science 246, pp. 586-595, 2024</p>
-  </li>
-  <li style="margin-top: 15px;">
-    <h4 style="margin-bottom: 5px;">Advanced topic modeling in genomics: Towards personalized dietary recommendations through bertopic analysis</h4>
-    <p style="margin: 0; font-size: smaller; color: #666;">G. M. De Filippis, A. M. Rinaldi, C. Russo, C. Tommasino</p>
-    <p style="margin: 0; font-size: smaller; font-style: italic;">International Conference on Information Integration and Web Intelligence, pp. 3-17, 2024</p>
-  </li>
-  <li style="margin-top: 15px;">
-    <h4 style="margin-bottom: 5px;">Enhanced semantic understanding with graph-based information retrieval</h4>
-    <p style="margin: 0; font-size: smaller; color: #666;">G. M. De Filippis, A. M. Rinaldi, C. Russo, C. Tommasino</p>
-    <p style="margin: 0; font-size: smaller; font-style: italic;">International Workshop on Graph-Based Approaches in Information Retrieval, pp. 11-24, 2024</p>
-  </li>
+<ul class="metrics">
+  <li><span class="n">15</span><span class="l">peer-reviewed papers</span></li>
+  <li><span class="n">8</span><span class="l">published</span></li>
+  <li><span class="n">4</span><span class="l">journal articles</span></li>
+  <li><span class="n">4</span><span class="l">software &amp; data releases</span></li>
+  <li><span class="n">4</span><span class="l">months abroad</span></li>
 </ul>
-        </div>
+
+<!-- ===================================================== EDUCATION -->
+<section>
+<h2>Education</h2>
+
+<div class="entry">
+  <div class="when">2023 &ndash; 2026</div>
+  <div class="what">
+    <span class="title">PhD in Computational and Quantitative Biology (cycle XXXIX)</span>
+    <span class="where">University of Naples Federico II &middot; DIETI</span>
+    <div class="detail">
+      Thesis: <em>From Trans-Omic Networks to Knowledge Graphs: Encoding and Exploiting
+      Biological Semantics for Multi-Omics Data Integration with Graph Neural Networks</em><br>
+      Supervisor: Prof. Antonio Maria Rinaldi &middot; Coordinator: Prof. Diego Di Bernardo<br>
+      146 credits earned (34.2 taught courses, 10.6 seminars, 99 research, 2.2 teaching support).
+      Doctor Europaeus certification requested.
     </div>
-    <div class="report-section">
-    <h2 style="margin-top: 0;">Education</h2>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">June 2032 - July 2023</h4>
-
-    <p><strong>Scholarship</strong></p>
-
-    <p style="margin-left:40px">&quot;Identification of risk alleles for obesity predisposition using bioinformatics tools&quot;</p>
-
-    <p style="margin-left:40px; font-size: smaller">University of Naples Federico II</p>
-
-    <p style="margin-left:40px; font-size: smaller">Supervisor: Prof. Viola Calabr&ograve;</p>
-    </div>  
-    <br>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">January 25, 2024</h4>
-
-    <p><strong>Master's Degree Level I</strong></p>
-
-    <p style="margin-left:40px">Teaching Mathematics and Sciences in Secondary School (Grade I)</p>
-
-    <p style="margin-left:40px">Università Telematica E-Campus</p>
-
-    <p style="margin-left:40px; font-size: smaller">Duration: 1500 hours (60 university credits)</p>
-    </div>  
-    <br>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">December 15, 2022</h4>
-
-    <p><strong>Professional Qualification</strong></p>
-
-    <p style="margin-left:40px">Ordine Nazione dei Biologi (ONB) </p>
-    </div>  
-    <br>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">October 2022 - April 2023</h4>
-
-    <p><strong>Scholarship</strong></p>
-
-    <p style="margin-left:40px">&quot;Experimentation of a Research and Business Idea Generation platform in the field of Nutrigenomics&quot;</p>
-
-    <p style="margin-left:40px;">University of Naples Federico II</p>
-
-    <p style="margin-left:40px; font-size: smaller">Aim: Development of a genomic-scale dataset of nutrition-associated polymorphisms for the development of predictive genetic tests in personalized nutrition</p>
-
-    <p style="margin-left:40px; font-size: smaller">Methods: Design and development of software, data mining, database management, data analysis</p>
-
-    <p style="margin-left:40px; font-size: smaller">Supervisor: Prof. Viola Calabr&ograve;</p>
-    </div>  
-    <br>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">September 2019 - July 2022</h4>
-
-    <p><strong>Master&#39;s Degree</strong></p>
-
-    <p style="margin-left:40px">Master&#39;s Degree in Biology LM-6, Nutrition Curriculum.</p>
-
-    <p style="margin-left:40px">University of Naples Federico II</p>
-        
-    <p style="margin-left:40px; font-size: smaller">Grade: 110/110 with honors</p>
-
-    <p style="margin-left:40px; font-size: smaller">Thesis Title: &quot;Bioinformatic analysis of nutrigenetic variants for personalized nutrition based on genotype&quot;</p>
-    </div>  
-    <br>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">March 2021 - October 2022</h4>
-
-    <p><strong>24 CFU Certification for teaching in secondary school</strong></p>
-
-    <p style="margin-left:40px">University of Naples Federico II</p>
-
-    <p style="margin-left:40px; font-size: smaller">Psycho-pedagogical skills</p>
-
-    </div>  
-    <br>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">October 2015 - 2019</h4>
-
-    <p><strong>Naturopathy Training</strong></p>
-
-    <p style="margin-left:40px">IESO Academy, Naples (course compliant with UNI-11491 standard)</p>
-
-    <p style="margin-left:40px; margin-bottom: 0;
-              font-size: smaller;">Key acquired skills:</p>
-
-    <ul style="padding-left:80px; margin-top: 0; font-size: smaller">
-        <li>Anatomy, Physiology, and Pathology</li>
-        <li>Phytotherapy and Herbal Medicine</li>
-        <li>Traditional Chinese Medicine</li>
-        <li>Psychological Counseling</li>
-    </ul>
-
-    </div>  
-    <br>
-    <div style="background-color: white; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">September 2008 - July 2014</h4>
-
-    <p><strong>Bachelor&#39;s Degree</strong></p>
-
-    <p style="margin-left:40px">General and Applied Biology, Biomolecular Curriculum</p>
-    
-    <p style="margin-left:40px">University of Naples Federico II</p>
-
-    <p style="margin-left:40px; font-size: smaller"> Grade: 110/110 with honors</p>
-        </div>
-    </div>
-    <div class="report-section">
-<div class="report-section">
-    <h2 style="margin-top: 0;">Professional Skills</h2>
-    <div style="background-color: #fcfbf7; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">Languages</h4>
-    <ul>
-        <li>Italian (Native)</li>
-        <li>English (Advanced)</li>
-        <li>Chinese (Basic)</li>
-    </ul>
-    </div>  
-    <br>
-<div style="background-color: #fcfbf7; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">Computer Skills</h4>
-    <ul>
-        <li>General:
-            <ul>
-                <li>MS Office, Spreadsheets (Excel), Presentations (Powerpoint), Graphics (Photoshop, Stable Diffusion)</li>
-            </ul>
-        </li>
-        <li style="margin-top: 6";>Advanced:
-           <ul>
-                <li>Python Programming</li>
-                <li>RStudio, Bioconductor</li>
-                <li>Jupyter Lab, Google Colab</li>
-                <li>Docker Containers</li>
-                <li>Markdown/LaTeX/HTML</li>
-                <li>SQL</li>
-            </ul>
-          </li>
-    </ul>
-</div>
-<br>
-<div style="background-color: #fcfbf7; border-radius: 10px; padding: 20px;">
-    <h4 style="margin-top: 0;">Areas of Expertise</h4>
-    <ul>
-        <li>Scientific literature scoping</li>
-           <ul>
-                <li>keyword and MeSH analysis</li>
-            </ul>
-        <li>Bioinformatics:
-             <ul>
-                <li>Genomics</li>
-                <li>Transcriptomics, RNASeq alignmet</li>
-                <li>Genetic polymorphism, Variant Calling</li>
-            </ul>
-        <li>Informatics:
-             <ul>
-                <li>Data mining, API Usage</li>
-                <li>Data manipulation and integration</li>
-                <li>Statistical Analysis</li>
-                <li>Colaborative Coding</li>
-                <li>Natural language processing</li>
-            </ul>
-        <li>Dietary plan development</li>
-    </ul>
-</div>
-        </div>
-    </div>
-    <div class="report-section">
-
-
-    <h3>ACADEMIC ACTIVITIES</h3>
-
-    <h4>2025 - Program Committee Member</h4>
-
-    <p>1st Workshop on Artificial Intelligence for Biomedical Data (AIBio) 2025</p>
-    <p style="margin-left:40px; font-size: smaller">Held in conjunction with the 28th European Conference on Artificial Intelligence (ECAI) 2025</p>
-    <p style="margin-left:40px; font-size: smaller">25-26 October 2025, Bologna, Italy</p>
-
-    <h3>NON ACADEMIC PROJECTS</h3>
-
-    <h3 style="margin-top: 0;">CERTIFICATES AND COURSES</h3>
-
-    <h4>2017 - Chen-style Taijiquan Instructor Degree (AICS)</h4>
-
-    <p>At Tuhe Association in Naples</p>
-
-    <h4>2018 - Teaching Taijiquan in schools</h4>
-
-    <p>G. Siani Elementary School (Mugnano), I.C. Aliotta Middle School, A. Belvedere Middle School, Pontano Institute (Naples)</p>
+  </div>
 </div>
 
+<div class="entry">
+  <div class="when">2019 &ndash; 2022</div>
+  <div class="what">
+    <span class="title">MSc in Biology (LM-6), Nutrition curriculum</span>
+    <span class="where">University of Naples Federico II &middot; 110/110 <em>cum laude</em></span>
+    <div class="detail">Thesis: bioinformatic analysis of nutrigenetic variants for genotype-based
+      personalised nutrition.</div>
+  </div>
+</div>
 
+<div class="entry">
+  <div class="when">2008 &ndash; 2014</div>
+  <div class="what">
+    <span class="title">BSc in General and Applied Biology, Biomolecular curriculum</span>
+    <span class="where">University of Naples Federico II &middot; 110/110 <em>cum laude</em></span>
+  </div>
+</div>
 
+<div class="entry">
+  <div class="when">Jan 2024</div>
+  <div class="what">
+    <span class="title">First-level Master's degree in Teaching Mathematics and Sciences in Secondary School</span>
+    <span class="where">Universit&agrave; Telematica E-Campus &middot; 1500 hours, 60 credits</span>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="when">Dec 2022</div>
+  <div class="what">
+    <span class="title">Professional qualification as Biologist</span>
+    <span class="where">Ordine Nazionale dei Biologi (ONB)</span>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="when">2021 &ndash; 2022</div>
+  <div class="what">
+    <span class="title">24-credit certification for secondary-school teaching</span>
+    <span class="where">University of Naples Federico II &middot; psycho-pedagogical competences</span>
+  </div>
+</div>
+</section>
+
+<!-- ============================================ RESEARCH EXPERIENCE -->
+<section>
+<h2>Research Experience</h2>
+
+<div class="entry">
+  <div class="when">Mar &ndash; Jun 2025</div>
+  <div class="what">
+    <span class="title">Visiting Researcher</span>
+    <span class="where">Computer Laboratory, University of Cambridge, United Kingdom &middot;
+      research unit of Prof. Pietro Li&ograve;</span>
+    <ul>
+      <li>Biomedical knowledge-graph embeddings and graph-based retrieval.</li>
+      <li>Graph neural networks (GCN, GAT) for node classification and link prediction,
+          benchmarked on Cora, Cornell and Chameleon.</li>
+      <li>Prior-knowledge integration in multi-omics GNNs (MOGONET, MOGAT, MoGCN, MPK-GNN).</li>
+      <li>Cross-species knowledge-graph construction and link prediction (GCN, CompGCN) for
+          drug repurposing: the foundation of PathogenKG.</li>
+      <li>GraphRAG: LLM-driven knowledge-graph construction and retrieval augmentation.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="when">2023</div>
+  <div class="what">
+    <span class="title">Research Fellow</span>
+    <span class="where">University of Naples Federico II &middot; supervisor Prof. Viola Calabr&ograve;</span>
+    <div class="detail">&ldquo;Identification of risk alleles for obesity predisposition using
+      bioinformatics tools.&rdquo;</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="when">Oct 2022 &ndash; Apr 2023</div>
+  <div class="what">
+    <span class="title">Research Fellow</span>
+    <span class="where">University of Naples Federico II &middot; supervisor Prof. Viola Calabr&ograve;</span>
+    <div class="detail">&ldquo;Experimentation of a Research and Business Idea Generation platform
+      in Nutrigenomics.&rdquo; Genome-scale dataset of nutrition-associated polymorphisms for
+      predictive genetic testing in personalised nutrition: software design, data mining,
+      database management and analysis.</div>
+  </div>
+</div>
+
+<h3>Research lines</h3>
+<ul class="plain">
+  <li><b>KG-TransomicNet</b> &mdash; a property-graph substrate coupling a PheKnowLator-derived
+      ontological backbone (7.8&times;10<sup>5</sup> grounded entities, 1.1&times;10<sup>7</sup> typed
+      relations) to the multi-omic profiles of the TCGA/TARGET cohorts at native per-sample
+      precision, keeping entities and measurements jointly queryable in one multimodal database.</li>
+  <li><b>PathogenKG</b> &mdash; heterogeneous knowledge-graph embedding for cross-species
+      antimicrobial drug repurposing: protein interaction networks of 31 bacterial pathogens,
+      orthology, functional annotation and validated drug&ndash;target edges in a single graph of
+      over 3 million triples, with a training pipeline designed for extreme class imbalance.</li>
+  <li><b>MOGNN-TF / MOKG-HGNN</b> &mdash; heterogeneous graph neural networks for pan-cancer
+      molecular subtype classification, at the molecular scale with transcription factors as
+      first-class nodes, and at multiple scales through pathway, Gene Ontology and disease nodes.</li>
+  <li><b>OmicsCouncil</b> &mdash; patient representation as the auditable trace of a multi-agent
+      deliberation rather than a dense latent vector, graded against a biomedical knowledge prior.</li>
+  <li><b>Semantic retrieval and LLM applications</b> &mdash; graph-based information retrieval,
+      topic modelling for genomics, retrieval-augmented generation and knowledge-graph-enhanced
+      RAG in the nutrigenetic and transcriptomic domains.</li>
+</ul>
+
+<h3>Research collaborations</h3>
+<ul class="plain">
+  <li>CNR-IEOS, Institute for Endocrinology and Experimental Oncology (Dr. Francesco Russo)
+      &mdash; LLM-assisted transcriptomic analysis, knowledge-graph-based bio-data integration.</li>
+  <li>Department of Biology, Federico II (Prof. Viola Calabr&ograve;, Dr. Bruno Hay Mele)
+      &mdash; nutrigenetics, polymorphism curation and missense-variant analysis.</li>
+  <li>Department of Molecular Medicine and Medical Biotechnology (DMMBM), Federico II
+      &mdash; multi-omics integration in ovarian carcinoma cell lines.</li>
+  <li>FAIR &mdash; Future Artificial Intelligence Research (Italian PNRR programme)
+      &mdash; ontology-based improvement of the semantic structure of biological datasets.</li>
+  <li>CINI-AIIS national laboratory, Federico II unit &mdash; AI for healthcare.</li>
+</ul>
+</section>
+
+<!-- ================================================== PUBLICATIONS -->
+<section>
+<h2>Publications</h2>
+
+<h3>Peer-reviewed journal articles</h3>
+<ol class="pubs">
+  <li><span class="me">G. M. De Filippis</span>, P. Sahu, P. Ambrosio, S. Picascia, M. Lo Monte,
+    I. Agliarulo, S. Di Paola, C. Russo, C. Tommasino, N. Normanno, D. Frezzetti,
+    S. Parashuraman, A. M. Rinaldi, F. Russo.
+    REDAC: RNA-seq expression data analysis chatbot.
+    <span class="venue">Bioinformatics Advances</span> 6(1):vbaf321, 2026.
+    <span class="doi"><a href="https://doi.org/10.1093/bioadv/vbaf321">10.1093/bioadv/vbaf321</a></span></li>
+
+  <li><span class="me">G. M. De Filippis</span>, M. Monticelli, B. Hay Mele, V. Calabr&ograve;.
+    Missense variants in nutrition-related genes: a computational study.
+    <span class="venue">International Journal of Molecular Sciences</span> 26(19):9619, 2025.
+    <span class="doi"><a href="https://doi.org/10.3390/ijms26199619">10.3390/ijms26199619</a></span></li>
+
+  <li><span class="me">G. M. De Filippis</span>, M. Monticelli, A. Pollice, T. Angrisano,
+    B. Hay Mele, V. Calabr&ograve;.
+    Computational strategies in nutrigenetics: constructing a reference dataset of
+    nutrition-associated genetic polymorphisms.
+    <span class="venue">Journal of Biomedical Informatics</span> 167:104845, 2025.
+    <span class="doi"><a href="https://doi.org/10.1016/j.jbi.2025.104845">10.1016/j.jbi.2025.104845</a></span></li>
+
+  <li><span class="me">G. M. De Filippis</span>, D. Amalfitano, C. Russo, C. Tommasino,
+    A. M. Rinaldi.
+    A systematic mapping study of semantic technologies in multi-omics data integration.
+    <span class="venue">Journal of Biomedical Informatics</span> 165:104809, 2025.
+    <span class="doi"><a href="https://doi.org/10.1016/j.jbi.2025.104809">10.1016/j.jbi.2025.104809</a></span></li>
+</ol>
+
+<h3>Peer-reviewed conference and workshop papers</h3>
+<ol class="pubs" start="5">
+  <li><span class="me">G. M. De Filippis</span>, D. Benfenati, G. De Carlo, A. M. Rinaldi.
+    Knowledge graph-enhanced retrieval-augmented generation for nutrigenetics.
+    <span class="venue">AIBio Workshop @ ECAI 2025</span>, Bologna, Italy.
+    CCIS, pp. 91&ndash;104, Springer, 2026.
+    <span class="doi"><a href="https://doi.org/10.1007/978-3-032-17216-7_8">10.1007/978-3-032-17216-7_8</a></span></li>
+
+  <li><span class="me">G. M. De Filippis</span>, A. M. Rinaldi, C. Russo, C. Tommasino.
+    Advanced topic modeling in genomics: towards personalized dietary recommendations through
+    BERTopic analysis.
+    <span class="venue">iiWAS 2024</span>, Bratislava, Slovakia. LNCS, pp. 3&ndash;17, Springer, 2024.
+    <span class="doi"><a href="https://doi.org/10.1007/978-3-031-78093-6_1">10.1007/978-3-031-78093-6_1</a></span></li>
+
+  <li>D. Benfenati, <span class="me">G. M. De Filippis</span>, A. M. Rinaldi, C. Russo,
+    C. Tommasino.
+    A retrieval-augmented generation application for question-answering in nutrigenetics domain.
+    <span class="venue">KES 2024</span>, Seville, Spain.
+    Procedia Computer Science 246:586&ndash;595, 2024.
+    <span class="doi"><a href="https://doi.org/10.1016/j.procs.2024.09.467">10.1016/j.procs.2024.09.467</a></span></li>
+
+  <li><span class="me">G. M. De Filippis</span>, A. M. Rinaldi, C. Russo, C. Tommasino.
+    Enhanced semantic understanding with graph-based information retrieval.
+    <span class="venue">IRonGraphs Workshop @ ECIR 2024</span>, Glasgow, United Kingdom.
+    CCIS, pp. 11&ndash;24, Springer, 2024.
+    <span class="doi"><a href="https://doi.org/10.1007/978-3-031-71382-8_2">10.1007/978-3-031-71382-8_2</a></span></li>
+</ol>
+
+<h3>In press and accepted</h3>
+<ol class="pubs" start="9">
+  <li><span class="me">G. M. De Filippis</span>, A. M. Rinaldi, C. Tommasino.
+    PathogenKG: cross-species drug repurposing via heterogeneous knowledge graph link prediction.
+    <span class="venue">ECML PKDD 2026, Applied Data Science Track</span>, Naples, Italy,
+    7&ndash;11 September 2026. LNCS, Springer.
+    <span class="tag">In press</span> <span class="tag">CORE A</span></li>
+
+  <li><span class="me">G. M. De Filippis</span>, A. M. Rinaldi, C. Tommasino.
+    Deliberation as representation: knowledge-grounded multi-agent embeddings for multi-omic
+    breast-cancer subtyping.
+    <span class="venue">REHMED Workshop @ ECML PKDD 2026</span>, Naples, Italy. Springer.
+    <span class="tag">In press</span></li>
+
+  <li>D. Benfenati, <span class="me">G. M. De Filippis</span>, A. M. Rinaldi, C. Russo,
+    C. Tommasino.
+    Task-oriented semantic communication for digital pathology over wireless channels.
+    <span class="venue">AIMEH Workshop @ IEEE WiMob 2026</span>, Avignon, France,
+    14&ndash;16 October 2026. <span class="tag">Accepted</span></li>
+
+  <li>Retrieval errors respect the diagnostic scale: an audit of multimodal retrieval for
+    breast lesions.
+    <span class="venue">Clinical-MIRF Workshop @ CIKM 2026</span>, Rome, Italy,
+    November 2026. <span class="tag">Accepted</span></li>
+</ol>
+
+<h3>Under review</h3>
+<ol class="pubs" start="13">
+  <li><span class="me">G. M. De Filippis</span>, A. M. Rinaldi.
+    Modeling omics with semantics for dynamic construction of knowledge-based trans-omic networks.
+    <span class="venue">Computer Methods and Programs in Biomedicine</span>, Elsevier.</li>
+
+  <li><span class="me">G. M. De Filippis</span>, A. M. Rinaldi, C. Tommasino.
+    MOGNN-TF: transcription-factor-aware heterogeneous graph neural networks for pan-cancer
+    molecular subtype classification.
+    <span class="venue">IEEE Journal of Biomedical and Health Informatics</span>.</li>
+
+  <li><span class="me">G. M. De Filippis</span>, A. M. Rinaldi, C. Tommasino.
+    MOKG-HGNN: a multi-scale heterogeneous graph neural network integrating a biomedical
+    knowledge graph for pan-cancer subtype classification.
+    <span class="venue">IEEE Journal of Biomedical and Health Informatics</span>, Special Issue.</li>
+</ol>
+
+<h3>Software, datasets and posters</h3>
+<ul class="plain">
+  <li><b>KG-TransomicNet</b> &mdash; semantic&ndash;quantitative property graph of PheKnowLator and
+    multi-omics. Zenodo v1.0.0, 2026.
+    <a href="https://doi.org/10.5281/zenodo.21629419">10.5281/zenodo.21629419</a></li>
+  <li><b>MOKG-HGNN</b> &mdash; code and supplementary material. Zenodo v1.0.0, 2026.
+    <a href="https://doi.org/10.5281/zenodo.22047821">10.5281/zenodo.22047821</a></li>
+  <li><b>MOGNN-TF</b> &mdash; code and supplementary material. Zenodo v1.1.0, 2026.
+    <a href="https://doi.org/10.5281/zenodo.21475911">10.5281/zenodo.21475911</a></li>
+  <li><b>Nutrigenetics reference dataset</b> &mdash; nutrition-associated genetic polymorphisms.
+    Zenodo, 2024. <a href="https://zenodo.org/records/14052302">zenodo.org/records/14052302</a></li>
+  <li><b>Poster</b> &mdash; Data-driven nutrigenetics: crafting and mining a curated repository of
+    nutritional genomic polymorphisms. BBCC 2023, Naples, 4&ndash;7 December 2023.</li>
+</ul>
+</section>
+
+<!-- ======================================================== TALKS -->
+<section>
+<h2>Talks and Presentations</h2>
+
+<div class="entry">
+  <div class="when">Sep 2026</div>
+  <div class="what">
+    <span class="title">ECML PKDD 2026 &mdash; Applied Data Science Track, and REHMED Workshop</span>
+    <span class="where">Naples, Italy &middot; speaker at both, and member of the volunteer
+      organising staff</span>
+  </div>
+</div>
+<div class="entry">
+  <div class="when">Oct 2025</div>
+  <div class="what">
+    <span class="title">AIBio Workshop @ ECAI 2025</span>
+    <span class="where">Bologna, Italy &middot; speaker</span>
+  </div>
+</div>
+<div class="entry">
+  <div class="when">Oct 2025</div>
+  <div class="what">
+    <span class="title">CQB PhD Day</span>
+    <span class="where">University of Naples Federico II &middot; speaker</span>
+  </div>
+</div>
+<div class="entry">
+  <div class="when">Dec 2024</div>
+  <div class="what">
+    <span class="title">iiWAS 2024</span>
+    <span class="where">Bratislava, Slovakia &middot; speaker</span>
+  </div>
+</div>
+<div class="entry">
+  <div class="when">Oct 2024</div>
+  <div class="what">
+    <span class="title">CQB Scientific Day 2024</span>
+    <span class="where">University of Naples Federico II &middot; poster</span>
+  </div>
+</div>
+<div class="entry">
+  <div class="when">Dec 2023</div>
+  <div class="what">
+    <span class="title">Bioinformatics and Computational Biology Conference (BBCC 2023)</span>
+    <span class="where">Naples, Italy &middot; poster</span>
+  </div>
+</div>
+</section>
+
+<!-- ============================================ TEACHING & SERVICE -->
+<section>
+<h2>Teaching and Supervision</h2>
+
+<div class="entry">
+  <div class="when">2025 &ndash; 2026</div>
+  <div class="what">
+    <span class="title">Invited lecturer and teaching assistant</span>
+    <span class="where">Information Retrieval and Natural Language Processing, MSc in Computer
+      Engineering &middot; University of Naples Federico II (Prof. A. M. Rinaldi, IKNOS-DIETI Lab)</span>
+    <ul>
+      <li>Invited seminars on <em>LLM-based topic modeling with BERTopic</em>
+          (April 2025 and May 2026).</li>
+      <li>Designed the student assignment <em>Biomedical Knowledge Graphs for Information
+          Retrieval in Precision Medicine</em> and graded its submissions for the exam.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="when">2024 &ndash; 2026</div>
+  <div class="what">
+    <span class="title">Thesis co-supervision</span>
+    <ul>
+      <li>Giuseppe La Terza, MSc thesis in Computer Engineering, graduated March 2026.</li>
+      <li>Francesco Floriano, BSc thesis, <em>Tecniche e Strumenti per l'Integrazione e la
+          Visualizzazione di Dati Biomedici nei Knowledge Graphs</em>, A.Y. 2023/2024.</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>Academic Service</h2>
+<div class="entry">
+  <div class="when">2026</div>
+  <div class="what">
+    <span class="title">Program Committee &mdash; REHMED Workshop @ ECML PKDD 2026</span>
+    <span class="where">Naples, Italy &middot; 3 reviews</span>
+  </div>
+</div>
+<div class="entry">
+  <div class="when">2025</div>
+  <div class="what">
+    <span class="title">Program Committee &mdash; 1st Workshop on Artificial Intelligence for
+      Biomedical Data (AIBio 2025) @ ECAI 2025</span>
+    <span class="where">Bologna, Italy, 25&ndash;26 October 2025 &middot; 9 reviews</span>
+  </div>
+</div>
+<div class="entry">
+  <div class="when">2024</div>
+  <div class="what">
+    <span class="title">Reviewer &mdash; Soft Computing</span>
+    <span class="where">Special issue <em>AI and Knowledge Graphs in Smart Industry and Health
+      Applications</em> &middot; 5 reviews</span>
+  </div>
+</div>
+</section>
+
+<!-- ======================================================= SKILLS -->
+<section>
+<h2>Skills</h2>
+<div class="grid2">
+  <div class="skill"><b>Machine learning on graphs</b>
+    <span>Heterogeneous and multi-relational GNNs (GCN, GAT, GraphSAGE, R-GCN, CompGCN);
+      knowledge-graph embedding; link prediction under extreme class imbalance.</span></div>
+  <div class="skill"><b>Knowledge representation</b>
+    <span>Biomedical ontologies, OWL-NETS and PheKnowLator, property graphs, SPARQL and graph
+      query languages, semantic data integration.</span></div>
+  <div class="skill"><b>Bioinformatics</b>
+    <span>Multi-omics integration (RNA-seq, copy number, microRNA, methylation, proteomics);
+      variant analysis and genetic polymorphism; pathway enrichment; TCGA/TARGET cohorts.</span></div>
+  <div class="skill"><b>Language models</b>
+    <span>Retrieval-augmented generation and GraphRAG, LLM agents, topic modelling with BERTopic,
+      MeSH- and PubMed-driven literature mining.</span></div>
+  <div class="skill"><b>Programming</b>
+    <span>Python (PyTorch, PyTorch Geometric, scikit-learn, pandas), R and Bioconductor, SQL,
+      Bash; Docker, Git, Jupyter, LaTeX.</span></div>
+  <div class="skill"><b>Experimental method</b>
+    <span>Repeated stratified cross-validation, Friedman and corrected Wilcoxon tests, ablation
+      design, calibration and interpretability analysis, reproducible releases with archived DOIs.</span></div>
+</div>
+
+<h3>Languages</h3>
+<p>Italian (native) &middot; English (advanced) &middot; Chinese (basic)</p>
+</section>
+
+<!-- ======================================================== OTHER -->
+<section>
+<h2>Other Qualifications</h2>
+<div class="entry">
+  <div class="when">2015 &ndash; 2019</div>
+  <div class="what">
+    <span class="title">Naturopathy training</span>
+    <span class="where">IESO Academy, Naples &middot; course compliant with the UNI-11491 standard</span>
+    <div class="detail">Anatomy, physiology and pathology; phytotherapy and herbal medicine;
+      traditional Chinese medicine; psychological counselling.</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="when">2017 &ndash; 2018</div>
+  <div class="what">
+    <span class="title">Chen-style Taijiquan instructor (AICS)</span>
+    <span class="where">Tuhe Association, Naples</span>
+    <div class="detail">Taught Taijiquan in Neapolitan schools: G. Siani primary school (Mugnano),
+      I.C. Aliotta and A. Belvedere middle schools, Pontano Institute.</div>
+  </div>
+</div>
+</section>
+
+<footer>
+  Last updated 23 September 2026. The complete record of doctoral activities, including all
+  47 seminars attended and every taught course, is kept in
+  <code>PhD_record_2023-2026.md</code> alongside this document.
+</footer>
+
+</main>
+</body>
+</html>

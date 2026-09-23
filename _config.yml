@@ -1,32 +1,68 @@
-title: Researcher
-#url: "https://johndef64.com"
+# ---------------------------------------------------------------- site
+title: "Giovanni Maria De Filippis"
+tagline: "Computational Biology Research"
+author: "Giovanni Maria De Filippis"
+description: >-
+  Computational biologist working on biomedical knowledge graphs and graph
+  neural networks for multi-omics data integration. PhD in Computational and
+  Quantitative Biology, University of Naples Federico II.
+
 url: "https://johndef64.github.io"
 baseurl: ""
+lang: en
 
-#url: "https://ankitsultana.com"
-#baseurl: "/researcher"
+profile_picture: "https://avatars.githubusercontent.com/u/116732521?v=4"
+og_image: "https://avatars.githubusercontent.com/u/116732521?v=4"
 
 markdown: kramdown
-#ins_logo: "./bits-logo.png"
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 tracking_id: #
 
-footer: yes
+# ---------------------------------------------------------------- footer
+footer: true
 footer_url: "https://github.com/johndef64"
 footer_text: "Giovanni M. De Filippis - Computational Biology Research"
 
+# ---------------------------------------------------------------- sass
 sass:
     style: compressed
     sass_dir: _sass
 
+# ---------------------------------------------------------------- nav
 nav:
  - name: "About"
-   link: "index" #"/researcher/"
-# - name: "Resume"
-#   link: "resume.pdf"
+   link: "/"
  - name: "Research"
    link: "research"
  - name: "Publications"
    link: "publications"
+ - name: "CV"
+   link: "cv"
  - name: "Contact"
    link: "contact"
+
+# ---------------------------------------------------------------- build
+# File di lavoro che non devono finire sul sito pubblico.
+exclude:
+  - index_.html
+  - misc-data.zip
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - docker-compose.yml
+  - run.bat
+  - serve.bat
+  - templates
+  - didattica
+  - "task-attività-svolte.md"
+  - curriculum/archive
+  - curriculum/PhD_record_2023-2026.md
+  - curriculum/curriculum-V0.3.docx
+  - curriculum/curriculum-V0.3.html
+  - .idea
+  - .vscode
+  - .ipynb_checkpoints
+  - curriculum/.ipynb_checkpoints

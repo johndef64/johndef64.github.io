@@ -1,166 +1,185 @@
 ---
 layout: default
 title: Research
+description: >-
+  Research lines on biomedical knowledge graphs, heterogeneous graph neural
+  networks, multi-omics integration, cross-species drug repurposing and
+  LLM-assisted retrieval.
 ---
 
-## Research Projects
+## Research
 
-### Current Research
+My work follows one axis: **how much biological semantics to formalise in a
+representation, and what that formalisation buys a learning system.** The lines
+below are the rungs of that ladder, from a reusable semantic substrate to the
+models that learn on it.
 
-#### Knowledge Graph-Based Multi-Omics Data Integration
-Design and implementation of a knowledge graph-based framework for integrating multi-omics data with prior biological knowledge into dynamic trans-omic networks. The approach separates biological entities and quantitative evidence into distinct node types, enabling provenance tracking, semantic versioning, and incremental updates, and couples this with a semantically-enhanced GNN engine for large-scale systems biology and precision medicine applications.
+## Research lines
 
-**Key Technologies**: Property Graph Databases (AQL), Knowledge Graphs, Graph Neural Networks, Multi-Omics Integration, GO/CHEBI/RO Ontologies
-**Status**: Framework design, implementation, and validation on TCGA cohorts
+### A semantic substrate for multi-omics
 
-#### Multi-Omics Integration with Prior Knowledge
-Implementation of GNN methods (MOGONET, MOGAT, MPK-GNN) that integrate biological prior knowledge into graph architectures to improve multi-omics analyses such as cancer subtype classification. Exploring multimodal integration on extended graph layers, including TF–target, protein–protein, and miRNA–target interaction networks.
+A property-graph infrastructure that couples an ontology-grounded backbone
+derived from PheKnowLator and OWL-NETS with per-cohort quantitative multi-omic
+collections, inside a single multimodal database. Entities and measurements stay
+jointly queryable: a vector-plus-index data model stores dense per-sample arrays
+separately from a position-to-feature mapping, so the document count stays linear
+in samples and cohorts and entity-to-measurement joins resolve inside one query.
 
-**Key Technologies**: Multi-modal Graph Learning, Prior Knowledge Integration, Omics Data Fusion
-**Status**: Methodology development and benchmarking
+The resulting graph holds over 780,000 ontologically grounded entities and 11
+million typed relations, coupled to the multi-omic profiles of the TCGA and
+TARGET cohorts across five layers at native precision, with at least 93% feature
+coverage on four of the five layers. Built once, rather than rebuilt per study.
 
-#### Graph Neural Networks for Biological Data Analysis
-Development and application of GNN architectures (GCN, GAT, CompGCN) for biological data analysis. Focus on node classification, link prediction, and graph-level tasks using standard benchmarks (Cora, Cornell, Chameleon) and biological datasets.
+*Technologies*: multimodal NoSQL property graphs (AQL), OWL-NETS, Gene Ontology,
+Reactome, CHEBI, RO. *Status*: under review.
 
-**Key Technologies**: PyTorch Geometric, Deep Graph Library (DGL), NetworkX, Graph Neural Networks
-**Status**: Ongoing research at Cambridge University
+### Cross-species drug repurposing — PathogenKG
 
-#### Cross-Species Knowledge Graph Construction
-Development of comprehensive knowledge graphs spanning multiple species for drug repurposing applications. Using GCN and CompGCN architectures for link prediction and drug-target interaction discovery.
+Antimicrobial resistance needs candidate targets across many species, and
+existing knowledge-graph repurposing systems are built around human disease
+biology. PathogenKG integrates protein interaction networks from 31 bacterial
+pathogens with orthology relationships, functional annotation and validated
+drug–target associations into one graph of over 3 million triples, so that
+evidence propagates between phylogenetically related organisms.
 
-**Key Technologies**: Knowledge Graph Embeddings, Cross-species Data Integration, Drug Repurposing Algorithms
-**Status**: In preparation for publication
+The hard part is imbalance: 302 known drug–target edges among millions of
+triples. The training pipeline combines focal loss, type-constrained negative
+sampling and targeted oversampling, validated on an external biomedical
+benchmark. Ranked predictions for nine case-study compounds were assessed by
+domain experts, who rated 22.2% of the top-20 biologically plausible.
 
-### Past Research
+*Technologies*: heterogeneous GNN encoders, CompGCN, knowledge-graph embedding,
+link prediction. *Status*: in press, ECML PKDD 2026 (Applied Data Science Track).
 
-#### GraphRAG for Biological Knowledge Augmentation
-Implementation of LLM-driven knowledge graph construction and retrieval-augmented generation systems for biological data. This project combines large language models with structured biological knowledge to enhance information retrieval and reasoning.
+### Molecular-scale subtype classification — MOGNN-TF
 
-**Key Technologies**: Large Language Models, Knowledge Graph Embeddings, RAG Architecture, Neo4j
-**Status**: Active development with applications to nutrigenetics and general biological datasets
+Most prior-knowledge GNNs restrict the prior to a single network type, usually
+protein interactions, and are evaluated on binary or few-class settings.
+MOGNN-TF integrates three complementary knowledge sources, protein interactions,
+post-transcriptional regulation and transcriptional regulation, into a single
+multi-relational graph where genes, microRNAs and **transcription factors** are
+first-class node types, and is evaluated on the full 27-class TCGA pan-cancer
+taxonomy.
 
-#### Single-Cell Transcriptomics Analysis
-Advanced computational methods for single-cell RNA sequencing data analysis using graph-based approaches. Integration with tools like Seurat and development of novel network-based methods.
+It reaches macro-F1 0.79, outperforming two graph-based baselines with
+significance confirmed by Friedman and corrected Wilcoxon tests across eleven
+seeds. A four-axis ablation shows the transcriptional layer can substitute the
+microRNA layer at no measurable cost, which makes subtype prediction possible
+from transcriptomic data alone.
 
-**Key Technologies**: scRNA-seq Analysis, Seurat, Graph-based Clustering, Cell Type Classification
-**Status**: Active research collaboration
+*Status*: under review, IEEE Journal of Biomedical and Health Informatics.
+*Code*: [Zenodo](https://doi.org/10.5281/zenodo.21475911).
 
-#### Nutrigenetics and Personalized Medicine
-Computational strategies for constructing reference datasets of nutrition-associated genetic polymorphisms. Application of graph-based methods for personalized dietary recommendations.
+### Multi-scale subtype classification — MOKG-HGNN
 
-### Research Areas
+The same biomedical knowledge graph that underlies the substrate, this time
+connecting the molecular layer upward to pathways, Gene Ontology terms and
+diseases as explicit node types, learned with typed message passing and a
+per-scale readout over three interchangeable heterogeneous backbones.
 
-#### � Graph Neural Networks
-- Graph Convolutional Networks (GCN)
-- Graph Attention Networks (GAT)
-- Composition-based Graph Convolutional Networks (CompGCN)
-- Node classification and link prediction
-- Graph-level representation learning
+It does not beat the molecular baseline on aggregate accuracy, and that is the
+interesting part: what the knowledge graph buys is measured directly. The model
+degrades less than half as fast under feature scarcity, the two accuracy curves
+crossing at 50–100 genes, below which the semantic scaffold wins outright, in
+precisely the clinically realistic regime. It is three times more stable across
+splits, and it recovers a distinct pathway signature for nearly every subtype,
+matching canonical drivers such as the androgen-receptor programme in prostate
+cancer and glutamate-receptor signalling in glioma.
 
-#### 🕸️ Knowledge Graphs
-- Biological knowledge graph construction
-- Knowledge graph embeddings (KGE)
-- Cross-species data integration
-- Semantic reasoning and inference
-- Graph validation and quality assessment
+*Status*: under review, IEEE J-BHI Special Issue.
+*Code*: [Zenodo](https://doi.org/10.5281/zenodo.22047821).
 
-#### 🔬 Computational Biology
-- Multi-omics data integration
-- Single-cell transcriptomics
-- Drug repurposing and discovery
-- Protein-protein interaction networks
-- Gene regulatory networks
+### Deliberation as representation — OmicsCouncil
 
-#### 🤖 AI for Biology
-- Large language models for biological text
-- Information retrieval from biological literature
-- Retrieval-augmented generation (RAG) systems
-- Natural language processing for biomedical data
-- Automated knowledge extraction
+Latent embeddings of multi-omic data score well on accuracy and poorly on
+calibration, auditability and resilience to missing inputs, the three properties
+that high-risk medical AI regulation treats as prerequisites. OmicsCouncil
+represents a patient by the **trace of a multi-agent deliberation** rather than
+by a dense latent vector: modality-specific agents emit typed evidence claims,
+cross-examine one another, and submit the survivors to a graph-mediated arbiter
+that grades each claim against a biomedical knowledge prior.
 
-#### 📊 Data Integration
-- Multi-modal biological data fusion
-- Prior knowledge incorporation
-- Semantic data harmonization
-- Cross-domain knowledge transfer
-- Interoperability frameworks
+On TCGA-BRCA the representation is interpretable by construction, attains the
+lowest expected calibration error of the four models tested, and gives up about
+one accuracy point for those properties. The paper also reports an honest
+negative result: swapping the statistical agent for an LLM agent degrades
+classification without improving the trustworthy metrics.
 
-### Tools and Technologies
+*Status*: in press, REHMED workshop @ ECML PKDD 2026.
 
-**Programming Languages**
-- Python (Primary: PyTorch, PyTorch Geometric, DGL)
-- R (Bioconductor, Seurat for single-cell analysis)
-- SQL (Graph databases, Neo4j, PostgreSQL)
+### LLMs, retrieval and knowledge graphs
 
-**Graph Learning Frameworks**
-- PyTorch Geometric
-- Deep Graph Library (DGL)
-- NetworkX
-- Graph-tool
-- Neo4j for knowledge graphs
+A parallel line on making biomedical knowledge reachable: graph-based
+information retrieval, BERTopic-driven topic modelling for genomics,
+retrieval-augmented generation and knowledge-graph-enhanced RAG in the
+nutrigenetic domain, and **REDAC**, a web application that runs RNA-seq
+differential expression analysis from natural-language queries and grounds its
+pathway interpretation in PubMed through a RAG module over two open LLMs.
 
-**AI/ML Frameworks**
-- PyTorch/TensorFlow
-- Transformers (Hugging Face)
-- LangChain for RAG systems
-- Weights & Biases for experiment tracking
-- Scikit-learn
+*Status*: published across iiWAS 2024, IRonGraphs @ ECIR 2024, KES 2024,
+AIBio @ ECAI 2025 and Bioinformatics Advances.
 
-**Bioinformatics Tools**
-- Seurat (single-cell RNA-seq)
-- Bioconductor packages
-- STRING database
-- UniProt/ChEMBL APIs
-- Biological ontologies (GO, KEGG)
+### Nutrigenetics
 
-**Data Management**
-- Neo4j (Graph databases)
-- MongoDB
-- ArangoDB
+Where I started. A genome-scale curated dataset of nutrition-associated genetic
+polymorphisms, built by MeSH-driven literature mining and cross-referenced with
+GWAS data, with a co-occurrence analysis of gene–diet interactions, followed by a
+computational study of missense variants in nutrition-related genes.
 
+*Status*: published in Journal of Biomedical Informatics and International
+Journal of Molecular Sciences. *Data*:
+[Zenodo](https://zenodo.org/records/14052302).
 
-<!-- ### Collaborations
+## Methods and tools
 
-I actively collaborate with researchers in:
-- Graph neural network research groups
-- Computational biology laboratories
-- AI for science communities
-- Bioinformatics centers
-- Drug discovery teams -->
+| Area | What I use |
+| --- | --- |
+| Graph learning | PyTorch Geometric, DGL, GCN, GAT, GraphSAGE, R-GCN, CompGCN, heterogeneous message passing |
+| Knowledge representation | PheKnowLator, OWL-NETS, Gene Ontology, Reactome, STRING, TFlink, RO, CHEBI |
+| Data | TCGA and TARGET pan-cancer cohorts, GWAS Catalog, dbSNP, MeSH and PubMed, BRACS |
+| Databases | Property and graph databases, multimodal NoSQL, SQL |
+| Language models | Transformers, retrieval-augmented generation, GraphRAG, LLM agents, BERTopic |
+| Evaluation | Repeated stratified cross-validation, Friedman and corrected Wilcoxon tests, ablation design, calibration and interpretability analysis |
+| Engineering | Python, R and Bioconductor, Docker, Git, reproducible releases with archived DOIs |
 
-### Recent Experience
+## Experience abroad
 
-**Visiting Researcher** - Department of Computer Science, University of Cambridge
-- Focus on Graph Neural Networks and Knowledge Graphs for bioinformatics
-- Development of GraphRAG systems for biological knowledge augmentation
-- Cross-species knowledge graph construction for drug repurposing
-- Information Retrieval methodologies on biological knowledge graphs
-- Single-cell transcriptomics analysis using Seurat and graph-based approaches
+**Visiting researcher**, Computer Laboratory, University of Cambridge, March to
+June 2025, in the research unit of Prof. Pietro Liò. Biomedical knowledge-graph
+embeddings and graph-based retrieval; graph neural networks benchmarked on Cora,
+Cornell and Chameleon; prior-knowledge integration in multi-omics GNNs
+(MOGONET, MOGAT, MoGCN, MPK-GNN); cross-species knowledge-graph construction and
+link prediction for drug repurposing, which became PathogenKG; and a GraphRAG
+framework for LLM-driven knowledge-graph construction.
 
-### Recent Projects and Contributions
+## Collaborations
 
-#### REDAC Chatbot for Transcriptomic Analysis
-Contribution to the development of a Large Language Model-powered chatbot for RNASeq expression data analysis, making transcriptomic analysis more accessible to researchers.
+- **CNR-IEOS**, Institute for Endocrinology and Experimental Oncology, with
+  Dr. Francesco Russo — LLM-assisted transcriptomic analysis and
+  knowledge-graph-based data integration.
+- **Department of Biology**, Federico II, with Prof. Viola Calabrò and
+  Dr. Bruno Hay Mele — nutrigenetics and variant analysis.
+- **DMMBM**, Department of Molecular Medicine and Medical Biotechnology,
+  Federico II — multi-omics integration in ovarian carcinoma cell lines.
+- **FAIR**, Future Artificial Intelligence Research (Italian PNRR programme) —
+  ontology-based improvement of biological dataset semantics.
+- **CINI-AIIS** national laboratory, Federico II unit — AI for healthcare.
 
-**Technologies**: LLMs, Transcriptomics, RNA-seq Analysis
-**Status**: Delivered and operational
+## Service
 
-#### GraphRAG 
-Development of Graph-based Retrieval-Augmented Generation systems applied to biological datasets, with potential for journal publication and scalability to larger datasets.
+Program committee member for the **REHMED** workshop at ECML PKDD 2026 and for
+the 1st **AIBio** workshop at ECAI 2025; reviewer for a *Soft Computing* special
+issue on AI and knowledge graphs in smart industry and health applications;
+volunteer organising staff at ECML PKDD 2026.
 
-**Technologies**: GraphRAG, LLMs, Knowledge Graph Construction
-**Status**: Presented at workshop, under development for journal submission
+## Supervision and teaching
 
-#### Cross-Species Drug Repurposing
-Implementation of knowledge graph construction spanning multiple species with Graph Convolutional Networks (GCN) and Composition-based GCN (CompGCN) for drug repurposing applications.
+Invited lecturer and teaching assistant for **Information Retrieval and Natural
+Language Processing** (MSc in Computer Engineering, Federico II), where I gave
+seminars on LLM-based topic modelling, designed the assignment *Biomedical
+Knowledge Graphs for Information Retrieval in Precision Medicine* and graded it
+for the exam. Co-supervisor of one MSc and one BSc thesis on knowledge graphs for
+biomedical data.
 
-**Technologies**: Cross-species KG, GCN, CompGCN, Link Prediction
-**Status**: In preparation for publication
-
-### Future Directions
-
-- Development of foundation models for biological graphs
-- Integration of multi-modal biological data with graph neural networks
-- Real-time knowledge graph updates from scientific literature
-- Large-scale biological network analysis and prediction
-- AI-powered drug discovery through graph-based methods
+If you are a student looking for a thesis or an internship on these topics, get
+in [touch]({{ '/contact' | relative_url }}).

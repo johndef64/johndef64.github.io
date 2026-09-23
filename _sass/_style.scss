@@ -1,6 +1,40 @@
 @import "vars";
 
 /*
+ * Runtime theme tokens.
+ * Defined as custom properties so the dark scheme only has to restate colours.
+ */
+
+:root {
+    --ink:        #1b1b1b;
+    --ink-soft:   #4c4c4c;
+    --ink-faint:  #777777;
+    --bg:         #ffffff;
+    --bg-soft:    #f6f6f4;
+    --rule:       rgba(0, 0, 0, .12);
+    --rule-soft:  rgba(0, 0, 0, .07);
+    --accent:     #{$accent};
+    --accent-bg:  rgba(255, 15, 0, .08);
+    --selection:  rgba(255, 15, 0, .18);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink:        #e6e6e3;
+        --ink-soft:   #b2b2ae;
+        --ink-faint:  #8a8a86;
+        --bg:         #14161a;
+        --bg-soft:    #1b1e23;
+        --rule:       rgba(255, 255, 255, .14);
+        --rule-soft:  rgba(255, 255, 255, .08);
+        --accent:     #ff7a6d;
+        --accent-bg:  rgba(255, 122, 109, .13);
+        --selection:  rgba(255, 122, 109, .22);
+    }
+}
+
+
+/*
  * Basic
  */
 
@@ -8,24 +42,55 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    -webkit-text-size-adjust: 100%;
 }
 body {
     margin: 0;
-    font-family: "Inconsolata";
-    height: 100%;
+    min-height: 100%;
+    font-family: "Inconsolata", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+::selection {
+    background: var(--selection);
 }
 a {
     text-decoration: none;
-    color: $accent;
+    color: var(--accent);
 }
 a:hover {
     text-decoration: underline;
 }
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
 hr {
     border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    height: 1px;
+    background: var(--rule);
+    margin: 22px 0;
+}
+img {
+    max-width: 100%;
+}
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    padding: 8px 14px;
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    z-index: 10;
+}
+.skip-link:focus {
+    left: 8px;
+    top: 8px;
 }
 
 /*
@@ -33,22 +98,43 @@ hr {
  */
 
 #author-name {
-    font-size: 30px;
-    color: #272727;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    color: var(--ink);
     display: inline-block;
 }
+#author-name:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
 .navbar {
-    padding: 50px 0 50px 0;
+    display: block;
+    padding: 46px 0 30px 0;
 }
 .navbar-ul {
     display: inline-block;
-    margin: 0;
-    padding: 5px 0 5px 0;
-    margin-left: 20px;
+    margin: 0 0 0 20px;
+    padding: 12px 0 5px 0;
+    color: var(--ink-faint);
 }
 .nav-list {
     list-style-type: none;
-    margin: 0 5px 0 10px;
+    margin: 0 4px 0 8px;
+}
+.nav-list a {
+    color: var(--ink-soft);
+}
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+    color: var(--accent);
+    text-decoration: none;
+}
+.nav-list a[aria-current="page"] {
+    border-bottom: 2px solid var(--accent);
+}
+nav[aria-label="Main"] {
+    display: inline;
 }
 .alignable {
     display: inline-block;
@@ -70,15 +156,26 @@ hr {
 }
 .wrapper {
     min-height: 100%;
+    padding-bottom: 40px;
+}
+.content {
+    padding-bottom: 10px;
+}
+.site-footer {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.site-footer a {
+    color: var(--ink-faint);
 }
 
 /* Institute Image */
 
 #ins-logo {
-	margin: auto;
-	display: block;
-	max-height: 100px;
-	text-align: center;
+    margin: auto;
+    display: block;
+    max-height: 100px;
+    text-align: center;
 }
 
 /* Mobile */
@@ -86,13 +183,13 @@ hr {
 @media (max-width: 800px) {
     .container {
         max-width: $med-width;
-        transition: 0.3s ease all;
+        transition: .3s ease all;
     }
 }
 
 @media (max-width: 650px) {
     .container {
-        max-width: 83%;
+        max-width: 86%;
     }
     .navbar-ul {
         margin-top: 5px;
@@ -100,31 +197,62 @@ hr {
 }
 
 @media (max-width: 500px) {
-	.navbar {
-		text-align: center;
-		padding: 50px 0px 0px 0px;
-	}
-	#author-name {
-		width: 100%;
-		float: none;
-	}
-	#navlist {
-		padding: 10px 0 10px 0;
-		margin: 0;
-		display: block;
-		float: none;
-		text-align: center;
-		width: 100%;
-	}
-	#navlist li.alignable {
-		display: inline-block;
-	}
-	#navlist li.pull-left {
-		float: none;
-	}
-	#navlist li.nav-list {
-		margin: 0;
-	}
+    body {
+        font-size: 16px;
+    }
+    .navbar {
+        text-align: center;
+        padding: 34px 0 0 0;
+    }
+    #author-name {
+        width: 100%;
+        float: none;
+        font-size: 23px;
+    }
+    nav[aria-label="Main"] {
+        display: block;
+    }
+    #navlist {
+        padding: 12px 0;
+        margin: 0;
+        display: block;
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    #navlist li.alignable {
+        display: inline-block;
+    }
+    #navlist li.pull-left {
+        float: none;
+    }
+    #navlist li.nav-list {
+        margin: 0 2px;
+    }
+}
+
+/* Print */
+
+@media print {
+    body {
+        font-size: 11pt;
+        color: #000;
+        background: #fff;
+    }
+    .navbar, .skip-link, .site-footer {
+        display: none;
+    }
+    .container {
+        max-width: none;
+    }
+    a {
+        color: #000;
+    }
+    .content a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #555;
+    }
 }
 
 @import "typography";

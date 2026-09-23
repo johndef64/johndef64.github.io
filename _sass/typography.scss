@@ -1,60 +1,165 @@
 @import "vars";
 
 .content {
+    h1, h2, h3, h4 {
+        line-height: 1.25;
+        color: var(--ink);
+    }
+    h2 {
+        font-size: 1.42em;
+        margin: 38px 0 10px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--rule);
+        letter-spacing: -.01em;
+    }
+    h2:first-child {
+        margin-top: 6px;
+    }
+    h3 {
+        font-size: 1.14em;
+        margin: 28px 0 8px;
+    }
+    h4 {
+        font-size: 1em;
+        margin: 20px 0 6px;
+        color: var(--ink-soft);
+    }
+    p {
+        margin: 0 0 14px;
+    }
+    strong {
+        color: var(--ink);
+    }
     a:hover {
         text-decoration: underline;
     }
+    hr {
+        margin: 30px 0;
+    }
+
+    /* lists ------------------------------------------------------- */
     ol {
         counter-reset: list;
+        padding: 0 0 0 30px;
     }
     ol > li {
         list-style-position: none;
         position: relative;
         list-style: none;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    ul > li {
-        margin: 5px 0 5px 0;
-    }
-    ul {
-        padding: 0 20px 0 20px;;
-    }
-    ol {
-        padding: 0 30px 0 30px;
+        margin: 5px 0;
     }
     ol > li:before {
         content: "[" counter(list, decimal) "] ";
         counter-increment: list;
         position: absolute;
         left: -30px;
+        color: var(--ink-faint);
     }
+    ul {
+        padding: 0 0 0 20px;
+    }
+    ul > li {
+        margin: 5px 0;
+    }
+    li > ul, li > ol {
+        margin: 4px 0;
+    }
+
     blockquote {
-        //border: 1px solid black;
-        border-left: 5px solid #333333;
-        margin: 20px 0 20px 0;
-        padding: 2px 8px 2px 8px;
+        border-left: 4px solid var(--rule);
+        margin: 22px 0;
+        padding: 2px 0 2px 14px;
         font-style: italic;
+        color: var(--ink-soft);
     }
+
+    code {
+        background: var(--bg-soft);
+        border: 1px solid var(--rule-soft);
+        border-radius: 3px;
+        padding: 1px 5px;
+        font-size: .92em;
+    }
+    pre {
+        background: var(--bg-soft);
+        border: 1px solid var(--rule-soft);
+        border-radius: 4px;
+        padding: 12px 14px;
+        overflow-x: auto;
+    }
+    pre code {
+        background: none;
+        border: 0;
+        padding: 0;
+    }
+
+    /* profile picture --------------------------------------------- */
     .profile-picture {
         height: $image-size;
         width: $image-size;
         position: relative;
-        margin: -10px 0 0 15px;
+        margin: -4px 0 10px 18px;
         float: right;
         border-radius: 50%;
+        border: 1px solid var(--rule);
         p & {
             padding: 0;
             margin: 0;
         }
-        @media (max-width: $small-width) {
-            img {
-                margin-top: -5px;
-            }
-        }
     }
-    img {
-        text-align: center;
-        width: 100%;
+
+    /* publication entries ----------------------------------------- */
+    .pub-venue {
+        font-style: italic;
+    }
+    .pub-meta {
+        display: block;
+        color: var(--ink-faint);
+        font-size: .88em;
+    }
+    .tag {
+        display: inline-block;
+        font-size: .72em;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        padding: 0 6px;
+        border: 1px solid var(--accent);
+        border-radius: 3px;
+        color: var(--accent);
+        background: var(--accent-bg);
+        white-space: nowrap;
+        vertical-align: 1px;
+    }
+
+    /* a two-column key/value strip used on the about page ---------- */
+    .facts {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        border-top: 1px solid var(--rule-soft);
+    }
+    .facts li {
+        margin: 0;
+        padding: 7px 0;
+        border-bottom: 1px solid var(--rule-soft);
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+    .facts b {
+        flex: 0 0 8.5rem;
+        color: var(--ink-faint);
+        font-weight: 400;
+    }
+
+    @media (max-width: $small-width) {
+        .profile-picture {
+            float: none;
+            display: block;
+            margin: 0 0 14px 0;
+        }
+        .facts b {
+            flex-basis: 100%;
+        }
     }
 }

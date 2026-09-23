@@ -1,0 +1,4 @@
+# Override per lo sviluppo locale:
+#   jekyll serve --config _config.yml,_config.dev.yml
+# Le esclusioni vivono ora in _config.yml, cosi' valgono anche in produzione.
+url: ""

@@ -1,94 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang | default: 'en' }}">
 <head>
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="blog, accent, {{ site.author }}, {{ site.title }}, jekyll">
-    <meta name="author" content="{{ site.author }}">
-    {% if page.url == "/404.html" %}
-        <meta http-equiv="refresh" content="5; url=/">
-    {% endif %}
-    {% if page.description %}
-        {% assign desc = page.description %}
+
+    {% if page.title %}
+        {% assign page_title = page.title | append: " · " | append: site.title %}
     {% else %}
-        {% assign desc = site.description %}
+        {% assign page_title = site.title %}
+        {% if site.tagline %}{% assign page_title = page_title | append: " · " | append: site.tagline %}{% endif %}
     {% endif %}
-    {% if page.url %}
-        {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% else %}
-        {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% endif %}
+    {% assign desc = page.description | default: site.description | strip_newlines | strip %}
+    {% assign canonical = page.url | replace: 'index.html', '' | absolute_url %}
+
+    <title>{{ page_title }}</title>
     <meta name="description" content="{{ desc }}">
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="/feed.xml" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-    {% if site.favicon %}
-        <link rel="icon" type="image/ico" href="{{ site.favicon_location }}">
-        <link rel="shortcut-icon" type="image/ico" href="{{ site.favicon_location }}">
+    <meta name="author" content="{{ site.author }}">
+    <link rel="canonical" href="{{ canonical }}">
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+
+    {% if page.url == "/404.html" %}
+        <meta http-equiv="refresh" content="5; url={{ '/' | absolute_url }}">
     {% endif %}
-    {% if site.twitter_username %}
-        <link rel="author" href="https://twitter.com/{{ site.twitter_username }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+    {% if site.favicon_location %}
+        <link rel="icon" href="{{ site.favicon_location }}">
     {% endif %}
-    <!-- Facebook Open Graph -->
-    <meta name="og:description" content="{{ desc }}">
-    <meta name="og:title" content="{{ site.title }}">
-    <meta name="og:url" content="{{ url }}">
-    <meta name="og:type" content="article">
-    {% if site.og_image %}
-        <meta name="og:image" content="{{ site.og_image }}">
-    {% endif %}
-    {% if site.facebook_id %}
-        <meta name="fb:admins" content="{{ site.facebook_id }}">
-    {% endif %}
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ desc }}">
+    <meta property="og:url" content="{{ canonical }}">
+    <meta property="og:type" content="profile">
+    {% if site.og_image %}<meta property="og:image" content="{{ site.og_image }}">{% endif %}
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:title" content="{{ page.title | default: site.title }}">
     <meta name="twitter:description" content="{{ desc }}">
-    <meta name="twitter:url" content="{{ url }}">
-    {% if site.twitter_image %}
-        <meta name="twitter:image" content="{{ site.twitter_image }}">
-    {% else %}
-        <meta name="twitter:image" content="{{ site.profile_picture }}">
-    {% endif %}
+    {% if site.og_image %}<meta name="twitter:image" content="{{ site.og_image }}">{% endif %}
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="wrapper">
-        <div class="navbar container">
+        <header class="navbar container">
             {% if site.ins_logo %}
-                <img id="ins-logo" src="{{ site.ins_logo }}" />
+                <img id="ins-logo" src="{{ site.ins_logo }}" alt="">
             {% endif %}
-            <a id="author-name" class="alignable pull-left" href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a>
-            <ul id="navlist" class="alignable pull-right navbar-ul">
-                {% for x in site.nav %}
-                    {% if x.name == "Resume" %}
-                        <li class="alignable pull-left nav-list"><a target="_blank" href="{{ x.link }}">{{ x.name }}</a>
-                    {% else %}
-                        <li class="alignable pull-left nav-list"><a href="{{ x.link }}">{{ x.name }}</a>
-                    {% endif %}
-                    {% if forloop.last == false %}
-                        /
-                    {% endif %}
-                        </li>
-                {% endfor %}
-            </ul>
-        </div>
+            <a id="author-name" class="alignable pull-left" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            <nav aria-label="Main">
+                <ul id="navlist" class="alignable pull-right navbar-ul">
+                    {% for x in site.nav %}
+                        {% assign is_current = false %}
+                        {% if page.title and page.title == x.name %}{% assign is_current = true %}{% endif %}
+                        {% if page.url == '/' and x.name == 'About' %}{% assign is_current = true %}{% endif %}
+                        {% if x.link contains '//' %}
+                            <li class="alignable pull-left nav-list"><a href="{{ x.link }}" target="_blank" rel="noopener">{{ x.name }}</a>
+                        {% else %}
+                            <li class="alignable pull-left nav-list"><a href="{{ x.link | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ x.name }}</a>
+                        {% endif %}
+                        {% if forloop.last == false %} / {% endif %}
+                            </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </header>
         <div style="clear:both"></div>
         <hr>
-        {% if page.is_contact == true %}
-            <div class="container content contact">
-        {% else %}
-            <div class="container content">
-        {% endif %}
-                {{ content }}
-                {% if site.footer == true %}
-                    <hr />
-                    <p style="text-align: center; margin-bottom: 10px">
-                    <a href="{{ site.footer_url }}" style="color: black"><small>{{ site.footer_text }}</small></a>
-                    </p>
-                {% endif %}
-            </div>
+        <main id="content" class="container content{% if page.is_contact == true %} contact{% endif %}">
+            {{ content }}
+            {% if site.footer == true %}
+                <hr>
+                <p class="site-footer">
+                    <a href="{{ site.footer_url }}"><small>{{ site.footer_text }}</small></a>
+                </p>
+            {% endif %}
+        </main>
     </div>
     {% if site.tracking_id %}
         <script>
@@ -101,5 +94,4 @@
         </script>
     {% endif %}
 </body>
-<footer>
-</footer>
+</html>

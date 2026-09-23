@@ -12,3 +12,14 @@
 /.ipynb_checkpoints/
 /.idea/
 wedding-website.zip
+# Jekyll build locale
+_site/
+.jekyll-cache/
+.sass-cache/
+.jekyll-metadata
+Gemfile.lock
+
+
+curriculum/archive*
+curriculum/.ipynb_checkpoints*
+didattica*
