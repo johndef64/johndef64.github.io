@@ -97,16 +97,26 @@ img {
  * Navbar
  */
 
+.brand {
+    line-height: 1.2;
+}
 #author-name {
+    display: block;
     font-size: 27px;
     font-weight: 700;
     letter-spacing: -.02em;
     color: var(--ink);
-    display: inline-block;
 }
 #author-name:hover {
     color: var(--accent);
     text-decoration: none;
+}
+#author-subtitle {
+    display: block;
+    margin-top: 3px;
+    font-size: 14px;
+    letter-spacing: .02em;
+    color: var(--ink-faint);
 }
 .navbar {
     display: block;
@@ -204,10 +214,15 @@ nav[aria-label="Main"] {
         text-align: center;
         padding: 34px 0 0 0;
     }
-    #author-name {
+    .brand {
         width: 100%;
         float: none;
+    }
+    #author-name {
         font-size: 23px;
+    }
+    #author-subtitle {
+        font-size: 13px;
     }
     nav[aria-label="Main"] {
         display: block;

@@ -9,7 +9,7 @@ description: >-
 
 ## Publications
 
-Eight published papers, two in press, two accepted and three under review.
+Eight published papers, two in press and two accepted.
 Full metadata on [ORCID](https://orcid.org/0009-0002-8395-0724),
 [Google Scholar](https://scholar.google.com/citations?user=VMk1EUQAAAAJ),
 [Scopus](https://www.scopus.com/authid/detail.uri?authorId=58613393100) and
@@ -45,6 +45,18 @@ Full metadata on [ORCID](https://orcid.org/0009-0002-8395-0724),
 
 12. Retrieval errors respect the diagnostic scale: an audit of multimodal retrieval for breast lesions. <span class="pub-venue">Clinical-MIRF Workshop @ CIKM 2026</span>, Rome, Italy, November 2026. <span class="pub-meta"><span class="tag">Accepted</span></span>
 
+{% comment %}
+-------------------------------------------------------------------------------
+Sezione "Under review" nascosta.
+
+Questo e' un commento Liquid: il testo qui dentro non viene nemmeno inviato al
+browser, quindi non e' leggibile nemmeno dal sorgente della pagina.
+
+Per rimettere la sezione online: cancella la riga di apertura del commento qui
+sopra e la riga di chiusura in fondo al blocco, poi riallinea la frase di
+conteggio all'inizio della pagina.
+-------------------------------------------------------------------------------
+
 ### Under review
 
 13. **G. M. De Filippis**, A. M. Rinaldi. Modeling omics with semantics for dynamic construction of knowledge-based trans-omic networks. <span class="pub-venue">Computer Methods and Programs in Biomedicine</span>, Elsevier.
@@ -52,6 +64,8 @@ Full metadata on [ORCID](https://orcid.org/0009-0002-8395-0724),
 14. **G. M. De Filippis**, A. M. Rinaldi, C. Tommasino. MOGNN-TF: transcription-factor-aware heterogeneous graph neural networks for pan-cancer molecular subtype classification. <span class="pub-venue">IEEE Journal of Biomedical and Health Informatics</span>.
 
 15. **G. M. De Filippis**, A. M. Rinaldi, C. Tommasino. MOKG-HGNN: a multi-scale heterogeneous graph neural network integrating a biomedical knowledge graph for pan-cancer subtype classification. <span class="pub-venue">IEEE Journal of Biomedical and Health Informatics</span>, Special Issue.
+
+{% endcomment %}
 
 ## Software and data
 

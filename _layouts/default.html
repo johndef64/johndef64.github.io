@@ -7,8 +7,7 @@
     {% if page.title %}
         {% assign page_title = page.title | append: " · " | append: site.title %}
     {% else %}
-        {% assign page_title = site.title %}
-        {% if site.tagline %}{% assign page_title = page_title | append: " · " | append: site.tagline %}{% endif %}
+        {% assign page_title = site.author | append: " · " | append: site.title %}
     {% endif %}
     {% assign desc = page.description | default: site.description | strip_newlines | strip %}
     {% assign canonical = page.url | replace: 'index.html', '' | absolute_url %}
@@ -34,7 +33,7 @@
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="{{ site.title }}">
-    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:title" content="{{ page.title | default: site.author }}">
     <meta property="og:description" content="{{ desc }}">
     <meta property="og:url" content="{{ canonical }}">
     <meta property="og:type" content="profile">
@@ -42,7 +41,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+    <meta name="twitter:title" content="{{ page.title | default: site.author }}">
     <meta name="twitter:description" content="{{ desc }}">
     {% if site.og_image %}<meta name="twitter:image" content="{{ site.og_image }}">{% endif %}
 </head>
@@ -53,7 +52,10 @@
             {% if site.ins_logo %}
                 <img id="ins-logo" src="{{ site.ins_logo }}" alt="">
             {% endif %}
-            <a id="author-name" class="alignable pull-left" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            <div class="brand alignable pull-left">
+                <a id="author-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                {% if site.subtitle %}<span id="author-subtitle">{{ site.subtitle }}</span>{% endif %}
+            </div>
             <nav aria-label="Main">
                 <ul id="navlist" class="alignable pull-right navbar-ul">
                     {% for x in site.nav %}

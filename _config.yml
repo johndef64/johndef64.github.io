@@ -1,5 +1,8 @@
 # ---------------------------------------------------------------- site
-title: "Giovanni Maria De Filippis"
+# Il titolo compare nella scheda del browser, come brand in navbar e in og:site_name.
+# Il sottotitolo e' la riga piccola sotto il brand.
+title: "Graphs of Life"
+subtitle: "Giovanni Maria De Filippis"
 tagline: "Computational Biology Research"
 author: "Giovanni Maria De Filippis"
 description: >-
