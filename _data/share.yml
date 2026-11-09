@@ -11,12 +11,3 @@
 #   date         AAAA-MM-GG (obbligatorio: la lista e' ordinata per data)
 #   tags         lista di etichette brevi
 #   listed       false = non compare nella pagina Share; raggiungibile solo da chi ha il link
-
-- file: pathjev-vs-pathojev.html
-  title: "PathJev vs PathoJev: comparison"
-  description: >-
-    Aligned numerical comparison of two decision-native pathology models, with
-    a summary scoreboard and notes for the CVPR 2027 submission.
-  date: 2026-11-09
-  tags: [review, internal]
-  listed: false

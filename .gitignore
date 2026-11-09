@@ -23,3 +23,5 @@ Gemfile.lock
 curriculum/archive*
 curriculum/.ipynb_checkpoints*
 didattica*
+# pagine condivise solo in locale
+share/pathjev-vs-pathojev.html
