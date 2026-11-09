@@ -11,7 +11,8 @@ description: >-
 Standalone pages: charts, comparisons and working notes. Each one opens directly
 in the browser, no login needed.
 
-{% assign items = site.data.share | where_exp: "x", "x.listed != false" | sort: "date" | reverse %}
+{% assign items = "" | split: "" %}
+{% if site.data.share %}{% assign items = site.data.share | where_exp: "x", "x.listed != false" | sort: "date" | reverse %}{% endif %}
 {% if items.size > 0 %}
 <ul class="share-list">
 {% for x in items %}
