@@ -44,6 +44,8 @@ nav:
    link: "publications"
  - name: "CV"
    link: "cv"
+ - name: "Share"
+   link: "share"
  - name: "Contact"
    link: "contact"
 

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>PathJev vs PathoJev</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: one column of chart cards, each card = title + subtitle + SVG drawn to scale + table twin. */
+:root {
+  --bg: #f9f9f7; --surface: #fcfcfb; --fg: #0b0b0b; --fg2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+  --s1: #2a78d6; --s2: #eb6834; --nd: #c3c2b7;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d0d0d; --surface: #1a1a19; --fg: #f0efec; --fg2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --s1: #3987e5; --s2: #d95926; --nd: #383835; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d0d0d; --surface: #1a1a19; --fg: #f0efec; --fg2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+  --s1: #3987e5; --s2: #d95926; --nd: #383835; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 14px; line-height: 1.45;
+  padding-block: 28px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 980px; margin: 0 auto; display: grid; gap: 20px; }
+header h1 { font-size: 24px; font-weight: 650; margin: 0 0 6px; text-wrap: balance; letter-spacing: -0.01em; }
+header p { margin: 0; color: var(--fg2); max-width: 70ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; margin-top: 12px; font-size: 13px; color: var(--fg2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.sw.s1 { background: var(--s1); } .sw.s2 { background: var(--s2); } .sw.nd { background: var(--nd); }
+.card { background: var(--surface); border: 1px solid var(--ring); border-radius: 8px; padding: 18px 18px 14px; min-width: 0; }
+.card h2 { font-size: 16px; font-weight: 650; margin: 0 0 2px; }
+.card .sub { color: var(--fg2); font-size: 13px; margin: 0 0 12px; max-width: 80ch; }
+.card .note { color: var(--muted); font-size: 12px; margin: 8px 0 0; max-width: 90ch; }
+.head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.tbtn { font: inherit; font-size: 12px; color: var(--fg2); background: transparent; border: 1px solid var(--ring); border-radius: 6px; padding: 4px 10px; cursor: pointer; white-space: nowrap; }
+.tbtn:hover { color: var(--fg); } .tbtn:focus-visible { outline: 2px solid var(--s1); outline-offset: 2px; }
+.plot { width: 100%; overflow: visible; display: block; }
+svg text { font-family: var(--sans); }
+.ax { stroke: var(--axis); stroke-width: 1; } .gr { stroke: var(--grid); stroke-width: 1; }
+.lab { fill: var(--fg); font-size: 12.5px; } .lab2 { fill: var(--fg2); font-size: 12px; } .tick { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.grp { fill: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.val { fill: var(--fg); font-size: 12px; font-variant-numeric: tabular-nums; }
+.ci { stroke-width: 2; stroke-linecap: round; }
+.dot { stroke: var(--surface); stroke-width: 2; }
+.nd-t { fill: var(--muted); font-size: 12px; font-style: italic; }
+.hit { fill: transparent; cursor: default; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 8px; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { color: var(--fg2); font-weight: 600; } td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.twrap { overflow-x: auto; }
+.matrix td:first-child { color: var(--fg2); }
+#tip { position: fixed; pointer-events: none; background: var(--fg); color: var(--bg); font-size: 12px; padding: 6px 9px; border-radius: 6px; max-width: 280px; line-height: 1.35; z-index: 20; opacity: 0; transition: opacity .08s; }
+@media (prefers-reduced-motion: reduce) { #tip { transition: none; } }
+footer { color: var(--muted); font-size: 12px; max-width: 90ch; }
+.score { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+.tile { background: var(--surface); border: 1px solid var(--ring); border-radius: 8px; padding: 12px 14px 12px 16px; position: relative; min-width: 0; }
+.tile::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 4px; border-radius: 0 3px 3px 0; background: var(--nd); }
+.tile.s1::before { background: var(--s1); } .tile.s2::before { background: var(--s2); }
+.tile .axis { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+.tile .who { font-size: 15px; font-weight: 650; margin: 0 0 4px; display: flex; align-items: center; gap: 7px; }
+.tile .why { font-size: 12.5px; color: var(--fg2); margin: 0; }
+.strategy ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.strategy li { max-width: 85ch; }
+.strategy blockquote { margin: 10px 0 0; padding: 6px 0 6px 14px; border-left: 3px solid var(--s1); background: transparent; font: inherit; color: var(--fg); max-width: 85ch; }
+</style>
+</head>
+<body>
+
+<main>
+<header>
+  <h1>PathJev vs PathoJev: cosa si può confrontare, in numeri</h1>
+  <p>I due lavori non condividono alcun test set. Ogni pannello allinea solo i contrasti che entrambi misurano su se stessi (decidere contro generare, a parità di backbone e dati), i rapporti di costo e la calibrazione. Numeri PathJev dalla versione CVPR 2027 (5 organi held-out, 3 seed); PathoJev da arXiv 2610.40752 v1 (1 seed, modello 9B).</p>
+  <div class="legend" aria-label="Legenda">
+    <span><i class="sw s1"></i>PathJev (CVPR)</span>
+    <span><i class="sw s2"></i>PathoJev 9B</span>
+    <span><i class="sw nd"></i>non misurato</span>
+    <span>Barrette: intervallo di confidenza 95 % dove riportato</span>
+  </div>
+</header>
+
+<section aria-label="Sintesi: chi è avanti su ciascun asse">
+  <div class="score">
+    <div class="tile"><p class="axis">Decide vs letter, accuratezza</p><p class="who"><i class="sw s1"></i><i class="sw s2"></i>Pari</p><p class="why">+1.5 punti in entrambi i paper, intervalli che toccano lo zero. Convergenza indipendente.</p></div>
+    <div class="tile s1"><p class="axis">Decide vs candidate scoring</p><p class="who"><i class="sw s1"></i>PathJev</p><p class="why">+12.5 punti su 5 organi nuovi, in tutte e 4 le configurazioni visive. PathoJev non lo misura.</p></div>
+    <div class="tile s1"><p class="axis">Organi mai visti in training</p><p class="who"><i class="sw s1"></i>PathJev</p><p class="why">Unico a misurarlo: 40.8 da solo, 60.0 pooled con CPath-CLIP. PathoJev: 0 organi held-out.</p></div>
+    <div class="tile s2"><p class="axis">Velocità con molte domande</p><p class="who"><i class="sw s2"></i>PathoJev</p><p class="why">6.9–11.2× con 8–64 domande per vetrino, contro 1.9× con 5 domande per patch. Scenari diversi.</p></div>
+    <div class="tile"><p class="axis">Calibrazione in-distribution</p><p class="who"><i class="sw s1"></i><i class="sw s2"></i>Pari</p><p class="why">ECE fra 2 e 9 % per entrambi. Sotto shift di organo solo PathJev misura (12–29 %).</p></div>
+    <div class="tile s1"><p class="axis">Forza dell'evidenza</p><p class="who"><i class="sw s1"></i>PathJev</p><p class="why">3 seed, piano pre-registrato, bootstrap su ogni contrasto, label esperte. PathoJev: 1 seed, label estratte da referti con LLM.</p></div>
+    <div class="tile s2"><p class="axis">Scala e capacità del modello</p><p class="who"><i class="sw s2"></i>PathoJev</p><p class="why">9B e 27B su 4 GPU, vetrino intero e ROI. PathJev: 4B a 4 bit su 1 GPU, solo patch.</p></div>
+    <div class="tile"><p class="axis">Accuratezza assoluta</p><p class="who"><i class="sw nd"></i>Non confrontabile</p><p class="why">Nessun test set in comune, compiti e metriche diversi. Nessuno dei due può dirsi più accurato dell'altro.</p></div>
+  </div>
+</section>
+
+<section class="card" id="c1">
+  <div class="head"><div><h2>Decidere meno generare: punti di accuratezza</h2>
+  <p class="sub">Stesso backbone, stessi dati, stessi step. PathJev in balanced accuracy, PathoJev in accuracy. Il baseline generativo di PathoJev (AR-SFT) risponde con la lettera dell'opzione: corrisponde al letter model di PathJev, non al candidate scoring.</p></div>
+  <button class="tbtn" data-t="t1" aria-expanded="false">Tabella</button></div>
+  <svg class="plot" id="p1" role="img" aria-label="Delta di accuratezza tra decidere e generare, con intervalli di confidenza"></svg>
+  <div class="twrap" id="t1" hidden></div>
+  <p class="note">PathoJev non prova il read-out per likelihood del testo dei candidati; il +12.5 è un risultato che riporta solo PathJev. PathoJev: ROI media senza intervallo; MedXpertQA è il caso ROI peggiore.</p>
+</section>
+
+<section class="card" id="c2">
+  <div class="head"><div><h2>Quanto è più veloce decidere rispetto a generare</h2>
+  <p class="sub">Rapporto di latenza generativo / decisione, misurato da ciascun paper sul proprio hardware (PathJev: H100 PCIe, 4B a 4 bit; PathoJev: RTX PRO 6000, 9B). Le latenze assolute non si confrontano, i rapporti sì.</p></div>
+  <button class="tbtn" data-t="t2" aria-expanded="false">Tabella</button></div>
+  <svg class="plot" id="p2" role="img" aria-label="Speed-up del decidere rispetto al generare"></svg>
+  <div class="twrap" id="t2" hidden></div>
+  <p class="note">PathoJev condivide il prefisso del vetrino per 8–64 domande e usa un backbone ricorrente a costo marginale quasi piatto; PathJev misura 5 domande per patch. Stessa direzione, scenari diversi.</p>
+</section>
+
+<section class="card" id="c3">
+  <div class="head"><div><h2>Calibrazione: ECE in percentuale</h2>
+  <p class="sub">Più basso è meglio. In-distribution i due sono nella stessa fascia. Sotto shift di organo PathoJev non ha alcuna misura.</p></div>
+  <button class="tbtn" data-t="t3" aria-expanded="false">Tabella</button></div>
+  <svg class="plot" id="p3" role="img" aria-label="ECE in-distribution e su organi held-out"></svg>
+  <div class="twrap" id="t3" hidden></div>
+  <p class="note">PathJev: 15 bin, probabilità raw; dopo temperature scaling l'ECE su fegato e stomaco scende da 27.3 a 15.1. PathoJev: τ = 1, numero di bin non dichiarato.</p>
+</section>
+
+<section class="card" id="c4">
+  <div class="head"><div><h2>Organi mai visti in training: balanced accuracy</h2>
+  <p class="sub">Media sui 5 organi held-out di PathJev (fegato, stomaco, esofago, mascella, osso). PathoJev addestra e valuta sugli stessi 11 progetti TCGA: nessun organo held-out, quindi nessun valore.</p></div>
+  <button class="tbtn" data-t="t4" aria-expanded="false">Tabella</button></div>
+  <svg class="plot" id="p4" role="img" aria-label="Balanced accuracy sui cinque organi held-out"></svg>
+  <div class="twrap" id="t4" hidden></div>
+  <p class="note">Il probe lineare usa le label dell'organo di test ed è un riferimento supervisionato. CPath-CLIP è zero-shot. Il modello pooled combina PathJev e CPath-CLIP con un peso fittato su organi proxy.</p>
+</section>
+
+<section class="card" id="c5">
+  <div class="head"><div><h2>Cosa copre ciascun paper</h2>
+  <p class="sub">Dove un valore manca da una parte, il confronto su quell'asse non è possibile.</p></div></div>
+  <div class="twrap"><table class="matrix">
+    <thead><tr><th>Asse</th><th>PathJev (CVPR)</th><th>PathoJev</th></tr></thead>
+    <tbody>
+      <tr><td>Test set in comune</td><td colspan="2">nessuno</td></tr>
+      <tr><td>Organi held-out</td><td>5</td><td>0</td></tr>
+      <tr><td>Test set</td><td>11 (5 held-out, 2 in-domain, 4 seen source)</td><td>8 (3 vetrino intero, 5 ROI)</td></tr>
+      <tr><td>Compito</td><td>classe tissutale o lesionale da patch, K = 5–25, con "none of these"</td><td>VQA a scelta multipla (K ≤ 16) e statement vero/falso</td></tr>
+      <tr><td>Metrica primaria</td><td>balanced accuracy, ECE</td><td>accuracy; ECE solo sui benchmark WSI</td></tr>
+      <tr><td>Seed</td><td>3, accoppiati</td><td>1</td></tr>
+      <tr><td>Intervalli</td><td>bootstrap a cluster, 10 000 resample, su ogni contrasto</td><td>bootstrap accoppiato, solo sull'ablation AR-SFT</td></tr>
+      <tr><td>Backbone</td><td>MedGemma-1.5-4B a 4 bit, 1 GPU</td><td>Qwen3.5-9B / 27B ibrido ricorrente, 4 GPU</td></tr>
+      <tr><td>Label di training</td><td>esperte (BRACS, SICAPv2, SPIDER)</td><td>"silver": estratte da referti TCGA con LLM e NLI, non verificate</td></tr>
+      <tr><td>Piano pre-registrato</td><td>sì, con hash dei file</td><td>no</td></tr>
+      <tr><td>Decide vs candidate scoring</td><td>+12.5 punti</td><td>non misurato</td></tr>
+      <tr><td>Decide vs letter / AR-SFT</td><td>+1.5 punti</td><td>+1.5 (WSI), +0.9 (ROI)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="card strategy" id="c6">
+  <div class="head"><div><h2>Strategia proposta per la submission CVPR</h2>
+  <p class="sub">PathoJev è su arXiv dal 29 ottobre, sei giorni dopo il nostro preprint; un reviewer lo troverà. Non è un rischio di plagio, è un lavoro parallelo. Va gestito nel testo, senza cambiare un numero.</p></div></div>
+  <ol>
+    <li><strong>Citarlo in Related Work</strong> (paragrafo "Decision-native models") come lavoro concorrente sul vetrino intero. Una frase, double-blind, senza richiamare il nostro preprint. Bozza:
+      <blockquote>Concurrently, PathoJev adapts decision-native inference to whole slides, reading a typed decision token over lettered options from a shared slide prefix, and reports latency gains over generation on in-distribution WSI benchmarks. We instead study patch-level transfer to organs held out from training under a contamination-aware protocol, and compare deciding with both candidate-likelihood and letter-answer read-outs of the same backbone.</blockquote></li>
+    <li><strong>Riformulare il contributo 1.</strong> "A decision-native VLM for histopathology" non è più unico. Spostare il peso su ciò che PathoJev non fa: organi held-out e benchmark contamination-aware, confronto alla pari fra decide, letter e candidate likelihood, calibrazione sotto shift, pooling con un modello contrastivo, diagnosi vocabolario-vs-concetti.</li>
+    <li><strong>Usare la convergenza a nostro favore.</strong> La loro ablation (decide vs AR-SFT: +1.5 WSI, +0.9 ROI, intervalli sullo zero, latenza 3× minore) conferma in modo indipendente la nostra conclusione "pari accuratezza rispetto alla lettera, il vantaggio è il costo". Una frase nei risultati o nella discussione, citata come risultato convergente, non come prova nostra.</li>
+    <li><strong>Rivendicare il terreno degli organi held-out.</strong> È l'asse su cui PathoJev non ha dati: i 5 organi, i 2 scelti per data di rilascio, il +12.5 contro il candidate scoring e il sistema pooled a 60.0 vanno in apertura dell'abstract e in chiusura della conclusione.</li>
+    <li><strong>Non inseguirli sul costo.</strong> I loro 6.9–11.2× vengono da 8–64 domande per vetrino e da un backbone ricorrente; i nostri 1.7–1.9× sono su 5 domande per patch. Lasciare la Tab. 3 com'è, dire che lo scenario è diverso.</li>
+    <li><strong>Supplemento (scadenza 23 novembre): amendment A22.</strong> Eseguire PathoJev-9B in modalità ROI zero-shot sui nostri 5 organi held-out con gli stessi candidati, come già fatto per OmniMed-Jev e Qwen2.5-VL-7B. Serve l'accesso al modello gated su Hugging Face (approvazione manuale) e circa 1 GPU-ora. Piano scritto e congelato prima di qualunque output, come per gli altri amendment. Esito atteso: sotto CPath-CLIP zero-shot (50.8), perché è addestrato su VQA TCGA, non su classi tissutali di quegli organi. Chiude in anticipo la domanda del reviewer.</li>
+    <li><strong>Priorità.</strong> Le date arXiv sono pubbliche (23 vs 29 ottobre). In double-blind non si scrive; se serve, si gestisce nel rebuttal tramite i chair.</li>
+  </ol>
+</section>
+
+<footer>Fonti: cvpr2027/cvprgen/numbers.tex e suppl_am_numbers.tex (PathJev); arXiv 2610.40752 v1, Tab. 1, 2, 3, 4, A5, A8, A9 (PathoJev). Confronto redatto il 9 novembre 2026 per uso interno. Dettaglio in review/03_benchmark_PathJev_vs_PathoJev.md.</footer>
+</main>
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  const S = { s1: 'var(--s1)', s2: 'var(--s2)', nd: 'var(--nd)' };
+  const NS = 'http://www.w3.org/2000/svg';
+  const tip = document.getElementById('tip');
+  function el(n, a, txt) { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; }
+  function hover(node, text) {
+    node.addEventListener('mousemove', e => { tip.textContent = text; tip.style.opacity = 1; tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 300) + 'px'; tip.style.top = (e.clientY + 14) + 'px'; });
+    node.addEventListener('mouseleave', () => { tip.style.opacity = 0; });
+    node.setAttribute('tabindex', '0');
+    node.addEventListener('focus', () => { const r = node.getBoundingClientRect(); tip.textContent = text; tip.style.opacity = 1; tip.style.left = Math.min(r.right + 8, window.innerWidth - 300) + 'px'; tip.style.top = r.top + 'px'; });
+    node.addEventListener('blur', () => { tip.style.opacity = 0; });
+    const t = el('title', {}, text); node.appendChild(t);
+  }
+  function fmt(v, d) { const s = Math.abs(v).toFixed(d); return (v > 0 ? '+' : v < 0 ? '−' : '') + s; }
+  function fmtN(v, d) { return v.toFixed(d).replace('-', '−'); }
+  function niceTicks(lo, hi, step) { const t = []; for (let v = Math.ceil(lo / step) * step; v <= hi + 1e-9; v += step) t.push(+v.toFixed(6)); return t; }
+
+  /* ---------- generic horizontal chart: rows with groups ---------- */
+  // rows: {g:'group', label, who:'s1'|'s2'|'nd', v, lo, hi, text, nd:boolean}
+  function draw(svgId, rows, opt) {
+    const svg = document.getElementById(svgId);
+    const W = 940, LW = opt.labelW || 250, R = 56, rowH = 26, gapG = 18;
+    const groups = []; rows.forEach(r => { if (!groups.includes(r.g)) groups.push(r.g); });
+    const H = 30 + rows.length * rowH + groups.length * gapG + 34;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.innerHTML = '';
+    const x0 = LW, x1 = W - R, lo = opt.lo, hi = opt.hi;
+    const X = v => x0 + (v - lo) / (hi - lo) * (x1 - x0);
+    const top = 22, bottom = H - 30;
+    // grid + ticks
+    niceTicks(lo, hi, opt.step).forEach(t => {
+      svg.appendChild(el('line', { x1: X(t), x2: X(t), y1: top, y2: bottom, class: (t === 0 && opt.zero) ? 'ax' : 'gr' }));
+      svg.appendChild(el('text', { x: X(t), y: bottom + 16, 'text-anchor': 'middle', class: 'tick' }, opt.tickFmt ? opt.tickFmt(t) : String(t)));
+    });
+    svg.appendChild(el('line', { x1: x0, x2: x1, y1: bottom, y2: bottom, class: 'ax' }));
+    svg.appendChild(el('text', { x: x1, y: H - 4, 'text-anchor': 'end', class: 'tick' }, opt.axisLabel));
+    let y = top + 6;
+    groups.forEach(g => {
+      svg.appendChild(el('text', { x: 0, y: y + 10, class: 'grp' }, g)); y += gapG;
+      rows.filter(r => r.g === g).forEach(r => {
+        const cy = y + rowH / 2;
+        svg.appendChild(el('text', { x: 0, y: cy + 4, class: 'lab' }, r.label));
+        svg.appendChild(el('rect', { x: LW - 18, y: cy - 6, width: 12, height: 12, rx: 3, fill: S[r.who] }));
+        if (r.nd) {
+          svg.appendChild(el('text', { x: X(lo) + 8, y: cy + 4, class: 'nd-t' }, r.text || 'non misurato'));
+        } else if (opt.kind === 'dot') {
+          if (r.lo != null) svg.appendChild(el('line', { x1: X(r.lo), x2: X(r.hi), y1: cy, y2: cy, class: 'ci', stroke: S[r.who] }));
+          svg.appendChild(el('circle', { cx: X(r.v), cy, r: 5, fill: S[r.who], class: 'dot' }));
+          const txt = fmt(r.v, 1) + (r.lo != null ? ` [${fmt(r.lo, 1)}, ${fmt(r.hi, 1)}]` : '');
+          const tx = r.hi != null ? X(Math.max(r.hi, r.v)) + 10 : X(r.v) + 10;
+          svg.appendChild(el('text', { x: tx, y: cy + 4, class: 'val' }, txt));
+        } else {
+          const bx = X(Math.min(0, r.v)), bw = Math.abs(X(r.v) - X(0));
+          const bar = el('rect', { x: bx, y: cy - 9, width: bw, height: 18, fill: S[r.who] });
+          svg.appendChild(bar);
+          // 4px rounded data-end: overlay a small rect at the baseline to square it
+          bar.setAttribute('rx', 4); svg.appendChild(el('rect', { x: X(0), y: cy - 9, width: Math.min(4, bw), height: 18, fill: S[r.who] }));
+          svg.appendChild(el('text', { x: X(r.v) + 8, y: cy + 4, class: 'val' }, opt.valFmt ? opt.valFmt(r.v) : fmtN(r.v, 1)));
+        }
+        const hit = el('rect', { x: 0, y: cy - rowH / 2, width: W, height: rowH, class: 'hit' });
+        hover(hit, r.tip || `${r.label}: ${r.nd ? 'non misurato' : (opt.valFmt ? opt.valFmt(r.v) : fmtN(r.v, 1))}`);
+        svg.appendChild(hit);
+        y += rowH;
+      });
+    });
+  }
+  function table(id, head, rows) {
+    const d = document.getElementById(id);
+    d.innerHTML = '<table><thead><tr>' + head.map((h, i) => `<th${i ? ' class="n"' : ''}>${h}</th>`).join('') + '</tr></thead><tbody>' +
+      rows.map(r => '<tr>' + r.map((c, i) => `<td${i ? ' class="n"' : ''}>${c}</td>`).join('') + '</tr>').join('') + '</tbody></table>';
+  }
+  document.querySelectorAll('.tbtn').forEach(b => b.addEventListener('click', () => {
+    const t = document.getElementById(b.dataset.t); t.hidden = !t.hidden; b.setAttribute('aria-expanded', String(!t.hidden)); b.textContent = t.hidden ? 'Tabella' : 'Nascondi tabella';
+  }));
+
+  /* ---------- 1. delta decide − generative ---------- */
+  const d1 = [
+    { g: 'PathJev, decide − letter', label: '5 organi held-out', who: 's1', v: 1.5, lo: 0.5, hi: 2.4 },
+    { g: 'PathJev, decide − letter', label: 'In-domain', who: 's1', v: 0.8, lo: -1.3, hi: 2.4 },
+    { g: 'PathoJev, decide − AR-SFT', label: 'WSI-VQA', who: 's2', v: 1.5, lo: -1.8, hi: 4.9 },
+    { g: 'PathoJev, decide − AR-SFT', label: 'WSI-Bench', who: 's2', v: 1.4, lo: 0.0, hi: 2.8 },
+    { g: 'PathoJev, decide − AR-SFT', label: 'SlideBench-TCGA', who: 's2', v: 1.7, lo: 0.5, hi: 2.9 },
+    { g: 'PathoJev, decide − AR-SFT', label: 'ROI, media di 5 benchmark', who: 's2', v: 0.9 },
+    { g: 'PathoJev, decide − AR-SFT', label: 'MedXpertQA (ROI, caso peggiore)', who: 's2', v: -4.4, lo: -11.1, hi: 2.2 },
+    { g: 'PathJev, decide − candidate scoring', label: '5 organi held-out', who: 's1', v: 12.5, lo: 11.5, hi: 13.6 },
+    { g: 'PathJev, decide − candidate scoring', label: 'PathoJev', who: 'nd', nd: true, text: 'read-out non provato' },
+  ];
+  d1.forEach(r => { if (!r.nd) r.tip = `${r.g}, ${r.label}: ${fmt(r.v, 1)} punti` + (r.lo != null ? `, IC 95 % [${fmt(r.lo, 1)}, ${fmt(r.hi, 1)}]` : ', senza intervallo'); });
+  draw('p1', d1, { kind: 'dot', lo: -12, hi: 14, step: 2, zero: true, axisLabel: 'punti di accuratezza, decidere meno generare', tickFmt: t => fmt(t, 0), labelW: 270 });
+  table('t1', ['Contrasto', 'Delta', 'IC 95 %'], d1.filter(r => !r.nd).map(r => [`${r.g}, ${r.label}`, fmt(r.v, 1), r.lo != null ? `[${fmt(r.lo, 1)}, ${fmt(r.hi, 1)}]` : 'n.d.']));
+
+  /* ---------- 2. speed-up ---------- */
+  const d2 = [
+    { g: 'PathJev, 1 domanda per immagine', label: 'vs letter model', who: 's1', v: 1.05 },
+    { g: 'PathJev, 1 domanda per immagine', label: 'vs candidate scoring (K = 10)', who: 's1', v: 4.9 },
+    { g: 'PathJev, 5 domande per immagine', label: 'vs letter model', who: 's1', v: 1.9 },
+    { g: 'PathJev, 5 domande per immagine', label: 'vs letter model con prefix cache', who: 's1', v: 1.7 },
+    { g: 'PathoJev, 1 domanda', label: 'vs AR-SFT, vetrino intero', who: 's2', v: 3.0 },
+    { g: 'PathoJev, 1 domanda', label: 'vs AR-SFT, ROI', who: 's2', v: 2.4 },
+    { g: 'PathoJev, più domande per vetrino', label: '8 domande, prefisso condiviso vs separato', who: 's2', v: 6.9 },
+    { g: 'PathoJev, più domande per vetrino', label: '64 domande, prefisso condiviso vs separato', who: 's2', v: 11.2 },
+    { g: 'PathoJev, più domande per vetrino', label: '64 domande, vs AR-SFT con cache', who: 's2', v: 9.3 },
+  ];
+  d2.forEach(r => r.tip = `${r.g}, ${r.label}: ${fmtN(r.v, 1)}× più veloce`);
+  draw('p2', d2, { kind: 'bar', lo: 0, hi: 12, step: 2, axisLabel: 'latenza del generativo / latenza del decidere (×)', valFmt: v => fmtN(v, 1) + '×', labelW: 300 });
+  table('t2', ['Scenario', 'Speed-up'], d2.map(r => [`${r.g}, ${r.label}`, fmtN(r.v, 2) + '×']));
+
+  /* ---------- 3. ECE ---------- */
+  const d3 = [
+    { g: 'In-distribution', label: 'PathJev, in-domain (mammella, prostata)', who: 's1', v: 9.1 },
+    { g: 'In-distribution', label: 'PathJev, seen sources (SPIDER)', who: 's1', v: 2.8 },
+    { g: 'In-distribution', label: 'PathoJev, WSI-VQA', who: 's2', v: 6.7 },
+    { g: 'In-distribution', label: 'PathoJev, WSI-Bench', who: 's2', v: 2.0 },
+    { g: 'In-distribution', label: 'PathoJev, SlideBench-TCGA', who: 's2', v: 2.2 },
+    { g: 'Organi held-out (shift)', label: 'PathJev, decide', who: 's1', v: 28.9 },
+    { g: 'Organi held-out (shift)', label: 'PathJev, letter model', who: 's1', v: 26.9 },
+    { g: 'Organi held-out (shift)', label: 'CPath-CLIP zero-shot (nel paper PathJev)', who: 's1', v: 16.5 },
+    { g: 'Organi held-out (shift)', label: 'PathJev pooled con CPath-CLIP', who: 's1', v: 12.0 },
+    { g: 'Organi held-out (shift)', label: 'PathoJev', who: 'nd', nd: true, text: 'nessun organo held-out' },
+  ];
+  d3.forEach(r => { if (!r.nd) r.tip = `${r.label}: ECE ${fmtN(r.v, 1)} %`; });
+  draw('p3', d3, { kind: 'bar', lo: 0, hi: 32, step: 4, axisLabel: 'ECE (%), più basso è meglio', labelW: 300 });
+  table('t3', ['Condizione', 'ECE (%)'], d3.filter(r => !r.nd).map(r => [`${r.g}: ${r.label}`, fmtN(r.v, 1)]));
+
+  /* ---------- 4. held-out bAcc ---------- */
+  const d4 = [
+    { g: 'Media sui 5 organi held-out', label: 'PathJev, decide', who: 's1', v: 40.8 },
+    { g: 'Media sui 5 organi held-out', label: 'PathJev, letter model', who: 's1', v: 39.3 },
+    { g: 'Media sui 5 organi held-out', label: 'CPath-CLIP zero-shot', who: 's1', v: 50.8 },
+    { g: 'Media sui 5 organi held-out', label: 'PathJev pooled con CPath-CLIP', who: 's1', v: 60.0 },
+    { g: 'Media sui 5 organi held-out', label: 'Probe lineare (label del test organ)', who: 's1', v: 81.1 },
+    { g: 'Media sui 5 organi held-out', label: 'PathoJev', who: 'nd', nd: true, text: 'nessun organo held-out' },
+  ];
+  d4.forEach(r => { if (!r.nd) r.tip = `${r.label}: bAcc ${fmtN(r.v, 1)} %`; });
+  draw('p4', d4, { kind: 'bar', lo: 0, hi: 100, step: 20, axisLabel: 'balanced accuracy (%)', labelW: 300 });
+  table('t4', ['Modello', 'bAcc (%)'], d4.filter(r => !r.nd).map(r => [r.label, fmtN(r.v, 1)]));
+})();
+</script>
+</body>
+</html>

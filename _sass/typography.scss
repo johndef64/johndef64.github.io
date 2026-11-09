@@ -131,6 +131,23 @@
         vertical-align: 1px;
     }
 
+    /* share page: list of standalone html pages -------------------- */
+    .share-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        border-top: 1px solid var(--rule-soft);
+    }
+    .share-list li {
+        margin: 0;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--rule-soft);
+    }
+    .share-desc {
+        display: block;
+        color: var(--ink-soft);
+    }
+
     /* a two-column key/value strip used on the about page ---------- */
     .facts {
         list-style: none;
